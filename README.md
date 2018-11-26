@@ -5,6 +5,10 @@
 
 ## 1. [Introduction to TensorBoard and TensorFlow visualization](http://adventuresinmachinelearning.com/introduction-to-tensorboard-and-tensorflow-visualization/)
 
+1. [Python TensorFlow Tutorial – Build a Neural Network](http://adventuresinmachinelearning.com/python-tensorflow-tutorial/)
+
+2. [Weight initialization tutorial in TensorFlow](http://adventuresinmachinelearning.com/weight-initialization-tutorial-tensorflow/)
+
 ## 2. [Natural Language Processing is Fun! How computers understand Human Language](https://medium.com/@ageitgey/natural-language-processing-is-fun-9a0bff37854e)
   
 - [Parsing English in 500 Lines of Python](https://explosion.ai/blog/parsing-english-in-python)
