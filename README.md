@@ -9,10 +9,10 @@
 
 1. [Python TensorFlow Tutorial – Build a Neural Network](http://adventuresinmachinelearning.com/python-tensorflow-tutorial/)
 
- a=(b+c)∗(c+2)
+a=(b+c)∗(c+2)
 ![](http://adventuresinmachinelearning.com/wp-content/uploads/2017/03/Simple-graph-example.png)
 
-This may seem like a silly example – but notice a powerful idea in expressing the equation this way: two of the computations (d=b+c and e=c+2) can be performed in parallel.  By splitting up these calculations across CPUs or GPUs, this can give us significant gains in computational times.
+This may seem like a silly example – but notice a powerful idea in expressing the equation this way: **two of the computations (d=b+c and e=c+2) can be performed in parallel.**  By splitting up these calculations across CPUs or GPUs, this can give us significant gains in computational times.
 
 
 2. [Weight initialization tutorial in TensorFlow](http://adventuresinmachinelearning.com/weight-initialization-tutorial-tensorflow/)
