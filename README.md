@@ -5,6 +5,8 @@
 
 ## 1. [Introduction to TensorBoard and TensorFlow visualization](http://adventuresinmachinelearning.com/introduction-to-tensorboard-and-tensorflow-visualization/)
 
+![](http://adventuresinmachinelearning.com/wp-content/uploads/2017/03/TensorFlow-data-flow-graph.gif)
+
 1. [Python TensorFlow Tutorial – Build a Neural Network](http://adventuresinmachinelearning.com/python-tensorflow-tutorial/)
 
 2. [Weight initialization tutorial in TensorFlow](http://adventuresinmachinelearning.com/weight-initialization-tutorial-tensorflow/)
