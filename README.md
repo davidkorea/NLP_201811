@@ -3,7 +3,7 @@
 
 # 2018-11-26
 
-## 1. 
+## 1. [Introduction to TensorBoard and TensorFlow visualization](http://adventuresinmachinelearning.com/introduction-to-tensorboard-and-tensorflow-visualization/)
 
 ## 2. [Natural Language Processing is Fun! How computers understand Human Language](https://medium.com/@ageitgey/natural-language-processing-is-fun-9a0bff37854e)
   
