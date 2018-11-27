@@ -11,6 +11,11 @@
 
 1. video & pdf: [https://mooc.study.163.com/learn/2001280005?tid=2001391038#/learn/content](https://mooc.study.163.com/learn/2001280005?tid=2001391038#/learn/content)
 
+## 3. Recurrent Neural Network - Wanmen
+
+1. video: []()
+2. pdf: []()
+
 # 2018-11-26
 
 ## 1. [Introduction to TensorBoard and TensorFlow visualization](http://adventuresinmachinelearning.com/introduction-to-tensorboard-and-tensorflow-visualization/)
