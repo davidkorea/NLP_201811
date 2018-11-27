@@ -14,7 +14,7 @@
 ## 3. Recurrent Neural Network - Wanmen
 
 1. video: []()
-2. pdf: []()
+2. pdf: [https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/RecurrentNeuralNetwork_wanmen.pdf](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/RecurrentNeuralNetwork_wanmen.pdf)
 
 # 2018-11-26
 
