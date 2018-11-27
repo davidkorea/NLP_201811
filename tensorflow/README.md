@@ -1,6 +1,6 @@
 
 # tensorflow
-andrew wu
+andrew ng
 
 # Issue 8 LSTM
 ![](https://i.loli.net/2018/11/24/5bf91df88d0e8.png)
