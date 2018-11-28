@@ -116,3 +116,4 @@ Moreover, the upgraded version LSTM_peephole. Not only input word2vec input, but
 3. **forget gate**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix_f = z_f
 4. **output gate**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix_o = z_o
 
+What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM could be deep, BUT less than 3 hidden layers in general for huge ammount of parameters will be hard to train due to the limited computional power as well as huge time consuming.
