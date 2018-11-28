@@ -106,4 +106,4 @@ For LSTM, there are 4 inputs and 1 output.
 
 The 4 transpose matrix are different and will be trained by model through BP.
 
-If the previous signal is important recognized by the model learned by training set. the infomation can be passed to current by setting the forget gate control signal = 1. Generally, the forget gate is always on (remember) and the input,output gate are always off with no input according to the init weight/transpose matrix above.
+If the previous infomation recognized by the model is important that learned through the training set. the infomation can be passed to current by setting the forget gate control signal = 1 continuously. Generally, the forget gate is always on (remember) and the input,output gate are always off with no input according to the init weight/transpose matrix shows above.
