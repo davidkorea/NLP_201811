@@ -72,3 +72,11 @@ Through the mathmatic notation and equation we can find that:
 
 The gradient equation which is hidden layer weights gradient with respect to the 3rd output L3. Because of the "∏(...)" makes it hard to pass the gradient to the very beginning when the large dimentions of the hidden layer.
 
+After the sigmoid function, the hidden layer will give an ouput in the range(0, 1).
+- 1.00 ^ 1000 = 1
+- 1.01 ^ 1000 = 20000
+- 0.99 ^ 1000 = 0
+- 0.01 ^ 1000 = 0
+we can figure out that even the small difference 1.01, 0.99 will make a huge completely diffenent output after many layers backward propagation. we call this Gradient Vanish.
+
+And from the Loss Function surface plot we see that the cliff will make it hard to train even after many epochs
