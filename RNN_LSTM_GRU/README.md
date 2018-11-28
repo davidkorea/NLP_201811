@@ -27,3 +27,11 @@ He said, “Teddy bears are on sale!”
 Will "Teddy" be recognized as a people name or a 장난감?
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/NamedEntityRecognition.png?raw=true)
+
+# RNN
+
+Actually, the only difference between fully connected layer and RNN is that each neuron in the hidden layer will pass its value to the next neuron.
+
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNN.png?raw=true)
+
+It could be understanded easily by the pic above, we set all the weights as 1 and the init memorn cell is 0. therefore all the outputs will be calculated. 
