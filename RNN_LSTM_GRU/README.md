@@ -83,3 +83,12 @@ After the sigmoid function, the hidden layer will give an ouput in the range(0, 
 we can figure out that even the small difference 1.01, 0.99 will make a huge completely diffenent output after many layers backward propagation. whereas even there's a big difference 0.99, 0.01 will give the same output 0. we call this Gradient Vanish.
 
 And from the Loss Function surface plot we see that the cliff will make it hard to train even after many epochs
+
+# 3. LSTM
+
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM1.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM2.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM3.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM4.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM5.png)
+
