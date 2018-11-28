@@ -47,6 +47,7 @@ In this way, before we decide whick slot to fill, we can read the previous infom
 ## 2.2 Notation
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNnotation.png?raw=true)
+**same color belongs to same part of equation in simplified notation**
 
 Through the mathmatic notation and equation we can find that:
 1. hidden layer: 
@@ -57,3 +58,7 @@ Through the mathmatic notation and equation we can find that:
     add up and pass to a nolinear activation function
     
 2. output: 
+    - current hidden output -> transpose matrix,
+    - bias
+    
+    add up and pass to a nolinear activation function, sigmoid for binary classification and softmax to multi-classification.
