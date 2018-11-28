@@ -96,4 +96,4 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMstepbox.png)
 ---
-![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM2PIC.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM2graph.png)
