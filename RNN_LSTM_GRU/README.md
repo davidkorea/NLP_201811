@@ -107,3 +107,10 @@ For LSTM, there are 4 inputs and 1 output.
 The 4 transpose matrix are different and will be trained by model through BP.
 
 If the previous infomation recognized by the model is important that learned through the training set. the infomation can be passed to current by setting the forget gate control signal = 1 continuously. Generally, the forget gate is always on (remember) and the input,output gate are always off with no input according to the init weight/transpose matrix shows above.
+
+Moreover, the upgraded version LSTM_peephole. Not only input word2vec input, but also togethering with previous output,hidden(memory) to generate the gate control signal.
+1. **input**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix = z
+2. **input gate**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix_i = z_i
+3. **forget gate**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix_f = z_f
+4. **output gate**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix_o = z_o
+
