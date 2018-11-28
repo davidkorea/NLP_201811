@@ -61,4 +61,4 @@ Through the mathmatic notation and equation we can find that:
     - current hidden output -> transpose matrix,
     - bias
     
-    add up and pass to a nolinear activation function, sigmoid for binary classification and softmax to multi-classification.
+    add up and pass to a nolinear activation function, ```sigmoid``` for binary classification and ```softmax``` for multi-classification.
