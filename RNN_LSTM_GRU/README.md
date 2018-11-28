@@ -68,7 +68,9 @@ Through the mathmatic notation and equation we can find that:
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBP2.png?raw=true)
 
-<p align="center"><img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/BPgradient.png"></p>
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/BPgradient.png" width="390" height="130">
+</p>
 
 The gradient equation which is hidden layer weights gradient with respect to the 3rd output L3. Because of the "∏(...)" makes it hard to pass the gradient to the very beginning when the large dimentions of the hidden layer.
 
