@@ -42,3 +42,4 @@ Also, the order of the sequence input is important and the output will totally d
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNorder.png">
 </p>
 
+In this way, before we decide whick slot to fill, we can read the previous infomation first and then make the dicision. "place of arrive" or "place of departure" is dependent on "arrive" or "leave".
