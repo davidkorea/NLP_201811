@@ -44,8 +44,8 @@ Also, the order of the sequence input is important and the output will totally d
 
 In this way, before we decide whick slot to fill, we can read the previous infomation first and then make the dicision. "place of arrive" or "place of departure" is dependent on "arrive" or "leave".
 
-## 2.2 Notation
-
+## 2.2 Algorithm
+### 2.2.1 Forward Propagation
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNnotation.png?raw=true)
 **same color belongs to same part of equation in simplified notation**
 
@@ -63,7 +63,7 @@ Through the mathmatic notation and equation we can find that:
     
     add up and pass to a nolinear activation function, ```sigmoid``` for binary classification and ```softmax``` for multi-classification.
 
-
+### 2.2.2 Backward Propagation
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBP.png?raw=true)
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBP2.png?raw=true)
