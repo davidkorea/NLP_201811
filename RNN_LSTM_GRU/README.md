@@ -36,5 +36,6 @@ Actually, the only difference between fully connected layer and RNN is that each
 
 It could be understanded easily by the pic above, we set all the weights as 1 and the init memorn cell is 0. therefore all the outputs will be calculated. 
 
-Also, the order of the sequence input is important and the output will totally different if the order changed. This also demonstrated that the current output has an dependency with the previous input.
+Also, the order of the sequence input is important and the output will totally different if the order changed. This also demonstrated that the current output has an dependency with the previous input just as the pic shows below.
 
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNorder.png?raw=true)
