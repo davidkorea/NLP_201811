@@ -16,3 +16,14 @@ Slot filling is generally used in the robot customer service filed to automatica
 BUT, the problem is that how should we tell "leave" and "arrive" apart. "place of arrive" OR "place of departure"
 
 This the key point that we should use the sequence model / RNN to deal with this kind of question that the current has a strong dependency with the previous input data.
+
+- Named Entity Recognition
+
+This is another example to use RNN.
+
+He said, “Teddy Roosevelt was a great President.”
+He said, “Teddy bears are on sale!”
+
+Will "Teddy" be recognized as a people name or a 장난감?
+
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/NamedEntityRecognition.png?raw=true)
