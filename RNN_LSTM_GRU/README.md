@@ -62,3 +62,8 @@ Through the mathmatic notation and equation we can find that:
     - bias
     
     add up and pass to a nolinear activation function, ```sigmoid``` for binary classification and ```softmax``` for multi-classification.
+
+
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBP.png?raw=true)
+
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBP2.png?raw=true)
