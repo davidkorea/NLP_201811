@@ -38,4 +38,7 @@ It could be understanded easily by the pic above, we set all the weights as 1 an
 
 Also, the order of the sequence input is important and the output will totally different if the order changed. This also demonstrated that the current output has an dependency with the previous input just as the pic shows below.
 
-![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNorder.png?raw=true)
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNorder.png">
+</p>
+
