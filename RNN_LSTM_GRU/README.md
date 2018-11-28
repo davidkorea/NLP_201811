@@ -50,9 +50,9 @@ In this way, before we decide whick slot to fill, we can read the previous infom
 
 Through the mathmatic notation and equation we can find that:
 1. hidden layer: 
-    previous hidden output -> transpose matrix, 
-    input -> transpose matrix, 
-    bias
+    - previous hidden output -> transpose matrix, 
+    - input -> transpose matrix, 
+    - bias
     
     add up and pass to a nolinear activation function
     
