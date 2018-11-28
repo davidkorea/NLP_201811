@@ -10,3 +10,4 @@ For sequence data (time, vidoe, radio, ...), why don't we use the fully connecte
 - Slot Filling
 
 Slot filling is generally used in the robot customer service filed to automatically answer the specific question the customer raised by some key words. For example, the flight ticket booking app may get one message "I would like to arrive Taipei on Nov. 2nd". the program should identify which word belongs to which slot.
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/slotfilling.png?raw=true)https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/slotfilling.png?raw=true
