@@ -9,11 +9,11 @@ For sequence data (time, vidoe, radio, ...), why don't we use the fully connecte
 
 - Slot Filling
 
-Slot filling is generally used in the robot customer service filed to automatically answer the specific question the customer raised by some key words. For example, the flight ticket booking app may get one message "I would like to arrive Taipei on Nov. 2nd". the program should identify which word belongs to which slot.
+Slot filling is generally used in the robot customer service field to automatically answer the specific question the customer raised by catching some key words. For example, the flight ticket booking app may get one message "I would like to arrive Taipei on Nov. 2nd". the program should identify which word belongs to which slot.
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/slotfilling.png?raw=true)
 
-BUT, the problem is that how should we tell "leave" and "arrive" apart. "place of arrive" OR "place of departure"
+BUT, the problem is that how should we tell "leave" and "arrive" apart. "place of arrive" OR "place of departure".
 
 This the key point that we should use the sequence model / RNN to deal with this kind of question that the current has a strong dependency with the previous input data.
 
@@ -34,7 +34,7 @@ Actually, the only difference between fully connected layer and RNN is that each
 ## 2.1 Model Architecture
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNN.png?raw=true)
 
-It could be understanded easily by the pic above, we set all the weights as 1 and the init memorn cell is 0. therefore all the outputs will be calculated. 
+It could be understanded easily by the pic above, we set all the weights as 1 and the init memory cell is 0. therefore all the outputs will be calculated. 
 
 Also, the order of the sequence input is important and the output will totally different if the order changed. This also demonstrated that the current output has an dependency with the previous input just as the pic shows below.
 
@@ -42,7 +42,7 @@ Also, the order of the sequence input is important and the output will totally d
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNorder.png">
 </p>
 
-In this way, before we decide whick slot to fill, we can read the previous infomation first and then make the dicision. "place of arrive" or "place of departure" is dependent on "arrive" or "leave".
+In this way, before we decide which slot to fill, we can read the previous infomation first and then make the dicision. "place of arrive" or "place of departure" is dependent on "arrive" or "leave".
 
 ## 2.2 Algorithm
 ### 2.2.1 Forward Propagation
@@ -72,7 +72,7 @@ Through the mathmatic notation and equation we can find that:
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/BPgradient.png" width="390" height="130">
 </p>
 
-The gradient equation which is hidden layer weights gradient with respect to the 3rd output L3. Because of the "∏(...)" makes it hard to pass the gradient to the very beginning when the large dimentions of the hidden layer.(once 0 occurs all gradient will be 0)
+The gradient equation which is hidden layer weights' gradient with respect to the 3rd output L3. Because of the "∏(...)" makes it hard to pass the gradient to the very beginning when there's a large dimentions of the hidden layer.(once 0 occurs all gradient will be 0)
 
 After the sigmoid function, the hidden layer will give an ouput in the range(0, 1).
 - 1.00 ^ 1000 = 1
@@ -80,9 +80,12 @@ After the sigmoid function, the hidden layer will give an ouput in the range(0, 
 - 0.99 ^ 1000 = 0
 - 0.01 ^ 1000 = 0
 
-we can figure out that even the small difference 1.01, 0.99 will make a huge completely diffenent output after many layers backward propagation. whereas even there's a big difference 0.99, 0.01 will give the same output 0. we call this Gradient Vanish.
+we can figure out that:
+- even a small difference 1.01, 0.99 will make a huge completely diffenent output after many layers backward propagation. 
+- whereas 
+- even a big difference 0.99, 0.01 will give the same output 0. we call this Gradient Vanish.
 
-And from the Loss Function surface plot we see that the cliff will make it hard to train even after many epochs
+And from the Loss Function surface plot we see that the cliff will make it hard to train even after many epochs.
 
 # 3. LSTM
 
@@ -108,7 +111,7 @@ The 4 transpose matrix are different and will be trained by model through BP.
 
 If the previous infomation recognized by the model is important that learned through the training set. the infomation can be passed to current by setting the forget gate control signal = 1 continuously. Generally, the forget gate is always on (remember) and the input,output gate are always off with no input according to the init weight/transpose matrix shows above.
 
-Moreover, the upgraded version LSTM_peephole. Not only input word2vec input, but also togethering with previous output,hidden(memory) to generate the gate control signal.
+Moreover, the upgraded version LSTM_peephole. Not only input word2vec input x, but also togethering with previous output,hidden(memory) to generate the gate control signal.
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeephole.png)
 
 1. **input**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix = z
