@@ -28,10 +28,10 @@ Will "Teddy" be recognized as a people name or a 장난감?
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/NamedEntityRecognition.png?raw=true)
 
-# RNN
+# 2. RNN
 
 Actually, the only difference between fully connected layer and RNN is that each neuron in the hidden layer will pass its value to the next neuron.
-
+## 2.1 Model Architecture
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNN.png?raw=true)
 
 It could be understanded easily by the pic above, we set all the weights as 1 and the init memorn cell is 0. therefore all the outputs will be calculated. 
@@ -43,3 +43,7 @@ Also, the order of the sequence input is important and the output will totally d
 </p>
 
 In this way, before we decide whick slot to fill, we can read the previous infomation first and then make the dicision. "place of arrive" or "place of departure" is dependent on "arrive" or "leave".
+
+## 2.2 Notation
+
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNnotation.png?raw=true)
