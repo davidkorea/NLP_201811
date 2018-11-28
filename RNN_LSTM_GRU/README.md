@@ -97,3 +97,13 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMstepbox.png)
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM2graph.png)
+
+For LSTM, there are 4 inputs and 1 output.
+1. input: word2vec x -> transpose matrix = z
+2. input gate: word2vec x -> transpose matrix_i = z_i
+3. forget gate: word2vec x -> transpose matrix_f = z_f
+4. output gate: word2vec x -> transpose matrix_o = z_o
+
+The 4 transpose matrix are different and will be trained by model through BP.
+
+If the previous signal is important recognized by the model learned by training set. the infomation can be passed to current by setting the forget gate control signal = 1. Generally, the forget gate is always on (remember) and the input,output gate are always off with no input according to the init weight/transpose matrix above.
