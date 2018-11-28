@@ -1,5 +1,8 @@
 # NLP_201811
 
+# 2018-11-28
+1. [TensorFlow Eager tutorial](http://adventuresinmachinelearning.com/tensorflow-eager-tutorial/)
+
 # 2018-11-27 [NLP_201811/RNN_LSTM_GRU](https://github.com/davidkorea/NLP_201811/tree/master/RNN_LSTM_GRU)
 
 ## 1. ML Lecture 21-1: Recurrent Neural Network (Part I) - HungyiLee
