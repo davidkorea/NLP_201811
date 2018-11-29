@@ -1,6 +1,6 @@
 # NLP_201811
-# 2018-11-29 GPU Checking
-
+# 2018-11-29 
+## 1. GPU Checking
 1. Check use GPU or not
 ```python
 import tensorflow as tf
@@ -31,7 +31,7 @@ device_lib.list_local_devices()
  physical_device_desc: "device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7"]
 ```
 Reference： [First Google Colaboratory & Basic Tutorial](https://github.com/davidkorea/google_colaboratory/blob/master/first_colab.ipynb)
-
+## 2. [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 # 2018-11-28
 1. [TensorFlow Eager tutorial](http://adventuresinmachinelearning.com/tensorflow-eager-tutorial/)
 
