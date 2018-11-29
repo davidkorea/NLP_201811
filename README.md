@@ -30,6 +30,7 @@ device_lib.list_local_devices()
  incarnation: 13629897258954568467
  physical_device_desc: "device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7"]
 ```
+Reference： [First Google Colaboratory & Basic Tutorial](https://github.com/davidkorea/google_colaboratory/blob/master/first_colab.ipynb)
 
 # 2018-11-28
 1. [TensorFlow Eager tutorial](http://adventuresinmachinelearning.com/tensorflow-eager-tutorial/)
