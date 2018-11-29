@@ -3,21 +3,13 @@
 andrew ng
 
 # Issue 8 LSTM
-![](https://i.loli.net/2018/11/24/5bf91df88d0e8.png)
-![](https://i.loli.net/2018/11/24/5bf91dfb11a45.png)
-
-
-![](https://i.loli.net/2018/11/24/5bf91dd93522d.png)
-
-![](https://i.loli.net/2018/11/24/5bf91dec59515.png)
-
-
-![](https://i.loli.net/2018/11/24/5bf91df89b581.png)
-
-
-![](https://i.loli.net/2018/11/24/5bf91dfc16525.png)
-
-![](https://i.loli.net/2018/11/24/5bf91e01ba3f0.png)
+    ![](https://i.loli.net/2018/11/24/5bf91df88d0e8.png)
+    ![](https://i.loli.net/2018/11/24/5bf91dfb11a45.png)
+    ![](https://i.loli.net/2018/11/24/5bf91dd93522d.png)
+    ![](https://i.loli.net/2018/11/24/5bf91dec59515.png)
+    ![](https://i.loli.net/2018/11/24/5bf91df89b581.png)
+    ![](https://i.loli.net/2018/11/24/5bf91dfc16525.png)
+    ![](https://i.loli.net/2018/11/24/5bf91e01ba3f0.png)
 
 
 
