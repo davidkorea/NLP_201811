@@ -1,4 +1,14 @@
 # NLP_201811
+# 2018-11-29 GPU Checking
+
+1. Check use GPu or not
+```python
+import tensorflow as tf
+tf.test.gpu_device_name()
+=>out[1]: '/device:GPU:0' # use GPU
+=>out[2]: '' # do not use GPU
+```
+
 
 # 2018-11-28
 1. [TensorFlow Eager tutorial](http://adventuresinmachinelearning.com/tensorflow-eager-tutorial/)
