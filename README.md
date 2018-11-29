@@ -1,14 +1,35 @@
 # NLP_201811
 # 2018-11-29 GPU Checking
 
-1. Check use GPu or not
+1. Check use GPU or not
 ```python
 import tensorflow as tf
 tf.test.gpu_device_name()
 =>out[1]: '/device:GPU:0' # use GPU
 =>out[2]: '' # do not use GPU
 ```
-
+2. Which GPU is using
+```python
+from tensorflow.python.client import device_lib
+device_lib.list_local_devices()
+```
+```
+[name: "/device:CPU:0"
+ device_type: "CPU"
+ memory_limit: 268435456
+ locality {
+ }
+ incarnation: 12748258960639313348, name: "/device:GPU:0"
+ device_type: "GPU"
+ memory_limit: 11281304781
+ locality {
+   bus_id: 1
+   links {
+   }
+ }
+ incarnation: 13629897258954568467
+ physical_device_desc: "device: 0, name: Tesla K80, pci bus id: 0000:00:04.0, compute capability: 3.7"]
+```
 
 # 2018-11-28
 1. [TensorFlow Eager tutorial](http://adventuresinmachinelearning.com/tensorflow-eager-tutorial/)
