@@ -102,7 +102,7 @@ The last pic as is shown above, input x -> transpose matrix -> z, z_i, z_o, z_f 
 
 Each dimention of the vector will control one LSTM neuron which is the one dimention of hidden layer. And Each LSTM neuron need 4 inputs.
 
-
+That is to say, input vector dim is the same as hidden layer dim as also teh same as output softmax dim in the situation of many-to-many networks.
 
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM6.png)
