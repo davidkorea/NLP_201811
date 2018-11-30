@@ -94,10 +94,13 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
 # 3. LSTM
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM1.png)
+
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM2.png)
+
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM3.png)
+
 The last pic as is shown above, input x -> transpose matrix -> z, z_i, z_o, z_f vecters.
 
 Each dimention of the vector will control one LSTM neuron which is the one dimention of hidden layer. And Each LSTM neuron need 4 inputs.
@@ -110,10 +113,13 @@ That is to say, as showed below, input vector dim is the same as hidden layer di
 
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM6.png)
+
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMstepbox.png)
+
 ---
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM2graph.png)
+
 
 For LSTM, there are 4 inputs and 1 output.
 1. **input**: word2vec x -> transpose matrix = z
