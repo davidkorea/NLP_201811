@@ -1,6 +1,7 @@
 # NLP_201811
 
-# 2018-11-30 [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
+# 2018-11-30 
+[Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 
 
 # 2018-11-29 
