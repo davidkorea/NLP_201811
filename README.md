@@ -6,11 +6,14 @@
 
 ## 2. [Anyone Can Learn To Code an LSTM-RNN in Python (Part 1: RNN)](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)
 ## 3. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+## 4. [Grokking-Deep-Learning](https://github.com/iamtrask/Grokking-Deep-Learning)
+[Manning online book](https://www.manning.com/books/grokking-deep-learning?a_aid=grokkingdl&a_bid=32715258)
+
+
+
 # 2018-11-30 
 [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 
-## 4. [Grokking-Deep-Learning](https://github.com/iamtrask/Grokking-Deep-Learning)
-[Manning online book](https://www.manning.com/books/grokking-deep-learning?a_aid=grokkingdl&a_bid=32715258)
 
 # 2018-11-29 
 ## 1. GPU Checking
