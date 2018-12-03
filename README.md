@@ -1,5 +1,10 @@
 # NLP_201811
 
+# 2018-12-03
+## 1. [Create Kafka Sentence RNN](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
+
+## 2. [Anyone Can Learn To Code an LSTM-RNN in Python (Part 1: RNN)](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)
+## 3. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 # 2018-11-30 
 [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 
