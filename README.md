@@ -9,6 +9,8 @@
 # 2018-11-30 
 [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 
+## 4. [Grokking-Deep-Learning](https://github.com/iamtrask/Grokking-Deep-Learning)
+[Manning online book](https://www.manning.com/books/grokking-deep-learning?a_aid=grokkingdl&a_bid=32715258)
 
 # 2018-11-29 
 ## 1. GPU Checking
