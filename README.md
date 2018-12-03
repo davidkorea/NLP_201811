@@ -1,6 +1,6 @@
 # NLP_201811
 
-# 2018-12-03
+# 2018-12-03 [Learn_Deep_Learning_in_6_Weeks- Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks)
 ## 1. [Create Kafka Sentence RNN](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
 
 ## 2. [Anyone Can Learn To Code an LSTM-RNN in Python (Part 1: RNN)](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)
