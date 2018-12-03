@@ -2,13 +2,13 @@
 
 # 2018-12-03 Learn_Deep_Learning_in_6_Weeks
 
-## [Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks#week-3---recurrent-networks)
+## 1. [Learn Deep Learning in 6 Weeks - Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks#week-3---recurrent-networks)
 
-## 1. [Create Kafka Sentence RNN](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
+1. [Create Kafka Sentence RNN](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
 
-## 2. [Anyone Can Learn To Code an LSTM-RNN in Python (Part 1: RNN)](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)
-## 3. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
-## 4. [Grokking-Deep-Learning](https://github.com/iamtrask/Grokking-Deep-Learning)
+2. [Anyone Can Learn To Code an LSTM-RNN in Python (Part 1: RNN)](https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/)
+3. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+4. [Grokking-Deep-Learning](https://github.com/iamtrask/Grokking-Deep-Learning)
 - [Manning online book](https://www.manning.com/books/grokking-deep-learning?a_aid=grokkingdl&a_bid=32715258)
 
 
