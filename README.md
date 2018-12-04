@@ -1,5 +1,8 @@
 # NLP_201811
 
+# 2018-12-04 Coding for Create Kafka Sentence RNN - numpy ONLY
+
+
 # 2018-12-03 Learn_Deep_Learning_in_6_Weeks
 
 ## 1. [Learn Deep Learning in 6 Weeks - Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks#week-3---recurrent-networks)
