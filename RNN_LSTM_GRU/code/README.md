@@ -33,7 +33,7 @@ Why = np.random.randn(vocab_size,hidden_size) * 0.01 # weight matrix hidden->out
 bh = np.zeros((hidden_size,1)) # bias of hidden
 by = np.zeros((vocab_size,1)) # bias of output y
 ```
-## 3. Model
+## 3. Loss Function
 ```python
 def lossFunc(inputs, targets, hprev):
     # inputs: (25, 63, 1), a sentence, contains 25 words, which word has a (vocab,1) shape vector
@@ -53,6 +53,7 @@ def lossFunc(inputs, targets, hprev):
         loss += -np.log(ps[t][targets[t],0]) # ps[t][targets[t]]选择出label对应盖茨的概率, 0 ???
     
     # Backward
+    # Below Conputaional Graph
     dWxh, dWhh, dWhy = np.zeros_like(Wxh), np.zeros_like(Whh), np.zeros_like(Why)
     dbh, dby = np.zeros_like(bh), np.zeros_like(by)
     dhnext = np.zeros_like(hs[0]) # hs[3] also Ok, cuz each vector has same shape
@@ -62,7 +63,7 @@ def lossFunc(inputs, targets, hprev):
         dWhy += np.dot(dy, hs[t].T)
         dby += dy
         dh = np.dot(Why.T, dy) + dhnext # if variable being inited above, use +=, else =
-        dhraw = (1-hs[t]*hs[t]) * dh 
+        dhraw = (1-hs[t]*hs[t]) * dh # (tanh)'=1 - (tanh)^2
         dbh += dhraw
         dWhh += np.dot(dhraw, hs[t-1].T)
         dWxh += np.dot(dhraw, xs[t].T)
