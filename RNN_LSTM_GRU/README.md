@@ -93,6 +93,11 @@ we can figure out that:
 
 And from the Loss Function surface plot we see that the cliff will make it hard to train even after many epochs.
 
+# 2.3 RNN  Code Implementation
+## 2.3.1 numpy_kafka_sentence_generate_RNN
+
+
+
 # 3. LSTM
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM1.png)
