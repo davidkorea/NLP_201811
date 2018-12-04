@@ -1,10 +1,13 @@
 # NLP_201811
 
-# 2018-12-04 Coding for Create Kafka Sentence RNN - numpy ONLY
+# 2018-12-04 Learn_Deep_Learning_in_6_Weeks
+## 1. Coding for Create Kafka Sentence RNN - numpy ONLY
+## 2. [Learn Deep Learning in 6 Weeks - Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks#week-3---recurrent-networks)
+1. [Generating Text using an LSTM Network (No libraries)](https://github.com/llSourcell/LSTM_Networks/blob/master/LSTM Demo.ipynb)
+2. [Visual Analysis for State Changes in RNNs](https://github.com/HendrikStrobelt/LSTMVis)
 
 
 # 2018-12-03 Learn_Deep_Learning_in_6_Weeks
-
 ## 1. [Learn Deep Learning in 6 Weeks - Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks#week-3---recurrent-networks)
 
 1. [Create Kafka Sentence RNN - numpy ONLY](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
