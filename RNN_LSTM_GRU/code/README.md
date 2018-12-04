@@ -146,7 +146,8 @@ while n <= 1000 * 100:
                                   [mWxh, mWhh, mWhy, mbh, mby]):
         mem += dparam * dparam
         param += -learning_rate * dparam / np.sqrt(mem + 1e-8) # adagrad update       
-    
+        # new param(Wxh, Whh, Why, bh, by) will be used in lossFunc()
+        
     p += seq_length
     n += 1
 ```
