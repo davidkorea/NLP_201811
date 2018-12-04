@@ -77,3 +77,39 @@ def lossFunc(inputs, targets, hprev):
 ```
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBPcomputationalgraph.png)
+
+## 4. Sampling - sentence generation
+
+```python
+def sample(h, seed_ix, n):
+    # h: last hidden state / memory
+    # seed_idx: the idx of the first word/char of the sentence we want to generate in corpus
+    # n: the length of the sentence we want to generate, how many characters to predict
+    
+    # create the first word's/char's vector
+    x = np.zeros((vocab_size,1))
+    x[seed_ix] = 1
+    ixes = [] # resotre the idx of words/chars of the sentence
+    
+    for t in range(n):
+        h = np.tanh(np.dot(Wxh,x) + (np.dot(Whh, h)+bh))
+        y = np.dot(Why, h)+by
+        p = np.exp(y) / np.sum(np.exp(y))
+        # select the biggest element? NO!NO! select randomly
+        ix = np.random.choice(range(vocab_size), p=p.ravel())
+        x = np.zeros((vocab_size,1))
+        x[ix] = 1
+        ixes.append(ix)
+    txt = ''.join(idx_to_char[ix] for ix in ixes)
+    print('-----\n',txt,'\n-----')
+    
+hprev = np.zeros((hidden_size,1))
+sample(hprev,char_to_idx['a'],100)
+"""
+-----
+ Lei'ma;FQkL:Fl O;CI?MHexkjEkr
+THfa!;'NfLyyC"nPdp?QIBLgu(w LUtjNyeHix?)qGA?)ym;fTVqC
+OkD?;rUlooPmCvCT 
+-----
+"""
+```
