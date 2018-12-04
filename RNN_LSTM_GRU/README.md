@@ -54,19 +54,18 @@ In this way, before we decide which slot to fill, we can read the previous infom
 **same color belongs to same part of equation in simplified notation**
 
 Through the mathmatic notation and equation we can find that:
-1. input:
-    - input vector -> transpose matrix
+1. input: ```np.dot(Wax, x)```
+    - input vector -> transpose matrix ```Wax```
 
-2. hidden layer: 
-    - previous hidden output -> transpose matrix, 
-    - input -> transpose matrix, 
-    - bias
+2. hidden layer: ```np.dot(Waa, h[t-1]) + ba```
+    - previous hidden output -> transpose matrix ```Waa```, 
+    - bias ```ba```
     
-    add up and pass to a nolinear activation function
+    add up and pass to a nolinear activation function ```h[t] = np.tanh( np.dot(Waa,x) + np.dot(Waa,h[t-a])+ba )```.
     
-3. output: 
-    - current hidden output -> transpose matrix,
-    - bias
+3. output: ```dot.np(Wah, h[t]) + by```
+    - current hidden output -> transpose matrix ```Way```,
+    - bias ```by```
     
     add up and pass to a nolinear activation function, ```sigmoid``` for binary classification and ```softmax``` for multi-classification.
 
