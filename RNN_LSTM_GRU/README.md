@@ -1,6 +1,3 @@
-- [keras_hongloumeng_RNN.ipynb](https://github.com/davidkorea/google_colaboratory/blob/master/keras_hongloumeng_RNN.ipynb)
-
-- [Text Generate toturial - Hongloumeng](https://github.com/davidkorea/deeplearning/blob/master/递归神经网络(1).ipynb)
 
 > **References about this ariticle**
 > 1. ML Lecture 21-1: Recurrent Neural Network (Part I) - HungyiLee
@@ -100,8 +97,11 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
 - tutorial
     [llSourcell/recurrent_neural_network/RNN.ipynb](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
 ## 2.3.2 keras_hongloumeng_generate_RNN
-
-
+- code
+    [keras_hongloumeng_RNN.ipynb](https://github.com/davidkorea/google_colaboratory/blob/master/keras_hongloumeng_RNN.ipynb)
+- tutorial
+    [Text Generate toturial - Hongloumeng](https://github.com/davidkorea/deeplearning/blob/master/递归神经网络(1).ipynb)
+    
 # 3. LSTM
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM1.png)
