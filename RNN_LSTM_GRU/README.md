@@ -95,6 +95,10 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
 
 # 2.3 RNN  Code Implementation
 ## 2.3.1 numpy_kafka_sentence_generate_RNN
+- code
+    [numpy_kafka_sentence_generate_RNN](https://github.com/davidkorea/NLP_201811/tree/master/RNN_LSTM_GRU/code)
+- tutorial
+    [llSourcell/recurrent_neural_network/RNN.ipynb](https://github.com/llSourcell/recurrent_neural_network/blob/master/RNN.ipynb)
 ## 2.3.2 keras_hongloumeng_generate_RNN
 
 
