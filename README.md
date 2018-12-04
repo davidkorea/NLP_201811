@@ -4,7 +4,7 @@
 ## 1. Coding for Create Kafka Sentence RNN - numpy ONLY
 1. [numpy_kafka_sentence_generate_RNN.ipynb](https://github.com/davidkorea/NLP_201811/tree/master/RNN_LSTM_GRU/code)
 ## 2. [Learn Deep Learning in 6 Weeks - Week 3 - Recurrent Networks](https://github.com/llSourcell/Learn_Deep_Learning_in_6_Weeks#week-3---recurrent-networks)
-1. [Generating Text using an LSTM Network No libraries](https://github.com/llSourcell/LSTM_Networks/blob/master/LSTM Demo.ipynb)
+1. [Generating Text using an LSTM Network No libraries](https://github.com/llSourcell/LSTM_Networks)
 2. [Visual Analysis for State Changes in RNNs](https://github.com/HendrikStrobelt/LSTMVis)
 
 
