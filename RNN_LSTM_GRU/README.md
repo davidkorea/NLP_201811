@@ -191,7 +191,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
 
 -----
 <p align="center">
-    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholegood.png">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholegood.png" width="600" height="500">
     <p align="center">
         <em>3 Red dot lines are last/previous memory cell values</em>
     </p>
