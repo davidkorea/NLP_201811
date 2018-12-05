@@ -167,6 +167,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
         <em>fix the error in red circle</em>
     </p>
 </p>
+-----
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholemid.png">
     <p align="center">
@@ -182,12 +183,14 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
         <em>thin lines are un-weighted connections</em>
     </p>
 </p>
+-----
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholegood.png">
     <p align="center">
         <em>Red dot lines are last/previous memory cell values</em>
     </p>
 </p>
+-----
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholecg.png">
     <p align="center">
