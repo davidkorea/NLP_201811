@@ -175,7 +175,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
         <em>Blue lines are peephole</em>
     </p>   
     <p align="center">
-        <em>Dot lines are the last/previous memory cell values</em>
+        <em>3 Dotlines(2 Blue, 1 Black) are the last/previous memory cell values</em>
     </p>   
     <p align="center">
         <em>Bond lines (black&blue) are weighted connections</em>
@@ -189,7 +189,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholegood.png">
     <p align="center">
-        <em>Red dot lines are last/previous memory cell values</em>
+        <em>3 Red dot lines are last/previous memory cell values</em>
     </p>
 </p>
 
@@ -197,7 +197,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholecg.png">
     <p align="center">
-        <em>Computational Graph of LSTM with peephole</em>
+        <em>3 Light blue arrows are last/previous memory cell values</em>
     </p>    
 </p>
 
