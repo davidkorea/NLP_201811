@@ -1,10 +1,13 @@
 # NLP_201811
 
-# 2018-12-05 Excellent blogs about LSTM
-[Understanding LSTM and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
+# 2018-12-05 
 
-[Materials to understand LSTM](https://medium.com/@shiyan/materials-to-understand-lstm-34387d6454c1)
+## 1. Excellent blogs about LSTM
+- [Understanding LSTM and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
 
+- [Materials to understand LSTM](https://medium.com/@shiyan/materials-to-understand-lstm-34387d6454c1)
+## 2.Excellent tutorial for numpy LSTM implementation
+- [numpy_lstm](http://blog.varunajayasiri.com/numpy_lstm.html)
 
 # 2018-12-04 Learn_Deep_Learning_in_6_Weeks
 ## 1. Coding for Create Kafka Sentence RNN - numpy ONLY
