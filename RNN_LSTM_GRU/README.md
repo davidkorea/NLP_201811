@@ -166,7 +166,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholebad.png">
     <p align="center">
-        <em>fix the error in red circle</em>
+        <em>Error fixed in red circle</em>
     </p>
 </p>
 
