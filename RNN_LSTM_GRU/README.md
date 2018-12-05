@@ -3,6 +3,8 @@
 > 1. ML Lecture 21-1: Recurrent Neural Network (Part I) - HungyiLee
 > 2. deeplearning.ai Sequence Model - AndrewNg
 > 3. Recurrent Neural Network - Wanmen
+> 4. Medium-[Understanding LSTM and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714) - Shi Yan
+> 5. Medium-[Materials to understand LSTM](https://medium.com/@shiyan/materials-to-understand-lstm-34387d6454c1) - Shi Yan
 
 # 1. Why Sequence Model / RNN
 
@@ -175,7 +177,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
         <em>Blue lines are peephole</em>
     </p>   
     <p align="center">
-        <em>3 Dotlines(2 Blue & 1 Black) are the last/previous memory cell values</em>
+        <em>3 Dotlines(2 blue & 1 black) are the last/previous memory cell values</em>
     </p>   
     <p align="center">
         <em>Bond lines (black & blue) are weighted connections</em>
