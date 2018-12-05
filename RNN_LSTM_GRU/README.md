@@ -199,7 +199,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
 
 -----
 <p align="center">
-    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholecg.png">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholecgfix.png">
     <p align="center">
         <em>3 Light blue arrows are last/previous memory cell values</em>
     </p>    
