@@ -169,6 +169,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
         <em>Error fixed in red circle</em>
     </p>
 </p>
+> People never judge an academic paper by those user experience standards that they apply to software. If the purpose of a paper were really promoting understanding, then most of them suck.
 
 -----
 <p align="center">
