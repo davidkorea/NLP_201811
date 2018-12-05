@@ -175,13 +175,13 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
         <em>Blue lines are peephole</em>
     </p>   
     <p align="center">
-        <em>3 Dotlines(2 Blue, 1 Black) are the last/previous memory cell values</em>
+        <em>3 Dotlines(2 Blue & 1 Black) are the last/previous memory cell values</em>
     </p>   
     <p align="center">
-        <em>Bond lines (black&blue) are weighted connections</em>
+        <em>Bond lines (black & blue) are weighted connections</em>
     </p>   
     <p align="center">
-        <em>thin lines are un-weighted connections</em>
+        <em>Thin lines are un-weighted connections</em>
     </p>
 </p>
 
