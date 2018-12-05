@@ -151,3 +151,25 @@ Moreover, the upgraded version LSTM_peephole. Not only input word2vec input x, b
 4. **output gate**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix_o = z_o
 
 What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM could be deep, BUT less than 3 hidden layers in general for huge ammount of parameters will be hard to train due to the limited computional power as well as huge time consuming.
+
+
+
+
+
+
+
+
+
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholebad.png">
+</p>
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholemid.png">
+</p>
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholegood.png">
+</p>
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholecg.png">
+</p>
+
