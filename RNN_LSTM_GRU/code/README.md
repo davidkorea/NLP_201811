@@ -73,7 +73,8 @@ def lossFunc(inputs, targets, hprev):
         np.clip(dparam, -5, 5, out=dparam) # eliminate gradient vanishing, exploding
         
     return loss, dWxh, dWhh, dWhy, dbh, dby, hs[len(inputs)-1] 
-    #  hs[len(inputs)-1]: last second hidden state/memory of this input sentence
+    # hs[len(inputs)-1]: last second hidden state/memory of this input sentence
+    # hs[len(inputs)-1]: the next hprev, when this lossFunc() is invoked recursively.
 ```
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBPcomputationalgraph.png)
