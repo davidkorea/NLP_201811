@@ -29,6 +29,8 @@ Will "Teddy" be recognized as a people name or a 장난감?
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/NamedEntityRecognition.png?raw=true)
 
+-----
+
 # 2. RNN
 
 Actually, the only difference between fully connected layer and RNN is that each neuron in the hidden layer will pass its value to the next neuron.
@@ -101,7 +103,9 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
     [keras_hongloumeng_RNN.ipynb](https://github.com/davidkorea/google_colaboratory/blob/master/keras_hongloumeng_RNN.ipynb)
 - tutorial
     [Text Generate toturial - Hongloumeng](https://github.com/davidkorea/deeplearning/blob/master/递归神经网络(1).ipynb)
-    
+
+-----
+
 # 3. LSTM
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM1.png)
@@ -142,7 +146,7 @@ The 4 transpose matrix are different and will be trained by model through BP.
 
 If the previous infomation recognized by the model is important that learned through the training set. the infomation can be passed to current by setting the forget gate control signal = 1 continuously. Generally, the forget gate is always on (remember) and the input,output gate are always off with no input according to the init weight/transpose matrix shows above.
 
-Moreover, the upgraded version LSTM_peephole. Not only input word2vec input x, but also togethering with previous output,hidden(memory) to generate the gate control signal.
+Moreover, the upgraded version **LSTM_peephole**. Not only input word2vec input x, but also togethering with previous output,hidden(memory) to generate the gate control signal.
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeephole.png)
 
 1. **input**: ( word2vec x, precious_hidden, previous_output ) -> transpose matrix = z
@@ -153,14 +157,9 @@ Moreover, the upgraded version LSTM_peephole. Not only input word2vec input x, b
 What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM could be deep, BUT less than 3 hidden layers in general for huge ammount of parameters will be hard to train due to the limited computional power as well as huge time consuming.
 
 
-
-
-<p align="center">
-    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholemix.png">
-</p>
-
-
------
+> Thanks for the Excellent blogs, show us the exact diagram about LSTM with peephole.
+> - [Understanding LSTM and its diagrams](https://medium.com/mlreview/understanding-lstm-and-its-diagrams-37e2f46f1714)
+> - [Materials to understand LSTM](https://medium.com/@shiyan/materials-to-understand-lstm-34387d6454c1)
 
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMpeepholebad.png">
