@@ -1,5 +1,7 @@
+1. [numpy_kafka_sentence_generate_LSTM.ipynb](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/README.md#numpy_kafka_sentence_generate_lstmipynb)
+2. [numpy_kafka_sentence_generate_RNN.ipynb](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/README.md#numpy_kafka_sentence_generate_rnnipynb)
 
-# numpy_kafka_sentence_generate_LSTM.ipynb
+# numpy_kafka_sentence_generate_LSTM
 Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
 
 ## 1. Import and read data
