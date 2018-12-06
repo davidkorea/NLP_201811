@@ -158,24 +158,24 @@ def backward(target, dh_next, dC_next, C_prev, z, f, i, C_bar, C, o, h, v, y, p 
 
 ## 7. Loss & Forward-Backward pass
 
-- Clear gradients before each backward pass
+1. Clear gradients before each backward pass
 ```python
 def clear_gradients(params = parameters):
     for p in params.all():
         p.d.fill(0)
 ```
-- Clip gradients to mitigate exploding gradients
+2. Clip gradients to mitigate exploding gradients
 ```python
 def clip_gradients(params = parameters):
     for p in params.all():
         np.clip(p.d, -1, 1, out=p.d)
 ```
-Calculate and store the values in forward pass. Accumulate gradients in backward pass and clip gradients to avoid exploding gradients.
+3. Calculate and store the values in forward pass. Accumulate gradients in backward pass and clip gradients to avoid exploding gradients.
 
-* `input`, `target` are list of integers, with character indexes.
-* `h_prev` is the array of initial `h` at $h_{-1}$ (size H x 1)
-* `C_prev` is the array of initial `C` at $C_{-1}$ (size H x 1)
-* *Returns* loss, final $h_T$ and $C_T$
+    * `input`, `target` are list of integers, with character indexes.
+    * `h_prev` is the array of initial `h` at $h_{-1}$ (size H x 1)
+    * `C_prev` is the array of initial `C` at $C_{-1}$ (size H x 1)
+    * *Returns* loss, final $h_T$ and $C_T$
 
 ```python
 def forward_backward(inputs, targets, h_prev, C_prev):
