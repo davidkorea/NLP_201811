@@ -102,8 +102,56 @@ def forward(x, h_prev, C_prev, p = parameters):
 
     return z, f, i, C_bar, C, o, h, v, y
 ```
+## 6. Backward pass
+![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
 
+```python
+def backward(target, dh_next, dC_next, C_prev, z, f, i, C_bar, C, o, h, v, y, p = parameters):
+    
+    assert z.shape == (X_size + H_size, 1)
+    assert v.shape == (X_size, 1)
+    assert y.shape == (X_size, 1)
+    
+    for param in [dh_next, dC_next, C_prev, f, i, C_bar, C, o, h]:
+        assert param.shape == (H_size, 1)
+        
+    dv = np.copy(y)
+    dv[target] -= 1
 
+    p.W_v.d += np.dot(dv, h.T)
+    p.b_v.d += dv
+
+    dh = np.dot(p.W_v.v.T, dv)        
+    dh += dh_next
+    do = dh * tanh(C)
+    do = dsigmoid(o) * do
+    p.W_o.d += np.dot(do, z.T)
+    p.b_o.d += do
+
+    dC = np.copy(dC_next)
+    dC += dh * o * dtanh(tanh(C))
+    dC_bar = dC * i
+    dC_bar = dtanh(C_bar) * dC_bar
+    p.W_C.d += np.dot(dC_bar, z.T)
+    p.b_C.d += dC_bar
+
+    di = dC * C_bar
+    di = dsigmoid(i) * di
+    p.W_i.d += np.dot(di, z.T)
+    p.b_i.d += di
+
+    df = dC * C_prev
+    df = dsigmoid(f) * df
+    p.W_f.d += np.dot(df, z.T)
+    p.b_f.d += df
+
+    dz = (np.dot(p.W_f.v.T, df) + np.dot(p.W_i.v.T, di)
+         + np.dot(p.W_C.v.T, dC_bar) + np.dot(p.W_o.v.T, do))
+    dh_prev = dz[:H_size, :]
+    dC_prev = f * dC
+    
+    return dh_prev, dC_prev
+```
 
 
 
