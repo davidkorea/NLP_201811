@@ -156,6 +156,72 @@ def backward(target, dh_next, dC_next, C_prev, z, f, i, C_bar, C, o, h, v, y, p 
     return dh_prev, dC_prev
 ```
 
+## 7. Loss & Forward-Backward pass
+
+- Clear gradients before each backward pass
+```python
+def clear_gradients(params = parameters):
+    for p in params.all():
+        p.d.fill(0)
+```
+- Clip gradients to mitigate exploding gradients
+```python
+def clip_gradients(params = parameters):
+    for p in params.all():
+        np.clip(p.d, -1, 1, out=p.d)
+```
+Calculate and store the values in forward pass. Accumulate gradients in backward pass and clip gradients to avoid exploding gradients.
+
+* `input`, `target` are list of integers, with character indexes.
+* `h_prev` is the array of initial `h` at $h_{-1}$ (size H x 1)
+* `C_prev` is the array of initial `C` at $C_{-1}$ (size H x 1)
+* *Returns* loss, final $h_T$ and $C_T$
+
+```python
+def forward_backward(inputs, targets, h_prev, C_prev):
+    global paramters
+    
+    # To store the values for each time step
+    x_s, z_s, f_s, i_s,  = {}, {}, {}, {}
+    C_bar_s, C_s, o_s, h_s = {}, {}, {}, {}
+    v_s, y_s =  {}, {}
+    
+    # Values at t - 1
+    h_s[-1] = np.copy(h_prev)
+    C_s[-1] = np.copy(C_prev)
+    
+    loss = 0
+    # Loop through time steps
+    assert len(inputs) == T_steps
+    for t in range(len(inputs)):
+        x_s[t] = np.zeros((X_size, 1))
+        x_s[t][inputs[t]] = 1 # Input character
+        
+        (z_s[t], f_s[t], i_s[t],
+        C_bar_s[t], C_s[t], o_s[t], h_s[t],
+        v_s[t], y_s[t]) = \
+            forward(x_s[t], h_s[t - 1], C_s[t - 1]) # Forward pass
+            
+        loss += -np.log(y_s[t][targets[t], 0]) # Loss for at t
+        
+    clear_gradients()
+
+    dh_next = np.zeros_like(h_s[0]) #dh from the next character
+    dC_next = np.zeros_like(C_s[0]) #dh from the next character
+
+    for t in reversed(range(len(inputs))):
+        # Backward pass
+        dh_next, dC_next = \
+            backward(target = targets[t], dh_next = dh_next,
+                     dC_next = dC_next, C_prev = C_s[t-1],
+                     z = z_s[t], f = f_s[t], i = i_s[t], C_bar = C_bar_s[t],
+                     C = C_s[t], o = o_s[t], h = h_s[t], v = v_s[t],
+                     y = y_s[t])
+
+    clip_gradients()
+        
+    return loss, h_s[len(inputs) - 1], C_s[len(inputs) - 1]
+```
 
 
 
