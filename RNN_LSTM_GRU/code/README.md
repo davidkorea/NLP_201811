@@ -40,9 +40,44 @@ def tanh(x):
 def dtanh(y):
     return 1 - y * y
 ```
+## 4. Parameters
+```python
+class Param:
+    def __init__(self, name, value):
+        self.name = name
+        self.v = value #parameter value
+        self.d = np.zeros_like(value) #derivative
+        self.m = np.zeros_like(value) #momentum for AdaGrad
+```
+We use random weights with normal distribution (`0`, `weight_sd`) for tanh activation function and (`0.5`, `weight_sd`) for sigmoid activation function.
 
+Biases are initialized to zeros.
 
+```python
+class Parameters:
+    def __init__(self):
+        self.W_f = Param('W_f', np.random.randn(H_size, z_size) * weight_sd + 0.5)
+        self.b_f = Param('b_f', np.zeros((H_size, 1)))
 
+        self.W_i = Param('W_i', np.random.randn(H_size, z_size) * weight_sd + 0.5)
+        self.b_i = Param('b_i', np.zeros((H_size, 1)))
+
+        self.W_C = Param('W_C', np.random.randn(H_size, z_size) * weight_sd)
+        self.b_C = Param('b_C', np.zeros((H_size, 1)))
+
+        self.W_o = Param('W_o', np.random.randn(H_size, z_size) * weight_sd + 0.5)
+        self.b_o = Param('b_o', np.zeros((H_size, 1)))
+
+        #For final layer to predict the next character
+        self.W_v = Param('W_v', np.random.randn(X_size, H_size) * weight_sd)
+        self.b_v = Param('b_v', np.zeros((X_size, 1)))
+        
+    def all(self):
+        return [self.W_f, self.W_i, self.W_C, self.W_o, self.W_v,
+               self.b_f, self.b_i, self.b_C, self.b_o, self.b_v]
+        
+parameters = Parameters()
+```
 
 
 
