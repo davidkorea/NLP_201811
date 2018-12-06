@@ -1,5 +1,7 @@
 # NLP_201811
 
+# 2018-12-06 code for LSTM with numpy
+
 # 2018-12-05 
 
 ## 1. Excellent blogs about LSTM
