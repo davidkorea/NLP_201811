@@ -110,6 +110,8 @@ And from the Loss Function surface plot we see that the cliff will make it hard 
 
 # 3. LSTM
 
+## 3.1 Algorithm
+
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTM1.png)
 
 ---
@@ -205,3 +207,5 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
     </p>    
 </p>
 
+## 3.2 LSTM Code Implementation
+![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
