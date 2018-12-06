@@ -1,3 +1,31 @@
+```![LSTM](http://blog.varunajayasiri.com/ml/lstm.svg)```
+# numpy_kafka_sentence_generate_LSTM.ipynb
+Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
+
+## 1. Import and read data
+```python
+
+import numpy as np
+import matplotlib.pyplot as plt
+from IPython import display
+plt.style.use('seaborn-white')
+
+data = open('../input/kafka.txt', 'r').read()
+
+chars = list(set(data))
+data_size, X_size = len(data), len(chars)
+print("data has %d characters, %d unique" % (data_size, X_size))
+char_to_idx = {ch:i for i,ch in enumerate(chars)}
+idx_to_char = {i:ch for i,ch in enumerate(chars)}
+```
+## 2. Hyperparameters
+```python
+H_size = 100 # Size of the hidden layer
+T_steps = 25 # Number of time steps (length of the sequence) used for training
+learning_rate = 1e-1 # Learning rate
+weight_sd = 0.1 # Standard deviation of weights for initialization
+z_size = H_size + X_size # Size of concatenate(H, X) vector
+```
 
 # numpy_kafka_sentence_generate_RNN.ipynb
 
