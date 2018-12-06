@@ -222,11 +222,31 @@ def forward_backward(inputs, targets, h_prev, C_prev):
         
     return loss, h_s[len(inputs) - 1], C_s[len(inputs) - 1]
 ```
+## 8. Sample the next character
 
+```python
+def sample(h_prev, C_prev, first_char_idx, sentence_length):
+    x = np.zeros((X_size, 1))
+    x[first_char_idx] = 1
 
+    h = h_prev
+    C = C_prev
 
+    indexes = []
+    
+    for t in range(sentence_length):
+        _, _, _, _, C, _, h, _, p = forward(x, h, C)
+        idx = np.random.choice(range(X_size), p=p.ravel())
+        x = np.zeros((X_size, 1))
+        x[idx] = 1
+        indexes.append(idx)
 
+    return indexes
+```
+## 9. Training (Adagrad)
+```python
 
+```
 
 # numpy_kafka_sentence_generate_RNN.ipynb
 
