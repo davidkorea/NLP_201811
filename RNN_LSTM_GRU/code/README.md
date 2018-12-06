@@ -104,7 +104,9 @@ def forward(x, h_prev, C_prev, p = parameters):
 ```
 ## 6. Backward pass
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
-
+<p align="center">
+    <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPformula.png">
+</p>
 ```python
 def backward(target, dh_next, dC_next, C_prev, z, f, i, C_bar, C, o, h, v, y, p = parameters):
     
