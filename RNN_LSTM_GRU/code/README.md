@@ -7,7 +7,7 @@ Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.h
 
 import numpy as np
 import matplotlib.pyplot as plt
-from IPython import display
+from IPython import display  ## 动态显示loss plot
 plt.style.use('seaborn-white')
 
 data = open('../input/kafka.txt', 'r').read()
@@ -244,9 +244,109 @@ def sample(h_prev, C_prev, first_char_idx, sentence_length):
     return indexes
 ```
 ## 9. Training (Adagrad)
+1. Update the graph and display a sample output **Loss plot**
 ```python
+def update_status(inputs, h_prev, C_prev):
+    #initialized later
+    global plot_iter, plot_loss
+    global smooth_loss
+    
+    # Get predictions for 200 letters with current model
 
+    sample_idx = sample(h_prev, C_prev, inputs[0], 200)
+    txt = ''.join(idx_to_char[idx] for idx in sample_idx)
+
+    # Clear and plot
+    plt.plot(plot_iter, plot_loss)
+    display.clear_output(wait=True)
+    plt.show()
+
+    #Print prediction and loss
+    print("----\n %s \n----" % (txt, ))
+    print("iter %d, loss %f" % (iteration, smooth_loss))
 ```
+
+2. Update parameters
+```python
+def update_paramters(params = parameters):
+    for p in params.all():
+        p.m += p.d * p.d # Calculate sum of gradients
+        #print(learning_rate * dparam)
+        p.v += -(learning_rate * p.d / np.sqrt(p.m + 1e-8))Update parameters
+```
+3. To delay the keyboard interrupt to prevent the training from stopping in the middle of an iteration 
+```python
+import signal
+
+class DelayedKeyboardInterrupt(object):
+    def __enter__(self):
+        self.signal_received = False
+        self.old_handler = signal.signal(signal.SIGINT, self.handler)
+
+    def handler(self, sig, frame):
+        self.signal_received = (sig, frame)
+        print('SIGINT received. Delaying KeyboardInterrupt.')
+
+    def __exit__(self, type, value, traceback):
+        signal.signal(signal.SIGINT, self.old_handler)
+        if self.signal_received:
+            self.old_handler(*self.signal_received)
+```
+
+4. Main training loop
+
+```python
+# Exponential average of loss
+# Initialize to a error of a random model
+smooth_loss = -np.log(1.0 / X_size) * T_steps
+
+iteration, pointer = 0, 0
+
+# For the graph
+plot_iter = np.zeros((0))
+plot_loss = np.zeros((0))
+```
+```python
+while True:
+    try:
+        with DelayedKeyboardInterrupt():
+            # Reset
+            if pointer + T_steps >= len(data) or iteration == 0:
+                g_h_prev = np.zeros((H_size, 1))
+                g_C_prev = np.zeros((H_size, 1))
+                pointer = 0
+
+
+            inputs = ([char_to_idx[ch] 
+                       for ch in data[pointer: pointer + T_steps]])
+            targets = ([char_to_idx[ch] 
+                        for ch in data[pointer + 1: pointer + T_steps + 1]])
+
+            loss, g_h_prev, g_C_prev = \
+                forward_backward(inputs, targets, g_h_prev, g_C_prev)
+            smooth_loss = smooth_loss * 0.999 + loss * 0.001
+
+            # Print every hundred steps
+            if iteration % 100 == 0:
+                update_status(inputs, g_h_prev, g_C_prev)
+
+            update_paramters()
+
+            plot_iter = np.append(plot_iter, [iteration])
+            plot_loss = np.append(plot_loss, [loss])
+
+            pointer += T_steps
+            iteration += 1
+    except KeyboardInterrupt:
+        update_status(inputs, g_h_prev, g_C_prev)
+        break
+```
+
+
+
+
+
+
 
 # numpy_kafka_sentence_generate_RNN.ipynb
 
