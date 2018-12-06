@@ -26,6 +26,32 @@ learning_rate = 1e-1 # Learning rate
 weight_sd = 0.1 # Standard deviation of weights for initialization
 z_size = H_size + X_size # Size of concatenate(H, X) vector
 ```
+## 3. Activation Functions and Derivatives
+```python
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+    
+def dsigmoid(y):
+    return y * (1 - y)
+    
+def tanh(x):
+    return np.tanh(x)
+    
+def dtanh(y):
+    return 1 - y * y
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 # numpy_kafka_sentence_generate_RNN.ipynb
 
