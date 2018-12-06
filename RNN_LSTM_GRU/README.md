@@ -209,3 +209,7 @@ What we have talked about is ONE hidden layer LSTM network. Obviously, RNN/LSTM 
 
 ## 3.2 LSTM Code Implementation
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
+- code
+    [numpy_kafka_sentence_generate_RNN](https://github.com/davidkorea/NLP_201811/tree/master/RNN_LSTM_GRU/code)
+- tutorial
+    [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
