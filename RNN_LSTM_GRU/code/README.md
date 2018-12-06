@@ -1,4 +1,4 @@
-```![LSTM](http://blog.varunajayasiri.com/ml/lstm.svg)```
+
 # numpy_kafka_sentence_generate_LSTM.ipynb
 Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
 
@@ -78,7 +78,30 @@ class Parameters:
         
 parameters = Parameters()
 ```
+## 5. Forward pass
 
+![LSTM](http://blog.varunajayasiri.com/ml/lstm.svg)
+
+```python
+def forward(x, h_prev, C_prev, p = parameters):
+    assert x.shape == (X_size, 1)
+    assert h_prev.shape == (H_size, 1)
+    assert C_prev.shape == (H_size, 1)
+    
+    z = np.row_stack((h_prev, x))
+    f = sigmoid(np.dot(p.W_f.v, z) + p.b_f.v)
+    i = sigmoid(np.dot(p.W_i.v, z) + p.b_i.v)
+    C_bar = tanh(np.dot(p.W_C.v, z) + p.b_C.v)
+
+    C = f * C_prev + i * C_bar
+    o = sigmoid(np.dot(p.W_o.v, z) + p.b_o.v)
+    h = o * tanh(C)
+
+    v = np.dot(p.W_v.v, h) + p.b_v.v
+    y = np.exp(v) / np.sum(np.exp(v)) #softmax
+
+    return z, f, i, C_bar, C, o, h, v, y
+```
 
 
 
