@@ -341,11 +341,73 @@ while True:
         update_status(inputs, g_h_prev, g_C_prev)
         break
 ```
+## 10. Gradient Check
 
+Approximate the numerical gradients by changing parameters and running the model. Check if the approximated gradients are equal to the computed analytical gradients (by backpropagation).
 
+Try this on `num_checks` individual paramters picked randomly for each weight matrix and bias vector.
 
+1. Calculate numerical gradient
+```python
+from random import uniform
 
+def calc_numerical_gradient(param, idx, delta, inputs, target, h_prev, C_prev):
+    old_val = param.v.flat[idx]
+    
+    # evaluate loss at [x + delta] and [x - delta]
+    param.v.flat[idx] = old_val + delta
+    loss_plus_delta, _, _ = forward_backward(inputs, targets,
+                                             h_prev, C_prev)
+    param.v.flat[idx] = old_val - delta
+    loss_mins_delta, _, _ = forward_backward(inputs, targets, 
+                                             h_prev, C_prev)
+    
+    param.v.flat[idx] = old_val #reset
 
+    grad_numerical = (loss_plus_delta - loss_mins_delta) / (2 * delta)
+    # Clip numerical error because analytical gradient is clipped
+    [grad_numerical] = np.clip([grad_numerical], -1, 1) 
+    
+    return grad_numerical
+```
+
+2. Check gradient of each paramter matrix/vector at `num_checks` individual values
+```python
+def gradient_check(num_checks, delta, inputs, target, h_prev, C_prev):
+    global parameters
+    
+    # To calculate computed gradients
+    _, _, _ =  forward_backward(inputs, targets, h_prev, C_prev)
+    
+    
+    for param in parameters.all():
+        #Make a copy because this will get modified
+        d_copy = np.copy(param.d)
+
+        # Test num_checks times
+        for i in range(num_checks):
+            # Pick a random index
+            rnd_idx = int(uniform(0, param.v.size))
+            
+            grad_numerical = calc_numerical_gradient(param,
+                                                     rnd_idx,
+                                                     delta,
+                                                     inputs,
+                                                     target,
+                                                     h_prev, C_prev)
+            grad_analytical = d_copy.flat[rnd_idx]
+
+            err_sum = abs(grad_numerical + grad_analytical) + 1e-09
+            rel_error = abs(grad_analytical - grad_numerical) / err_sum
+            
+            # If relative error is greater than 1e-06
+            if rel_error > 1e-06:
+                print('%s (%e, %e) => %e'
+                      % (param.name, grad_numerical, grad_analytical, rel_error))
+```
+```python
+gradient_check(10, 1e-5, inputs, targets, g_h_prev, g_C_prev)
+```
 
 
 # numpy_kafka_sentence_generate_RNN.ipynb
