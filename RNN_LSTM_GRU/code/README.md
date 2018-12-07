@@ -116,7 +116,8 @@ def forward(x, h_prev, C_prev, p = parameters):
 2. Parameter```h_prev```: 前一个LSTM的输出（=输出门乘以memory）
 3. Parameter```C_prev```: 前一个LSTM的memory（=遗忘门乘以前一个memory + 输入门乘以当前输入）
 4. Parameter```p```: 所有参数矩阵weights和偏置bias
-5. ```C = f * C_prev + i * C_bar```: how much to forget previous memory and how much to add current input to make new memory
+5. ```z = np.row_stack((h_prev, x))```: 将前一个LSTM单元的输出，横向并上当前的输入（一个字母/汉字的one-hot向量） 
+6. ```C = f * C_prev + i * C_bar```: how much to forget previous memory and how much to add current input to make new memory
 
 ## 6. Backward pass
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
@@ -251,9 +252,9 @@ def forward_backward(inputs, targets, h_prev, C_prev):
 4. ```for t in range(len(inputs)):```: 将每一个字母/汉字进行one-hot编码后，传入一个LSTM单元进行计算.inputs有几个字母/汉字组成，则循环调用几个LSTM单元进行计算。即，每一个字母/汉字需要一个LSTM单元。 每一个字母/汉字前向传播运算后，计算一次loss
 5. 每一步（每一个字母/单词，每个LSTM单元）正向传播的门参数计算后，存入一个dict{} 用户反向传播使用。
 
-    {0: [ , , ...], 1: [ , , ...], ..., -1: h_prev}, dict length = len(inputs) = T_steps = 25, 
+    ```{0: [ , , ...], 1: [ , , ...], ..., -1: h_prev}```, dict length = len(inputs) = T_steps = 25, 
     
-    each value of the dict has a length of (X_size, 1) = (corpus length, 1)
+    each value of the dict is a vector and has a length of (X_size, 1) = (corpus length, 1)
 6. ```dh_next```, ```dC_next```: 对于最后一个LSTM单元， 首次反向传播运算时（sample/sentence最后一个字母/汉字），其需要接收后面一个传回来的导数为0
 
 ## 8. Sample the next character
