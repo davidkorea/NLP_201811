@@ -30,6 +30,11 @@ learning_rate = 1e-1 # Learning rate
 weight_sd = 0.1 # Standard deviation of weights for initialization
 z_size = H_size + X_size # Size of concatenate(H, X) vector
 ```
+重点： 
+1. ```H_siz ```：LSTM单元中的memory cell的向量长度/维度
+2. ```T_step ```：输入样本sample的长度，即一个输入样本sample/sentence有几个字母/汉字组成
+3. ```z_size ```：前一个LSTM的输出向量, 当前LSTM的输入字母/汉字one-hot向量，横向拼接 
+
 ## 3. Activation Functions and Derivatives
 ```python
 def sigmoid(x):
