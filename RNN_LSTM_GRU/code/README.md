@@ -346,7 +346,7 @@ smooth_loss = -np.log(1.0 / X_size) * T_steps
 
 iteration, pointer = 0, 0
 
-# For the graph
+# For the graph 为上面声明的gloabl变量进行初始赋值
 plot_iter = np.zeros((0))
 plot_loss = np.zeros((0))
 ```
@@ -354,18 +354,20 @@ plot_loss = np.zeros((0))
 while True:
     try:
         with DelayedKeyboardInterrupt():
-            # Reset
+            # Reset 当整个corpus走完一遍或者第一个iteration，将前一个LSTM的输出h和memory重置为0向量
             if pointer + T_steps >= len(data) or iteration == 0:
                 g_h_prev = np.zeros((H_size, 1))
                 g_C_prev = np.zeros((H_size, 1))
                 pointer = 0
-
-
-            inputs = ([char_to_idx[ch] 
-                       for ch in data[pointer: pointer + T_steps]])
-            targets = ([char_to_idx[ch] 
-                        for ch in data[pointer + 1: pointer + T_steps + 1]])
-
+                
+            # 输入句子，长度为T_steps=25, 25个字母/汉字一个句子
+            # 每个输入字母/汉字的下一个字母/汉字作为标签
+            inputs = ([char_to_idx[ch] for ch in data[pointer: pointer + T_steps]]) 
+            targets = ([char_to_idx[ch] for ch in data[pointer + 1: pointer + T_steps + 1]]) 
+            
+            # 使用上面25个字母/汉字的句子进行训练，进行loss平滑输出
+            # forward_backward()函数会对输入句子的每个字母/汉字计算loss并求和
+            # 因为是基于时间time step的反向传播，每个时间就是一个字母/单词，所以对每个字母/单词都进行一次反向传播并计算loss
             loss, g_h_prev, g_C_prev = \
                 forward_backward(inputs, targets, g_h_prev, g_C_prev)
             smooth_loss = smooth_loss * 0.999 + loss * 0.001
