@@ -102,7 +102,7 @@ def forward(x, h_prev, C_prev, p = parameters):
     i = sigmoid(np.dot(p.W_i.v, z) + p.b_i.v)
     C_bar = tanh(np.dot(p.W_C.v, z) + p.b_C.v)
 
-    C = f * C_prev + i * C_bar
+    C = f * C_prev + i * C_bar  
     o = sigmoid(np.dot(p.W_o.v, z) + p.b_o.v)
     h = o * tanh(C)
 
@@ -112,10 +112,11 @@ def forward(x, h_prev, C_prev, p = parameters):
     return z, f, i, C_bar, C, o, h, v, y
 ```
 重点：
-1. Parameter```x```：输入样本sample/sentence中的一个字母/汉字的one-hot向量
-2. Parameter```h_prev```：前一个LSTM的输出（=输出门乘以memory）
-3. Parameter```C_prev```：前一个LSTM的memory（=遗忘门乘以前一个memory + 输入门乘以当前输入）
-4. Parameter```p```：所有参数矩阵weights和偏置bias
+1. Parameter```x```: 输入样本sample/sentence中的一个字母/汉字的one-hot向量
+2. Parameter```h_prev```: 前一个LSTM的输出（=输出门乘以memory）
+3. Parameter```C_prev```: 前一个LSTM的memory（=遗忘门乘以前一个memory + 输入门乘以当前输入）
+4. Parameter```p```: 所有参数矩阵weights和偏置bias
+5. ```C = f * C_prev + i * C_bar```: how much to forget previous memory and how much to add current input to make new memory
 
 ## 6. Backward pass
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
