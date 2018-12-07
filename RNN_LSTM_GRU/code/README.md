@@ -281,6 +281,8 @@ def sample(h_prev, C_prev, first_char_idx, sentence_length):
 
     return indexes
 ```
+重点：随机选择一个corpus中的字母/单词，走一次正向传播，再从输出中随机挑选一个作为下一次的输入。
+
 ## 9. Training (Adagrad)
 1. Update the graph and display a sample output **Loss plot**
 ```python
