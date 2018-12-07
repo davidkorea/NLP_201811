@@ -281,20 +281,22 @@ def sample(h_prev, C_prev, first_char_idx, sentence_length):
 
     return indexes
 ```
-重点：随机选择一个corpus中的字母/单词，走一次正向传播，再从输出中随机挑选一个作为下一次的输入。
+重点：
+1. 随机选择一个corpus中的字母/单词，走一次正向传播，再从输出中随机挑选一个作为下一次的输入
+2. ```for t in range(sentence_length):```: 根据输入参数```sentence_length```循环生成sentence_length（200）个idx
+3. return ```indexes```: 用于下一次调用此函数时的输入参数```first_char_idx```
 
 ## 9. Training (Adagrad)
 1. Update the graph and display a sample output **Loss plot**
 ```python
 def update_status(inputs, h_prev, C_prev):
-    #initialized later
+    #initialized later 仅声明变量，并未赋初始值，后面进行赋值
     global plot_iter, plot_loss
     global smooth_loss
     
     # Get predictions for 200 letters with current model
-
-    sample_idx = sample(h_prev, C_prev, inputs[0], 200)
-    txt = ''.join(idx_to_char[idx] for idx in sample_idx)
+    sample_idx = sample(h_prev, C_prev, inputs[0], 200) # 根据初始idx，运行前向传播，指导生成200个idx
+    txt = ''.join(idx_to_char[idx] for idx in sample_idx) # 将200个idx显示成字母/汉字
 
     # Clear and plot
     plt.plot(plot_iter, plot_loss)
