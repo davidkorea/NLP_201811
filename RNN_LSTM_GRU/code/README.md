@@ -208,7 +208,7 @@ def forward_backward(inputs, targets, h_prev, C_prev):
     C_bar_s, C_s, o_s, h_s = {}, {}, {}, {}
     v_s, y_s =  {}, {}
     
-    # Values at t - 1
+    # Values at t - 1 store the previous LSTM unit's output(h) and memory(C) into dict{}, which has its key=-1
     h_s[-1] = np.copy(h_prev)
     C_s[-1] = np.copy(C_prev)
     
@@ -244,6 +244,14 @@ def forward_backward(inputs, targets, h_prev, C_prev):
         
     return loss, h_s[len(inputs) - 1], C_s[len(inputs) - 1]
 ```
+重点：
+1. Parameter ```h_prev```: 上一个/前面一个LSTM前向传播的 输出h， init = 0
+2. Parameter ```C_prev```: 上一个/前面一个LSTM前向传播的 memory， init  0
+3. 
+4. 
+5. 
+
+
 ## 8. Sample the next character
 
 ```python
