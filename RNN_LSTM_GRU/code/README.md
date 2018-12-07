@@ -316,6 +316,8 @@ def update_paramters(params = parameters):
         #print(learning_rate * dparam)
         p.v += -(learning_rate * p.d / np.sqrt(p.m + 1e-8))Update parameters
 ```
+重点：adagrad梯度下降, 优化参数，更新后的参数数值存在parameter.value里面
+
 3. To delay the keyboard interrupt to prevent the training from stopping in the middle of an iteration 
 ```python
 import signal
