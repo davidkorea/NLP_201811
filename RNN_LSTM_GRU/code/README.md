@@ -349,8 +349,7 @@ iteration, pointer = 0, 0
 # For the graph 为上面声明的gloabl变量进行初始赋值
 plot_iter = np.zeros((0))
 plot_loss = np.zeros((0))
-```
-```python
+
 while True:
     try:
         with DelayedKeyboardInterrupt():
@@ -372,21 +371,28 @@ while True:
                 forward_backward(inputs, targets, g_h_prev, g_C_prev)
             smooth_loss = smooth_loss * 0.999 + loss * 0.001
 
-            # Print every hundred steps
+            # Print every hundred steps, 每训练一个25个字母/汉字的句子为一个iteration
             if iteration % 100 == 0:
                 update_status(inputs, g_h_prev, g_C_prev)
-
+            
+            # adagrad梯度下降更新参数
             update_paramters()
+            
+            # 往plot_iter(nparray)中append元素， 类比list append
+            plot_iter = np.append(plot_iter, [iteration]) # np array中存放每个iteration的数值0,1,2，...
+            plot_loss = np.append(plot_loss, [loss]) # np array中存放每个iteration的loss
 
-            plot_iter = np.append(plot_iter, [iteration])
-            plot_loss = np.append(plot_loss, [loss])
-
-            pointer += T_steps
+            pointer += T_steps # 指针增加一个sentence的长度
             iteration += 1
     except KeyboardInterrupt:
         update_status(inputs, g_h_prev, g_C_prev)
         break
 ```
+重点： 未指定训练多少次可以走完一个完整的Corpus/数据集，使用while True循环，当感觉到loss达到可接受程度，手动终止训练
+
+> 走完1次全部corpus是一个iteration，每训练完100个iteration/走完100次全部数据集, 使用训练出来的参数生成一个200字母/汉字的句子并打印，不是100取整的iteration时，不执行打印，进行下面步骤
+
+
 ## 10. Gradient Check
 
 Approximate the numerical gradients by changing parameters and running the model. Check if the approximated gradients are equal to the computed analytical gradients (by backpropagation).
