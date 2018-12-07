@@ -249,7 +249,12 @@ def forward_backward(inputs, targets, h_prev, C_prev):
 2. Parameter ```h_prev```: 上一个/前面一个LSTM前向传播的 输出h， init = 0
 3. Parameter ```C_prev```: 上一个/前面一个LSTM前向传播的 memory， init  0
 4. ```for t in range(len(inputs)):```: 将每一个字母/汉字进行one-hot编码后，传入一个LSTM单元进行计算.inputs有几个字母/汉字组成，则循环调用几个LSTM单元进行计算。即，每一个字母/汉字需要一个LSTM单元。 每一个字母/汉字前向传播运算后，计算一次loss
-5. ```dh_next```, ```dC_next```: 对于最后一个LSTM单元， 首次反向传播运算时（sample/sentence最后一个字母/汉字），其需要接收后面一个传回来的导数为0
+5. 每一步（每一个字母/单词，每个LSTM单元）正向传播的门参数计算后，存入一个dict{} 用户反向传播使用。
+
+    {0: [ , , ...], 1: [ , , ...], ..., -1: h_prev}, dict length = len(inputs) = T_steps = 25, 
+    
+    each value of the dict has a length of (X_size, 1) = (corpus length, 1)
+6. ```dh_next```, ```dC_next```: 对于最后一个LSTM单元， 首次反向传播运算时（sample/sentence最后一个字母/汉字），其需要接收后面一个传回来的导数为0
 
 ## 8. Sample the next character
 
