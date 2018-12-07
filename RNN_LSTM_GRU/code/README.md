@@ -31,9 +31,9 @@ weight_sd = 0.1 # Standard deviation of weights for initialization
 z_size = H_size + X_size # Size of concatenate(H, X) vector
 ```
 重点： 
-1. ```H_siz ```：LSTM单元中的memory cell的向量长度/维度
-2. ```T_step ```：输入样本sample的长度，即一个输入样本sample/sentence有几个字母/汉字组成
-3. ```z_size ```：前一个LSTM的输出向量, 当前LSTM的输入字母/汉字one-hot向量，横向拼接 
+1. ```H_size```：LSTM单元中的memory cell的向量长度/维度
+2. ```T_step```：输入样本sample的长度，即一个输入样本sample/sentence有几个字母/汉字组成
+3. ```z_size```：前一个LSTM的输出向量, 当前LSTM的输入（1个字母/汉字）one-hot向量，横向拼接 
 
 ## 3. Activation Functions and Derivatives
 ```python
@@ -111,6 +111,12 @@ def forward(x, h_prev, C_prev, p = parameters):
 
     return z, f, i, C_bar, C, o, h, v, y
 ```
+重点：
+1. Parameter```x```：输入样本sample/sentence中的一个字母/汉字的one-hot向量
+2. Parameter```h_prev```：前一个LSTM的输出（=输出门乘以memory）
+3. Parameter```C_prev```：前一个LSTM的memory（=遗忘门乘以前一个memory + 输入门乘以当前输入）
+4. Parameter```p```：所有参数矩阵weights和偏置bias
+
 ## 6. Backward pass
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
 <p align="center">
