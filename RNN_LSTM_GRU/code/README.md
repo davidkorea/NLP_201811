@@ -171,6 +171,12 @@ def backward(target, dh_next, dC_next, C_prev, z, f, i, C_bar, C, o, h, v, y, p 
     
     return dh_prev, dC_prev
 ```
+重点：
+1. Parameter ```dh_next```: 下一个/后面一个LSTM往回传的 输出h 的导数， init = 0
+2. Parameter ```dC_next```: 下一个/后面一个LSTM往回传的 memory 的导数， init  0
+3. Parameter ```C_prev```: 下一个/后面一个LSTM往回传的 memory， init = 0
+4. return ```dh_prev```: 再给 下一个/前面一个LSTM单元 回传的 输出h 的导数
+5. return ```dC_prev```: 再给 下一个/前面一个LSTM单元 回传的 memory 的导数
 
 ## 7. Loss & Forward-Backward pass
 
