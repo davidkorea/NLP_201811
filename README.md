@@ -1,3 +1,4 @@
+
 # NLP_201811
 
 # 2018-12-06 code for LSTM with numpy
