@@ -514,7 +514,9 @@ def lossFunc(inputs, targets, hprev):
     for t in range(len(inputs)): # idx of each word in input sentence / each time step
         xs[t] = np.zeros((vocab_size,1)) 
         xs[t][inputs[t]] = 1 # t-th word's vector's t-th element = 1 
-        hs[t] = np.tanh(np.dot(Wxh,xs[t]) + np.dot(Whh,hs[t-1]+bh))
+        hs[t] = np.tanh(np.dot(Wxh,xs[t]) + np.dot(Whh,hs[t-1]+bh)) 
+        # 当前输入x[t]放射变换 element-wise add对应位置元素相加 前一个隐藏层h[t-1]放射变换 
+        # 加和后的向量经过tanh非线性变化
         ys[t] = np.dot(Why, hs[t])+by
         ps[t] = np.exp(ys[t]) / (np.sum(np.exp(ys[t]))) # ps[t] 向量的每个元素对应词汇表中每个单词的概率
         loss += -np.log(ps[t][targets[t],0]) # ps[t][targets[t]]选择出label对应盖茨的概率, 0 ???
