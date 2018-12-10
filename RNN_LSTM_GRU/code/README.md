@@ -247,7 +247,7 @@ def forward_backward(inputs, targets, h_prev, C_prev):
     return loss, h_s[len(inputs) - 1], C_s[len(inputs) - 1]
 ```
 
-BP could do withuot loss???????????
+BP could do withuot loss value??????????? YES, the design of cross entropy loss function makes its BP need no loss value.
 
 重点：
 1. Parameter ```inputs```: 输入的sample/sentence, time sequence, 有多少个字母/汉字组成的句子
