@@ -113,11 +113,11 @@ def forward(x, h_prev, C_prev, p = parameters):
 ```
 重点：
 1. Parameter```x```: 输入样本sample/sentence中的一个字母/汉字的one-hot向量
-2. Parameter```h_prev```: 前一个LSTM的输出（=输出门乘以memory）
-3. Parameter```C_prev```: 前一个LSTM的memory（=遗忘门乘以前一个memory + 输入门乘以当前输入）
+2. Parameter```h_prev```: 前一个LSTM的输出（输出门乘以memory）, init 0 = ```h_prev = np.zeros((H_size, 1))```
+3. Parameter```C_prev```: 前一个LSTM的memory（遗忘门乘以前一个memory+输入门乘以当前输入）,init 0 = ```C_prev = np.zeros((H_size, 1))```
 4. Parameter```p```: 所有参数矩阵weights和偏置bias
 5. ```z = np.row_stack((h_prev, x))```: 将前一个LSTM单元的输出，横向并上当前的输入（一个字母/汉字的one-hot向量） 
-6. ```C = f * C_prev + i * C_bar```: how much to forget previous memory and how much to add current input to make new memory
+6. ```C = f * C_prev + i * C_bar```: 向量对应位置元素相加element-wise, how much to forget previous memory and how much to add current input to make new memory
 
 ## 6. Backward pass
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg2.png)
