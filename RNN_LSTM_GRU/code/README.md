@@ -473,7 +473,8 @@ gradient_check(10, 1e-5, inputs, targets, g_h_prev, g_C_prev)
 ## 1. Data Preparation
 ```python
 data = open('../input/kafka.txt','r').read()
-chars = sorted(list(set(data)))
+chars = sorted(list(set(data))) 
+# unlike the LSTM above, 经过排序后的corpus每次读取data后的单词顺序，即idx不会发生变化
 data_size = len(data)
 vocab_size = len(chars)
 print('data_size: ',data_size, '\nvocab_size: ',vocab_size)
