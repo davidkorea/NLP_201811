@@ -89,7 +89,7 @@ parameters = Parameters()
 ```
 ## 5. Forward pass
 
-![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaFPcg.png)
+![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaFPcg2.png)
 
 ```python
 def forward(x, h_prev, C_prev, p = parameters):
