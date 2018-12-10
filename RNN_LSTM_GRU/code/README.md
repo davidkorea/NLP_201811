@@ -89,7 +89,7 @@ parameters = Parameters()
 ```
 ## 5. Forward pass
 
-![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaFPcg2.png)
+![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaFPcg.png)
 
 ```python
 def forward(x, h_prev, C_prev, p = parameters):
@@ -120,7 +120,7 @@ def forward(x, h_prev, C_prev, p = parameters):
 6. ```C = f * C_prev + i * C_bar```: how much to forget previous memory and how much to add current input to make new memory
 
 ## 6. Backward pass
-![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg.png)
+![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg2.png)
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPformula.png">
 </p>
