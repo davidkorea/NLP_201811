@@ -210,7 +210,7 @@ def forward_backward(inputs, targets, h_prev, C_prev):
     v_s, y_s =  {}, {}
     
     # Values at t - 1 store the previous LSTM unit's output(h) and memory(C) into dict{},
-    # which has its key=-1
+    # which has its key=-1, in the forward pass process
     h_s[-1] = np.copy(h_prev)
     C_s[-1] = np.copy(C_prev)
     
