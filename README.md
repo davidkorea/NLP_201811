@@ -3,7 +3,9 @@
 
 
 deep learning from scrathc book by keras
+# 2018-12-10
 
+[numpy_kafka_sentence_generate_LSTM](https://github.com/davidkorea/NLP_201811/tree/master/RNN_LSTM_GRU/code#numpy_kafka_sentence_generate_lstm)
 
 # 2018-12-06 code for LSTM with numpy
 [numpy_kafka_sentence_generate_LSTM.ipynb](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.ipynb)
