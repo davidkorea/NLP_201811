@@ -4,7 +4,7 @@
 # numpy_kafka_sentence_generate_LSTM
 Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
 
-## 1. Import and read data
+## 1. Import and read data 
 ```python
 
 import numpy as np
