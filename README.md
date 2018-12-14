@@ -4,10 +4,14 @@
 # 2018-12-14
 
 [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
+![WeChat Image_20181214185217.jpg](https://i.loli.net/2018/12/14/5c137d6081989.jpg)
 
 
 
-deep learning from scrathc book by keras
+
+deep learning from scrathc book by keras - Amazon
+
+
 # 2018-12-10
 
 [numpy_kafka_sentence_generate_LSTM](https://github.com/davidkorea/NLP_201811/tree/master/RNN_LSTM_GRU/code#numpy_kafka_sentence_generate_lstm)
