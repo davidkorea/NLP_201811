@@ -1,6 +1,11 @@
 
 # NLP_201811
 
+# 2018-12-14
+
+[Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
+
+
 
 deep learning from scrathc book by keras
 # 2018-12-10
