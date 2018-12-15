@@ -6,9 +6,6 @@
 [Recurrent neural networks and LSTM tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/recurrent-neural-networks-lstm-tutorial-tensorflow/)
 ![WeChat Image_20181214185217.jpg](https://i.loli.net/2018/12/14/5c137d6081989.jpg)
 
-
-
-
 deep learning from scrathc book by keras - Amazon
 
 
