@@ -17,6 +17,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 tf.reset_default_graph()
 ```
+Before excuting code, run ```tf.reset_default_graph()```first.
 
 # 2018-12-14
 
