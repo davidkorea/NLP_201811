@@ -5,7 +5,7 @@
 
 [tensorflow_RNN_LSTM_MNIST](https://github.com/davidkorea/NLP_201811/blob/master/tensorflow/tensorflow_RNN_LSTM_MNIST.ipynb)
 
-refer: [recurrent_network.py](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/recurrent_network.py)
+refer: [](https://github.com/MorvanZhou/tutorials/blob/master/tensorflowTUT/tf20_RNN2/full_code.py),[recurrent_network.py](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/recurrent_network.py)
 
 **Issue**:
 
