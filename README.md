@@ -12,6 +12,11 @@ refer: [recurrent_network.py](https://github.com/aymericdamien/TensorFlow-Exampl
 **ValueError: Variable RNN/BasicRNNCell/Linear/Matrix already exists, disallowed. Did you mean to set reuse=True in VarScope?**
 
 **Answer**:
+```python
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+tf.reset_default_graph()
+```
 
 # 2018-12-14
 
