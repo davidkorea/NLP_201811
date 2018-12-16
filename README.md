@@ -8,6 +8,7 @@
 refer: [recurrent_network.py](https://github.com/aymericdamien/TensorFlow-Examples/blob/master/examples/3_NeuralNetworks/recurrent_network.py)
 
 **Issue: **
+
 **ValueError: Variable RNN/BasicRNNCell/Linear/Matrix already exists, disallowed. Did you mean to set reuse=True in VarScope?**
 
 # 2018-12-14
