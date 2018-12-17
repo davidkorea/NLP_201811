@@ -1,6 +1,12 @@
 
 # NLP_201811
 
+# 2018-12-17
+
+https://www.tensorflow.org/api_docs/python/tf/unstack
+
+
+
 # 2018-12-16
 
 [tensorflow_RNN_LSTM_MNIST](https://github.com/davidkorea/NLP_201811/blob/master/tensorflow/tensorflow_RNN_LSTM_MNIST.ipynb)
