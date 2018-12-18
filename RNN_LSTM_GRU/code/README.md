@@ -1,5 +1,6 @@
-1. [numpy_kafka_sentence_generate_LSTM.ipynb](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/README.md#numpy_kafka_sentence_generate_lstmipynb)
-2. [numpy_kafka_sentence_generate_RNN.ipynb](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/README.md#numpy_kafka_sentence_generate_rnnipynb)
+1. [numpy_kafka_sentence_generate_LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.md)
+
+2. [numpy_kafka_sentence_generate_RNN](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_RNN.md)
 
 # numpy_kafka_sentence_generate_LSTM
 Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
