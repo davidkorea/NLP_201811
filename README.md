@@ -1,5 +1,7 @@
-
 # NLP_201811
+
+# 2018-12-19
+[tensorflow_RNN_LSTM_MNIST](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_RNN_LSTM_MNIST.md)
 
 # 2018-12-18
 
