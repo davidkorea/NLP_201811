@@ -47,10 +47,10 @@ def maybe_download(filename, expected_bytes):
     return local_filename
 
 
-filename = maybe_download('simple-examples.tgz', 34869662)
+tgz_filename = maybe_download('simple-examples.tgz', 34869662)
 ```
 ```
-filename
+tgz_filename
 # '/tmp/simple-examples.tgz'
 os.listdir('/tmp')
 # ['.ipython', '.config', '.keras', 'simple-examples.tgz', '.local', '.cache']
