@@ -26,6 +26,7 @@ if not os.path.exists(FLAGS.log_dir):
     os.makedirs(FLAGS.log_dir)
 
 # Step 1: Download the data.
+# http://www.fit.vutbr.cz/~imikolov/rnnlm/simple-examples.tgz
 url = ' http://www.fit.vutbr.cz/~imikolov/rnnlm/'
 
 # pylint: disable=redefined-outer-name
