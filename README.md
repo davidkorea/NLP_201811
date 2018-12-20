@@ -4,6 +4,7 @@
 
 ## 1. Kaggle download dataset
 
+Reference: [tensorflow_official_word2vec_skipgram.ipynb](https://github.com/davidkorea/tensorflow/blob/master/tensorflow_official_word2vec_skipgram.ipynb)
 ```python
 import os
 import argparse
