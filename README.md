@@ -63,7 +63,10 @@ for tarinfo in tarobj:
     tarobj.extract(tarinfo.name, r"/tmp")
 tarobj.close()
 ```
-
+A new folder named 'simple-examples' will be created in ```/tmp```, and go to find the .txt file
+```
+data_path = '/tmp/simple-examples/data'
+```
 
 
 # 2018-12-19
