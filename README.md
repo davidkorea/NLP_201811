@@ -55,6 +55,12 @@ filename
 os.listdir('/tmp')
 # ['.ipython', '.config', '.keras', 'simple-examples.tgz', '.local', '.cache']
 ```
+## 2. Kaggle unzip .tgz file in temp
+```python
+
+```
+
+
 
 # 2018-12-19
 [tensorflow_RNN_LSTM_MNIST](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_RNN_LSTM_MNIST.md)
