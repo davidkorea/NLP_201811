@@ -1,5 +1,59 @@
 # NLP_201811
 
+# 2018-12-20
+
+## 1. Kaggle download dataset
+
+```python
+import os
+import argparse
+import sys
+from tempfile import gettempdir
+from six.moves import urllib
+
+current_path = os.path.dirname(os.path.realpath(sys.argv[0]))
+
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '--log_dir',
+    type=str,
+    default=os.path.join(current_path, 'log'),
+    help='The log directory for TensorBoard summaries.')
+FLAGS, unparsed = parser.parse_known_args()
+
+# Create the directory for TensorBoard variables if there is not.
+if not os.path.exists(FLAGS.log_dir):
+    os.makedirs(FLAGS.log_dir)
+
+# Step 1: Download the data.
+url = ' http://www.fit.vutbr.cz/~imikolov/rnnlm/'
+
+# pylint: disable=redefined-outer-name
+def maybe_download(filename, expected_bytes):
+    """Download a file if not present, and make sure it's the right size."""
+    local_filename = os.path.join(gettempdir(), filename)
+    if not os.path.exists(local_filename):
+        local_filename, _ = urllib.request.urlretrieve(url + filename,
+                                                   local_filename)
+    statinfo = os.stat(local_filename)
+    if statinfo.st_size == expected_bytes:
+        print('Found and verified', filename)
+    else:
+        print(statinfo.st_size)
+        raise Exception('Failed to verify ' + local_filename +
+                    '. Can you get to it with a browser?')
+    return local_filename
+
+
+filename = maybe_download('simple-examples.tgz', 34869662)
+```
+```
+filename
+# '/tmp/simple-examples.tgz'
+os.listdir('/tmp')
+# ['.ipython', '.config', '.keras', 'simple-examples.tgz', '.local', '.cache']
+```
+
 # 2018-12-19
 [tensorflow_RNN_LSTM_MNIST](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_RNN_LSTM_MNIST.md)
 
