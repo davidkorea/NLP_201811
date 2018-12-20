@@ -64,8 +64,12 @@ for tarinfo in tarobj:
 tarobj.close()
 ```
 A new folder named 'simple-examples' will be created in ```/tmp```, and go to find the .txt file
-```
+```python
 data_path = '/tmp/simple-examples/data'
+
+with tf.gfile.GFile('/tmp/simple-examples/data/ptb.test.txt', "r") as f:
+    print( f.read().replace("\n", "<eos>").split() )
+        
 ```
 
 
