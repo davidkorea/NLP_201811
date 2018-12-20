@@ -57,7 +57,11 @@ os.listdir('/tmp')
 ```
 ## 2. Kaggle unzip .tgz file in temp
 ```python
-
+import tarfile
+tarobj = tarfile.open(tgz_filename, "r:gz")
+for tarinfo in tarobj:
+    tarobj.extract(tarinfo.name, r"/tmp")
+tarobj.close()
 ```
 
 
