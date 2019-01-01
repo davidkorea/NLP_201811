@@ -4,6 +4,11 @@
 
 i will continue my journey with deep leaerning and of course NLP !!!
 
+more effiently focus on my own business.
+
+sleep early, get up early and excise more.
+
+
 # 2018-12-20
 
 ## 1. Kaggle download dataset
