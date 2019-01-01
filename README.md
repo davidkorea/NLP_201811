@@ -1,5 +1,9 @@
 # NLP_201811
 
+# 2019-01-01
+
+i will continue my journey with deep leaerning and of course NLP !!!
+
 # 2018-12-20
 
 ## 1. Kaggle download dataset
