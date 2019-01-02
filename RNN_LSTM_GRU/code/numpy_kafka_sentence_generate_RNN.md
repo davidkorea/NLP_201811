@@ -132,7 +132,7 @@ while n <= 1000 * 100:
         hprev = np.zeros((hidden_size,1))
         p = 0
         
-    inputs = [char_to_idx[ch] for ch in data[p:p+seq_length]]
+    inputs = [char_to_idx[ch] for ch in data[p:p+seq_length]] # 将输入句子中的每个单词转换为idx
     targets = [char_to_idx[ch] for ch in data[p+1:p+seq_length+1]]
 
     # forward seq_length characters through the net and fetch gradient                                                                                                                          
