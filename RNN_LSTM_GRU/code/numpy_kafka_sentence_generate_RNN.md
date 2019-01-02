@@ -107,7 +107,7 @@ def sample(h, seed_ix, n):
     ixes = [] # resotre the idx of words/chars of the sentence
     
     for t in range(n):
-        h = np.tanh(np.dot(Wxh,x) + (np.dot(Whh, h)+bh))
+        h = np.tanh(np.dot(Wxh,x) + np.dot(Whh, h) + bh ) # ---错误更正---
         y = np.dot(Why, h)+by
         p = np.exp(y) / np.sum(np.exp(y))
         # select the biggest element? NO!NO! select randomly
