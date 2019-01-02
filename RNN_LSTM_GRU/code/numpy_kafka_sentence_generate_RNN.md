@@ -39,12 +39,13 @@ def lossFunc(inputs, targets, hprev):
     # inputs: (25, 63, 1), a sentence, contains 25 words, which word has a (vocab,1) shape vector
     # outputs: (25, 63, 1), the label of input which has the same shape of input
     # hprev: the previous state of hodden layer / memory
+    # 此处inputs，xs，hs，ys，ps的‘s’表示为复数的含义，即一组输入，一个输入句子包含多个单词
     xs, hs, ys, ps = {}, {}, {}, {} # state of x, hidden, y, p(probability of y)
     hs[-1] = np.copy(hprev) # init previous state of hidden/memory in dict {-1:hprev}
     loss = 0
     
     # Forward
-    for t in range(len(inputs)): # idx of each word in input sentence / each time step
+    for t in range(len(inputs)): # idx of each word in inputs sentence / each time step
         xs[t] = np.zeros((vocab_size,1)) 
         xs[t][inputs[t]] = 1 # t-th word's vector's t-th element = 1 
         hs[t] = np.tanh(np.dot(Wxh,xs[t]) + np.dot(Whh,hs[t-1]+bh)) 
