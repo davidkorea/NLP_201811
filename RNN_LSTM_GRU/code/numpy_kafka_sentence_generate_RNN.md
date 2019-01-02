@@ -47,9 +47,10 @@ def lossFunc(inputs, targets, hprev):
     
     # Forward
     for t in range(len(inputs)): # idx of each word in inputs sentence / each time step
-        xs[t] = np.zeros((vocab_size,1)) 
+        xs[t] = np.zeros((vocab_size,1)) # 定义一个vector
         xs[t][inputs[t]] = 1 # t-th word's vector's t-th element = 1，
-                             # xs[t]取出一个vector，xs[t][inputs[t]]为一个vector中的某一位，置为1
+                             # xs[t]表示在dict中取出一个vector（上一行已定义），
+                             # xs[t][inputs[t]] = 1为一个vector中的某一位，置为1.
         hs[t] = np.tanh(np.dot(Wxh,xs[t]) + np.dot(Whh,hs[t-1]+bh)) 
         # 当前输入x[t]放射变换 element-wise add对应位置元素相加 前一个隐藏层h[t-1]放射变换 
         # 加和后的向量经过tanh非线性变化
