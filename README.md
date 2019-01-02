@@ -1,5 +1,13 @@
 # NLP_201811
 
+# 2019-01-02
+
+1. [numpy_kafka_sentence_generate_RNN](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_RNN.md)
+
+review and fix some code error 
+
+
+
 # 2019-01-01
 
 i will continue my journey with deep leaerning and of course NLP !!!
