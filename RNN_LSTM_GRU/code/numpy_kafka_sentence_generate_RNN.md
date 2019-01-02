@@ -115,11 +115,14 @@ def sample(h, seed_ix, n):
         x = np.zeros((vocab_size,1))
         x[ix] = 1
         ixes.append(ix)
+        
     txt = ''.join(idx_to_char[ix] for ix in ixes)
     print('-----\n',txt,'\n-----')
     
 hprev = np.zeros((hidden_size,1))
 sample(hprev,char_to_idx['a'],100)
+# hprev=0, x初始化为onehot, Wxh, Whh，bh最开始已经初始化randn和zero
+
 """
 -----
  Lei'ma;FQkL:Fl O;CI?MHexkjEkr
