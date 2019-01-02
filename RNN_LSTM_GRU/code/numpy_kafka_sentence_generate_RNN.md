@@ -7,8 +7,8 @@
 data = open('../input/kafka.txt','r').read()
 chars = sorted(list(set(data))) 
 # unlike the LSTM above, 经过排序后的corpus每次读取data后的单词顺序fixed，即idx不会发生变化
-data_size = len(data)
-vocab_size = len(chars)
+data_size = len(data) # all text with duplicated chars
+vocab_size = len(chars) # unduplicated chars
 print('data_size: ',data_size, '\nvocab_size: ',vocab_size)
 
 # data_size:  118561 
