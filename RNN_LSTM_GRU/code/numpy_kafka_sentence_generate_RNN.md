@@ -56,6 +56,7 @@ def lossFunc(inputs, targets, hprev):
         # 加和后的向量经过tanh非线性变化
         ys[t] = np.dot(Why, hs[t])+by
         ps[t] = np.exp(ys[t]) / (np.sum(np.exp(ys[t]))) # ps[t] 向量的每个元素对应词汇表中每个单词的概率
+                                                        # 即，输入一个单词，预测下一个单词应该是词表vocab中哪个单词，
         loss += -np.log(ps[t][targets[t],0]) # ps[t][targets[t]]选择出label对应盖茨的概率, 0 ???
     
     # Backward
