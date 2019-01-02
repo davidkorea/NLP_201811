@@ -39,7 +39,7 @@ def lossFunc(inputs, targets, hprev):
     # inputs: 由25个单词的idx组成的list
     # ---X---inputs: (25, 63, 1), a sentence, contains 25 words, which word has a (vocab,1) shape vector---X---
     # outputs: (25, 63, 1), the label of input which has the same shape of input
-    # hprev: the previous state of hodden layer / memory
+    # hprev: np.zeros((hidden_size,1))，the previous state of hodden layer / memory
     # 此处inputs，xs，hs，ys，ps的‘s’表示为复数的含义，即一组输入，一个输入句子包含多个单词
     xs, hs, ys, ps = {}, {}, {}, {} # state of x, hidden, y, p(probability of y)
     hs[-1] = np.copy(hprev) # init previous state of hidden/memory in dict {-1:hprev}
