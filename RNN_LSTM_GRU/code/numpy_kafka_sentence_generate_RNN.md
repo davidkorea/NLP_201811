@@ -162,7 +162,7 @@ while n <= 1000 * 100:
     for param, dparam, mem in zip([Wxh, Whh, Why, bh, by],
                                   [dWxh, dWhh, dWhy, dbh, dby],
                                   [mWxh, mWhh, mWhy, mbh, mby]):
-        mem += dparam * dparam
+        mem += dparam * dparam # 操作这一步只是为了套用adagrad方法，目的是用于更新下面的param，即[Wxh, Whh, Why, bh, by]
         param += -learning_rate * dparam / np.sqrt(mem + 1e-8) # adagrad update       
         # new param(Wxh, Whh, Why, bh, by) will be used in lossFunc() and sample()
         
