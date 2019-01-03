@@ -9,7 +9,7 @@ It is better to read the below RNN toturail first to get the main code structure
 2. sigmoid, softmax, cross entropy
 - sigmoid: non-linear activation function. 
 - softmax: scale the vector contains sigmoid values into (0,1).
-- cross entropy: loss function.
+- cross entropy: loss function. ```- y * log p(y)```, label X the log of the probability of this label 
 
 # 2019-01-02
 
