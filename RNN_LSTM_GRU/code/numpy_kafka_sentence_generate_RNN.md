@@ -1,6 +1,6 @@
 # numpy_kafka_sentence_generate_RNN
 
-[kaggle kernel](https://www.kaggle.com/davidkor/numpy-kafka-sentence-generate-rnn) <- need to be fixed  
+[kaggle kernel](https://www.kaggle.com/davidkor/numpy-kafka-sentence-generate-rnn) <- update 2019-01-03
 
 ## 1. Data Preparation
 ```python
