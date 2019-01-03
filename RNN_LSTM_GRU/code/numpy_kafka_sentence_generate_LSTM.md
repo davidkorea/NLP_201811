@@ -13,7 +13,7 @@ data = open('../input/kafka.txt', 'r').read()
 
 chars = list(set(data))
 data_size = len(data)
-X_size = len(chars)
+X_size = len(chars) # vocab_size
 print("data has %d characters, %d unique" % (data_size, X_size))
 char_to_idx = {ch:i for i,ch in enumerate(chars)}
 idx_to_char = {i:ch for i,ch in enumerate(chars)}
