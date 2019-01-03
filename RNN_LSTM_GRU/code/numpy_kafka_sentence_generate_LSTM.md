@@ -12,7 +12,8 @@ plt.style.use('seaborn-white')
 data = open('../input/kafka.txt', 'r').read()
 
 chars = list(set(data))
-data_size, X_size = len(data), len(chars)
+data_size = len(data)
+X_size = len(chars)
 print("data has %d characters, %d unique" % (data_size, X_size))
 char_to_idx = {ch:i for i,ch in enumerate(chars)}
 idx_to_char = {i:ch for i,ch in enumerate(chars)}
