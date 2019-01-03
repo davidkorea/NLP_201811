@@ -7,6 +7,9 @@
 It is better to read the below RNN toturail first to get the main code structure and thoughts for knowing the basics, and then go to this toturial. tips fior this toturial is that go through the class and def first and the go to the main training loop. refer to what you donno about one specific def.
 
 2. sigmoid, softmax, cross entropy
+- sigmoid: non-linear activation function. 
+- softmax: scale the vector contains sigmoid values into (0,1).
+- c
 
 # 2019-01-02
 
