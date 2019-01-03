@@ -37,7 +37,7 @@ by = np.zeros((vocab_size,1)) # bias of output y
 ```python
 def lossFunc(inputs, targets, hprev):
     # inputs: 由25个单词的idx组成的list
-    # ---X---inputs: (25, 63, 1), a sentence, contains 25 words, which word has a (vocab,1) shape vector---X---
+    # ---X---inputs: (25, 63, 1), a sentence, contains 25 words, which word has a (vocab,1) shape vector
     # outputs: (25, 63, 1), the label of input which has the same shape of input
     # hprev: np.zeros((hidden_size,1))，the previous state of hodden layer / memory
     # 此处inputs，xs，hs，ys，ps的‘s’表示为复数的含义，即一组输入，一个输入句子包含多个单词
