@@ -166,6 +166,7 @@ while n <= 1000 * 100:
         mem += dparam * dparam # 操作这一步只是为了套用adagrad方法，目的是用于更新下面的param，即[Wxh, Whh, Why, bh, by]
         param += -learning_rate * dparam / np.sqrt(mem + 1e-8) # adagrad update       
         # new param(Wxh, Whh, Why, bh, by) will be used in lossFunc() and sample()
+        # 一开始上面的参数为随机初始化，之后便使用此处更新过的参数
         
     p += seq_length
     n += 1
