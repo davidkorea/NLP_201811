@@ -316,7 +316,7 @@ def update_paramters(params = parameters):
     for p in params.all():
         p.m += p.d * p.d # Calculate sum of gradients
         #print(learning_rate * dparam)
-        p.v += -(learning_rate * p.d / np.sqrt(p.m + 1e-8))Update parameters
+        p.v += -(learning_rate * p.d / np.sqrt(p.m + 1e-8)) # Update parameters
 ```
 重点：adagrad梯度下降, 优化参数，更新后的参数数值存在parameter.value里面
 
