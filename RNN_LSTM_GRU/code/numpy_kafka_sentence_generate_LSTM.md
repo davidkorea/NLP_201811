@@ -1,6 +1,9 @@
 # numpy_kafka_sentence_generate_LSTM
 Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
 
+此教程建议先大体浏览一下前面创建的函数和类，主要从[training主函数](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.md#9-training-adagrad)，理清思路
+
+
 ## 1. Import and read data 
 ```python
 
