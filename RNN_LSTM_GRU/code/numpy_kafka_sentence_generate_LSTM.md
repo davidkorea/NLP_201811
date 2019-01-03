@@ -228,7 +228,7 @@ def forward_backward(inputs, targets, h_prev, C_prev):
         
     clear_gradients()
 
-    dh_next = np.zeros_like(h_s[0]) #dh from the next character
+    dh_next = np.zeros_like(h_s[0]) #dh from the next character, 只是生成0数组，shaoe同于h_s[?]任意一个
     dC_next = np.zeros_like(C_s[0]) #dh from the next character
 
     for t in reversed(range(len(inputs))):
