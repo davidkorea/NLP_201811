@@ -4,7 +4,7 @@
 
 1. [numpy_kafka_sentence_generate_LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.md)
 
-review 
+It is better to read the below RNN toturail first to get the main code structure and thoughts for knowing the basics, and then go to this toturial. tips fior this toturial is that go through the class and def first and the go to the main training loop. refer to what you donno about one specific def.
 
 # 2019-01-02
 
