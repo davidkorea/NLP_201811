@@ -20,7 +20,7 @@ idx_to_char = {i:ch for i,ch in enumerate(chars)}
 ```
 重点：```X_size = len(chars)```, 输入进LSTM单元的每个字母/汉字的one-hot向量长度/维度
 
-## 2. Hyperparameters
+## 2. Hyper parameters
 ```python
 H_size = 100 # Size of the hidden layer
 T_steps = 25 # Number of time steps (length of the sequence) used for training
