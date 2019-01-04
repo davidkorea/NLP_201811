@@ -1,7 +1,9 @@
 # numpy_kafka_sentence_generate_LSTM
 Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.html)
 
-此教程建议先大体浏览一下前面创建的函数和类，主要从[training主函数](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.md#9-training-adagrad)，理清思路
+- 此教程建议先大体浏览一下前面创建的函数和类，主要从[training主函数](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.md#9-training-adagrad)，理清思路
+
+- 因为RNN/LSTM的理念就是，使用前面若干个单词，来预测下一个单词，所以当然是以单词为运算单位，即每一个timestep的单词
 
 
 ## 1. Import and read data 
