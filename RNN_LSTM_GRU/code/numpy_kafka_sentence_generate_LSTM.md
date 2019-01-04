@@ -222,6 +222,8 @@ def forward_backward(inputs, targets, h_prev, C_prev):
     assert len(inputs) == T_steps
     
     # 因为RNN/LSTM的理念就是，使用前面若干个单词，来预测下一个单词，所以当然是以单词为运算单位
+    # 因此函数forward()只是一个LSTM单元，只针对一个单词的运算
+    # 运算完成此for循环，则x_s..等dict｛｝将会存储一个完整句子的25个单词的向量或其运算结果
     for t in range(len(inputs)):
         x_s[t] = np.zeros((X_size, 1))
         x_s[t][inputs[t]] = 1 # Input character
