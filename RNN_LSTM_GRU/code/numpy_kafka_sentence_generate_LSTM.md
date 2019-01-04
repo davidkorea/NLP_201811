@@ -114,7 +114,9 @@ def forward(x, h_prev, C_prev, p = parameters):
 
     return z, f, i, C_bar, C, o, h, v, y
 ```
-重点：**只是一个LSTM单元，只针对一个单词的运算。需要根据句子长度（timestep=25），循环调用来对句中每个单词进行运算**
+重点：
+
+**只是一个LSTM单元，只针对一个单词的运算。需要根据句子长度（timestep=25），循环调用来对句中每个单词进行运算**
 1. Parameter```x```: 输入样本sample/sentence中的一个字母/汉字的one-hot向量
 2. Parameter```h_prev```: 前一个LSTM的输出（输出门乘以memory）, init 0 = ```h_prev = np.zeros((H_size, 1))```
 3. Parameter```C_prev```: 前一个LSTM的memory（遗忘门乘以前一个memory+输入门乘以当前输入）,init 0 = ```C_prev = np.zeros((H_size, 1))```
