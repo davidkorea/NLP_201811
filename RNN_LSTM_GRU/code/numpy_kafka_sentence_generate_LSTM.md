@@ -212,8 +212,8 @@ def forward_backward(inputs, targets, h_prev, C_prev):
     
     # Values at t - 1 store the previous LSTM unit's output(h) and memory(C) into dict{},
     # which has its key=-1, in the forward pass process
-    h_s[-1] = np.copy(h_prev)
-    C_s[-1] = np.copy(C_prev)
+    h_s[-1] = np.copy(h_prev) # 最开始h_prev初始化为0
+    C_s[-1] = np.copy(C_prev) # 最开始C_prev初始化为0
     
     loss = 0
     # Loop through time steps
