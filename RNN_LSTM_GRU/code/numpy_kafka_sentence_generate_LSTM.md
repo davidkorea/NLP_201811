@@ -6,6 +6,36 @@ Reference: [Vanilla LSTM with numpy](http://blog.varunajayasiri.com/numpy_lstm.h
 - 因为RNN/LSTM的理念就是，使用前面若干个单词，来预测下一个单词，所以当然是以单词为运算单位，即每一个timestep的单词
 
 
+```python
+
+global parameters = [self.W_f, self.W_i, self.W_C, self.W_o, self.W_v,
+                    self.b_f, self.b_i, self.b_C, self.b_o, self.b_v]
+
+for 每个句子（inputs, targets） in full_data:
+    初始化 memory C （g_C_prev） 和 前面的输出 h （g_h_prev）为 0 向量
+    
+    forward_backward(inputs, targets, g_h_prev, g_C_prev)
+        {
+            for 每个单词 in full_sentence：
+                forward()
+                    {single word LSTM cell}                
+                backward()
+                    {backward prop fir the above sigle word}        
+        }
+        return loss, g_h_prev, g_C_prev
+    
+    loss += loss
+    
+    update_paramters(parameters), 使用adagrad更新所有前项传播需要的参数，用于下个句子的正反向传播
+    
+    sample(), 每训练100个句子，打印出预测的抽样效果
+    
+    plot loss, 每训练100个句子, 画出loss变换曲线
+
+```
+
+
+
 ## 1. Import and read data 
 ```python
 
