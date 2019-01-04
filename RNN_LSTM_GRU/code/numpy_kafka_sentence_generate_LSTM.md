@@ -220,6 +220,8 @@ def forward_backward(inputs, targets, h_prev, C_prev):
     loss = 0
     # Loop through time steps
     assert len(inputs) == T_steps
+    
+    # 因为RNN/LSTM的理念就是，使用前面若干个单词，来预测下一个单词，所以当然是以单词为运算单位
     for t in range(len(inputs)):
         x_s[t] = np.zeros((X_size, 1))
         x_s[t][inputs[t]] = 1 # Input character
