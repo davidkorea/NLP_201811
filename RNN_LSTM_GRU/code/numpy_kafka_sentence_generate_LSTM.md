@@ -259,6 +259,9 @@ def forward_backward(inputs, targets, h_prev, C_prev):
 
 BP could do withuot loss value??????????? YES, the design of cross entropy loss function makes its BP need no loss value.
 
+**函数```forward_backward()```将循环调用timestep = 25次前面定义的forward()和backward()组成的LSTM单元，完成一次整个输入句子的前项+反向传播。**
+**完成此sample句子的传播后，返回此句子最后一个 输出h 和 memory C， 即函数内部字典 h_s {} 和 C_s {} 的最后一个元素 h_s[len(inputs) - 1], C_s[len(inputs) - 1]，用于下一个sample句子的正反向传播**
+
 重点：
 1. Parameter ```inputs```: 输入的sample/sentence, time sequence, 有多少个字母/汉字组成的句子
 2. Parameter ```h_prev```: 上一个/前面一个LSTM前向传播的 输出h， init = 0
