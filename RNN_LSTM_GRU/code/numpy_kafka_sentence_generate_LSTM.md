@@ -123,6 +123,7 @@ def forward(x, h_prev, C_prev, p = parameters):
 4. Parameter```p```: 所有参数矩阵weights和偏置bias
 5. ```z = np.row_stack((h_prev, x))```: 将前一个LSTM单元的输出，横向并上当前的输入（一个字母/汉字的one-hot向量） 
 6. ```C = f * C_prev + i * C_bar```: 向量对应位置元素相加element-wise, how much to forget previous memory and how much to add current input to make new memory
+7. ```return z, f, i, C_bar, C, o, h, v, y```: 返回这些参数，用于反向传播
 
 ## 6. Backward pass
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaBPcg2.png)
