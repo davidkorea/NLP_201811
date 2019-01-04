@@ -88,14 +88,19 @@ class Parameters:
         return [self.W_f, self.W_i, self.W_C, self.W_o, self.W_v,
                self.b_f, self.b_i, self.b_C, self.b_o, self.b_v]
         
+        
+        
 parameters = Parameters()
+
+
+
 ```
 ## 5. Forward pass
 
 ![LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/LSTMvanillaFPcg.png)
 
 ```python
-def forward(x, h_prev, C_prev, p = parameters):
+def forward(x, h_prev, C_prev, p = parameters): # parameters 已经由上面的类定义并声明
     assert x.shape == (X_size, 1)
     assert h_prev.shape == (H_size, 1)
     assert C_prev.shape == (H_size, 1)
@@ -208,7 +213,7 @@ def clip_gradients(params = parameters):
 
 ```python
 def forward_backward(inputs, targets, h_prev, C_prev):
-    global paramters
+    global paramters # parameters 已经由上面的类定义并声明
     
     # To store the values for each time step，此处dict｛｝存储整个句子所有单词的运算向量
     x_s, z_s, f_s, i_s,  = {}, {}, {}, {}
@@ -260,6 +265,7 @@ def forward_backward(inputs, targets, h_prev, C_prev):
 BP could do withuot loss value??????????? YES, the design of cross entropy loss function makes its BP need no loss value.
 
 **函数```forward_backward()```将循环调用timestep = 25次前面定义的forward()和backward()组成的LSTM单元，完成一次整个输入句子的前项+反向传播。**
+
 **完成此sample句子的传播后，返回此句子最后一个 输出h 和 memory C， 即函数内部字典 h_s {} 和 C_s {} 的最后一个元素 h_s[len(inputs) - 1], C_s[len(inputs) - 1]，用于下一个sample句子的正反向传播**
 
 重点：
@@ -393,7 +399,7 @@ while True:
                 update_status(inputs, g_h_prev, g_C_prev)
             
             # adagrad梯度下降更新参数
-            update_paramters()
+            update_paramters() # 更新所有参数后，再次由forward_backward()调用进行下面sample的训练
             
             # 往plot_iter(nparray)中append元素， 类比list append
             plot_iter = np.append(plot_iter, [iteration]) # np array中存放每个iteration的数值0,1,2，...
