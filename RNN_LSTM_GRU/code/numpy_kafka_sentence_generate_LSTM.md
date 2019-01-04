@@ -82,7 +82,7 @@ def tanh(x):
 def dtanh(y):
     return 1 - y * y
 ```
-## 4. Parameters
+## 4. Model Parameters
 ```python
 class Param:
     def __init__(self, name, value):
