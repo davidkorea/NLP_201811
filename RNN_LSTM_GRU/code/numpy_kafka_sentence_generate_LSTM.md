@@ -210,7 +210,7 @@ def clip_gradients(params = parameters):
 def forward_backward(inputs, targets, h_prev, C_prev):
     global paramters
     
-    # To store the values for each time step
+    # To store the values for each time step，此处dict｛｝存储整个句子所有单词的运算向量
     x_s, z_s, f_s, i_s,  = {}, {}, {}, {}
     C_bar_s, C_s, o_s, h_s = {}, {}, {}, {}
     v_s, y_s =  {}, {}
