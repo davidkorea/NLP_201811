@@ -229,12 +229,12 @@ The next two lines are the same as before. Finally, we merge all the output tens
 
 ```python
 x_batch = np.array([
-# t = 0        t = 1
-[[0, 1, 2], [9, 8, 7]], # instance 0
-[[3, 4, 5], [0, 0, 0]], # instance 1
-[[6, 7, 8], [6, 5, 4]], # instance 2
-[[9, 0, 1], [3, 2, 1]], # instance 3
-])
+                    #  t = 0      t = 1
+                    [[0, 1, 2], [9, 8, 7]], # instance 0
+                    [[3, 4, 5], [0, 0, 0]], # instance 1
+                    [[6, 7, 8], [6, 5, 4]], # instance 2
+                    [[9, 0, 1], [3, 2, 1]], # instance 3
+                    ])
 ```
 ```python
 with tf.Session() as sess:
