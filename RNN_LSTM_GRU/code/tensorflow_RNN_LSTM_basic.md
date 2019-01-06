@@ -16,3 +16,4 @@ output_seqs, states = tf.contrib.rnn.static_rnn(cell=basic_cell, inputs=[x0,x1],
 
 -----
 
+# 1. Basic RNNs in TensorFlow
