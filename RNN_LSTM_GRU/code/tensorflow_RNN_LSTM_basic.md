@@ -272,14 +272,29 @@ states: # 每一个batch的最后一个输出，即y1
  [ 0.4635155  -0.56235206 -0.3522298  -0.80543756  0.99820757]
  [ 0.36765411 -0.54689246 -0.16637726 -0.9118903   0.6025403 ]]
 ```
-## 2.3 简化
 
 However, this approach still builds a graph containing one cell per time step. If there were 50 time steps, the graph would look pretty ugly. It is a bit like writing a program without ever using loops, e.g.
 ```
 (Y0=f(0,X0); Y1=f(Y0, X1); Y2=f(Y1, X2); ...; Y50=f(Y49, X50))
 ```
 
-With such as large graph, you may even get out-of-memory (OOM) errors during backpropagation (especially with the limited memory of GPU cards), since it must store all tensor values during the forward pass so it can use them to compute gradients during the reverse pass.
+With such as large graph, you may even get **out-of-memory (OOM)** errors during backpropagation (especially with the limited memory of GPU cards), since it must store all tensor values during the forward pass so it can use them to compute gradients during the reverse pass.
+
+# 3. Dynamic Unrolling Through Time
+
+The ```dynamic_rnn()``` function uses a ```while_loop()``` operation to run over the cell the appropriate number of times, and you can set swap_memory=True if you want it to swap the GPU’s memory to the CPU’s
+memory during backpropagation to avoid OOM errors. 
+
+Conveniently, it also accepts a single tensor for all inputs at every time step ```(shape [None, n_steps, n_inputs])``` and it outputs a single tensor for all outputs at every time step``` (shape [None, n_steps, n_neurons])```; 
+there is no need to stack, unstack, or transpose. 
+
+The following code creates the same RNN as earlier using the ```dynamic_rnn()``` function. It’s so much nicer!
+
+
+
+
+
+
 
 
 
