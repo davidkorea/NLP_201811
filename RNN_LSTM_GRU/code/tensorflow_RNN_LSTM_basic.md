@@ -138,7 +138,23 @@ output_seqs, states = tf.contrib.rnn.static_rnn(cell=basic_cell, inputs=[x0,x1],
 y0,y1 = output_seqs
 ```
 
+First we create the input placeholders, as before. Then we create a ```BasicRNNCell()```, which you can think
+of as a factory that creates copies of the cell to build the unrolled RNN (one for each time step). 
 
+Then we call ```static_rnn()```, giving it the cell factory and the input tensors, and telling it the data type of the inputs(this is used to create the **initial state matrix, which by default is full of zeros**). 
+
+The ```static_rnn()```function calls the cell factory’s``` __call__()``` function once per input, creating two copies of the cell (each containing a layer of five recurrent neurons), **with shared weights and bias terms**, and it chains them just like we did earlier. 
+
+```
+tf.contrib.rnn.BasicRNNCell(num_units, activation=None, reuse=None, name=None, dtype=None, **kwargs)
+```
+```
+tf.contrib.rnn.static_rnn(cell, inputs, initial_state=None, dtype=None, sequence_length=None, scope=None)
+```
+
+The ```static_rnn()``` function returns two objects. 
+1. The first is a Python list containing the output tensors for each time step. 
+2. The second is a tensor containing the final states of the network. When you are using basic cells, the final state is simply equal to the last output
 
 
 
