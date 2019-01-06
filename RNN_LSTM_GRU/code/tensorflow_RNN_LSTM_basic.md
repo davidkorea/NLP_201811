@@ -120,3 +120,40 @@ y1 = [ 1.          0.17404278  1.         -1.         -1.        ]
 Each output of one timestep is the size of (1, hidden_size) = (1, 5)
 
 That wasn’t too hard, but of course if you want to be able to run an RNN over 100 time steps, the graph is going to be pretty big. Now let’s look at how to create the same model using TensorFlow’s RNN operations.
+
+
+# 2. Static Unrolling Through Time
+
+```python
+tf.reset_default_graph() # RESET THE DEFAULT GRAPH USED ABOVE
+
+n_inputs = 3 # input vector dim at each time step 
+n_neurons = 5 # RNN cell hidden size
+
+x0 = tf.placeholder(dtype=tf.float32, shape=(None, n_inputs))
+x1 = tf.placeholder(dtype=tf.float32, shape=(None, n_inputs))
+
+basic_cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons)
+output_seqs, states = tf.contrib.rnn.static_rnn(cell=basic_cell, inputs=[x0,x1], dtype=tf.float32)
+y0,y1 = output_seqs
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
