@@ -145,12 +145,9 @@ Then we call ```static_rnn()```, giving it the cell factory and the input tensor
 
 The ```static_rnn()```function calls the cell factory’s``` __call__()``` function once per input, creating two copies of the cell (each containing a layer of five recurrent neurons), **with shared weights and bias terms**, and it chains them just like we did earlier. 
 
-```
-tf.contrib.rnn.BasicRNNCell(num_units, activation=None, reuse=None, name=None, dtype=None, **kwargs)
-```
-```
-tf.contrib.rnn.static_rnn(cell, inputs, initial_state=None, dtype=None, sequence_length=None, scope=None)
-```
+```tf.contrib.rnn.BasicRNNCell(num_units, activation=None, reuse=None, name=None, dtype=None, **kwargs)```
+
+```tf.contrib.rnn.static_rnn(cell, inputs, initial_state=None, dtype=None, sequence_length=None, scope=None)```
 
 The ```static_rnn()``` function returns two objects. 
 1. The first is a Python list containing the output tensors for each time step. 
