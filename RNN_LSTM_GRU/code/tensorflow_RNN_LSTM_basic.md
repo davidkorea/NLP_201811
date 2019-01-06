@@ -75,12 +75,12 @@ x1_batch = np.array([[9, 8, 7], [0, 0, 0], [6, 5, 4], [3, 2, 1]]) # t=1
 with tf.Session() as sess:
     sess.run(init)
     y0_val, y1_val = sess.run([y0,y1], feed_dict={x0:x0_batch, x1:x1_batch})
+```
+```python
 print('y0_val:\n',y0_val)
 print('\ny1_val:\n',y1_val)
-```
 
-output:
-```
+
 y0_val:
  [[-0.91210926 -0.97909343 -0.9963769  -0.804197    0.81554604]
  [-0.9984175  -0.99501723 -0.9999899  -0.999553    0.878944  ]
@@ -162,12 +162,14 @@ with tf.Session() as sess:
     # sess.run(init)
     sess.run(tf.global_variables_initializer())
     y0_val, y1_val, states = sess.run([y0,y1,states], feed_dict={x0:x0_batch, x1:x1_batch})
+```
+```python
 print('y0_val:\n',y0_val)
 print('\ny1_val:\n',y1_val)
 print('\nstates:\n',states)
-```
 
-```
+
+
 y0_val:
  [[ 0.65068823 -0.7885722  -0.68872046 -0.579271    0.5519878 ]
  [ 0.9604823  -0.9950424  -0.9997227  -0.5949103   0.8591207 ]
