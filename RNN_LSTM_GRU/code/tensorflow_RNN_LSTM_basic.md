@@ -281,12 +281,13 @@ However, this approach still builds a graph containing one cell per time step. I
 With such as large graph, you may even get **out-of-memory (OOM)** errors during backpropagation (especially with the limited memory of GPU cards), since it must store all tensor values during the forward pass so it can use them to compute gradients during the reverse pass.
 
 # 3. Dynamic Unrolling Through Time
+### no need to stack, unstack, or transpose
 
 The ```dynamic_rnn()``` function uses a ```while_loop()``` operation to run over the cell the appropriate number of times, and you can set swap_memory=True if you want it to swap the GPU’s memory to the CPU’s
 memory during backpropagation to avoid OOM errors. 
 
 Conveniently, it also accepts a single tensor for all inputs at every time step ```(shape [None, n_steps, n_inputs])``` and it outputs a single tensor for all outputs at every time step``` (shape [None, n_steps, n_neurons])```; 
-there is no need to stack, unstack, or transpose. 
+there is **no need to stack, unstack, or transpose**. 
 
 The following code creates the same RNN as earlier using the ```dynamic_rnn()``` function. It’s so much nicer!
 
