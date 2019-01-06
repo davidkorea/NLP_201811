@@ -204,11 +204,14 @@ tf.reset_default_graph()
 n_steps = 2
 
 x = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
+
 x_seqs = tf.unstack(tf.transpose(x, perm=[1, 0, 2]))
+
 basic_cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons)
 output_seqs, states = tf.contrib.rnn.static_rnn(basic_cell, 
                                                 x_seqs, 
                                                 dtype=tf.float32)
+                                                
 outputs = tf.transpose(tf.stack(output_seqs), perm=[1, 0, 2])
 ```
 
@@ -216,9 +219,11 @@ input placeholder of shape [None, n_steps, n_inputs] where the first dimension i
 
 Then it extracts the list of input sequences for each time step. X_seqs is a Python list of n_steps tensors of shape [None, n_inputs], where once again the first dimension is the minibatch size.
 
-To do this, we first swap the first two dimensions using the transpose() function, so that the time steps are now the first dimension.
+To do this, we first swap交换 the first two dimensions using the transpose() function, so that the time steps are now the first dimension.
 
-Then we extract a Python list of tensors along the first dimension (i.e., one tensor per time step) using the unstack() function.
+**此处为什么要交换tensor的前两个维度，将timestep放在第一个维度。是因为static_RNN()只支持第一维度为timestep的tensor吗？？？？？**
+
+Then we extract取出 a Python list of tensors along the first dimension (i.e., one tensor per time step) using the unstack() function.
 
 The next two lines are the same as before. Finally, we merge all the output tensors into a single tensor using the stack() function, and we swap the first two dimensions to get a final outputs tensor of shape [None, n_steps, n_neurons] (again the first dimension is the mini-batch size).
 
