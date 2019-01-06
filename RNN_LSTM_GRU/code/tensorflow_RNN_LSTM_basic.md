@@ -243,9 +243,25 @@ with tf.Session() as sess:
 ```
 ```python
 print(outputs_val)
+
+
+[[[ 0.7030044   0.9178484  -0.79409844  0.1814973  -0.9564625 ]
+  [ 0.9999998   0.990394   -1.          0.9705728  -1.        ]]
+
+ [[ 0.9994244   0.99556637 -0.99984914  0.7777229  -0.9999891 ]
+  [-0.16180846 -0.44066358  0.60035974 -0.58253336 -0.4148272 ]]
+
+ [[ 0.99999905  0.99976957 -0.9999999   0.95586205 -1.        ]
+  [ 0.99995315  0.6604901  -0.9999651   0.6610545  -0.9999976 ]]
+
+ [[ 0.9998051  -0.9945523  -0.99998325 -0.88014686 -0.9161856 ]
+  [ 0.8684468   0.8314037  -0.9810648   0.89922035 -0.99718755]]]
 ```
 
+However, this approach still builds a graph containing one cell per time step. If there were 50 time steps, the graph would look pretty ugly. It is a bit like writing a program without ever using loops, e.g.
 
+(Y0=f(0,X0); Y1=f(Y0, X1); Y2=f(Y1, X2); ...; Y50=f(Y49, X50))
+With such as large graph, you may even get out-of-memory (OOM) errors during backpropagation (especially with the limited memory of GPU cards), since it must store all tensor values during the forward pass so it can use them to compute gradients during the reverse pass.
 
 
 
