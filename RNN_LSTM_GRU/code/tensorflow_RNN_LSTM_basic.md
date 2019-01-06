@@ -123,6 +123,7 @@ That wasn’t too hard, but of course if you want to be able to run an RNN over 
 
 
 # 2. Static Unrolling Through Time
+## 2.1 使用tensorflow自带BasicRNNCell，static_rnn
 
 ```python
 tf.reset_default_graph() # RESET THE DEFAULT GRAPH USED ABOVE
@@ -188,6 +189,7 @@ states:
  [ 0.9914208  -0.99018264 -0.99999976  0.845585    0.12200028]
  [ 0.6654841  -0.707808   -0.99619687  0.8441219  -0.2600849 ]]
 ```
+## 2.2 简化输入x
 
 If there were 50 time steps, it would not be very convenient to have to define 50 input placeholders and 50 output tensors.
 
@@ -270,6 +272,7 @@ states: # 每一个batch的最后一个输出，即y1
  [ 0.4635155  -0.56235206 -0.3522298  -0.80543756  0.99820757]
  [ 0.36765411 -0.54689246 -0.16637726 -0.9118903   0.6025403 ]]
 ```
+## 2.3 简化
 
 However, this approach still builds a graph containing one cell per time step. If there were 50 time steps, the graph would look pretty ugly. It is a bit like writing a program without ever using loops, e.g.
 ```
