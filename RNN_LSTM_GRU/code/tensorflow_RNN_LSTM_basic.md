@@ -241,7 +241,9 @@ x_batch = np.array([
 ```python
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
-    outputs_val = sess.run(outputs, feed_dict={x:x_batch}) # x_batch = (4, 2, 3) batch=4, timestep=2, input_vector=3
+    outputs_val = sess.run(outputs, feed_dict={x:x_batch}) 
+    # x = (None, n_steps, n_inputs)
+    # x_batch = (4, 2, 3) batch=4, timestep=2, input_vector=3
 ```
 ```python
 print(outputs_val)
