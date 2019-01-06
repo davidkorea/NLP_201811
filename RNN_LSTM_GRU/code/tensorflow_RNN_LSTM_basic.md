@@ -328,10 +328,16 @@ print(outputs_val)
    -9.9381185e-01]
   [ 3.2501018e-01  9.8728287e-01 -7.4440765e-01  2.7665448e-01
     9.3733406e-01]]]
-
 ```
 
+# 4. LSTM Cell
 
+```python
+lstm_cell = tf.contrib.rnn.BasicLSTMCell(num_units=n_neurons)
+```
+```python
+lstm_cell = tf.contrib.rnn.LSTMCell(num_units=n_neurons, use_peepholes=True)
+```
 
 
 
