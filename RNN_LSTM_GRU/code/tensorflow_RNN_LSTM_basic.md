@@ -154,7 +154,17 @@ The ```static_rnn()``` function returns two objects.
 2. The second is a tensor containing the final states of the network. When you are using basic cells, the final state is simply equal to the last output
 
 
-
+```python
+# mini batch = 4,     sentence1   sentence2  sentence3  sentence4
+x0_batch = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 0, 1]]) # t=0
+x1_batch = np.array([[9, 8, 7], [0, 0, 0], [6, 5, 4], [3, 2, 1]]) # t=1
+with tf.Session() as sess:
+    # sess.run(init)
+    sess.run(tf.global_variables_initializer())
+    y0_val, y1_val = sess.run([y0,y1], feed_dict={x0:x0_batch, x1:x1_batch})
+print('y0_val:\n',y0_val)
+print('\ny1_val:\n',y1_val)
+```
 
 
 
