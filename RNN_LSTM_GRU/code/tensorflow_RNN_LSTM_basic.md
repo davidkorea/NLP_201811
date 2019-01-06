@@ -26,3 +26,14 @@ output_seqs, states = tf.contrib.rnn.static_rnn(cell=basic_cell, inputs=[x0,x1],
 <p align="center">
     <img src="https://camo.githubusercontent.com/a7d62cc5a1d4412efc7153d13e7601d8881681d5/68747470733a2f2f692e6c6f6c692e6e65742f323031382f31322f31382f356331383466643135336637382e706e67">
 </p>
+
+We will assume that the RNN runs over only two time steps, taking input vectors of size 3 at each time step. The following code builds this RNN, unrolled through two time steps:
+
+1. time steps : 2, two words a sentence
+2. RNN cell input vector dim: 3, each RNN cell accepts a shape of (1,3) vector
+3. hidden size: 5
+
+
+
+
+
