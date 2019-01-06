@@ -324,14 +324,14 @@ print(outputs_val)
 
 # 4. LSTM Cell
 
+using dynamict_rnn() and LSTMcell.
+
 ```python
 basic_lstm_cell = tf.contrib.rnn.BasicLSTMCell(num_units=n_neurons)
 ```
 ```python
 peepholes_lstm_cell = tf.contrib.rnn.LSTMCell(num_units=n_neurons, use_peepholes=True)
 ```
-
-```python
 
 ```python
 tf.reset_default_graph()
