@@ -33,7 +33,44 @@ We will assume that the RNN runs over only two time steps, taking input vectors 
 2. RNN cell input vector dim: 3, each RNN cell accepts a shape of (1,3) vector
 3. hidden size: 5
 
+```python
+import tensorflow as tf
+import numpy as np
+tf.set_random_seed(1)
+```
 
+```python
+n_inputs = 3 # input vector dim at each time step 
+n_neurons = 5 # RNN cell hidden size
+```
+
+```python
+# 2 time steps: x0, x1
+x0 = tf.placeholder(tf.float32, shape=(None,n_inputs))
+x1 = tf.placeholder(tf.float32, shape=(None,n_inputs))
+```
+
+```python
+wx = tf.Variable(tf.random_normal(shape=(n_inputs, n_neurons), dtype=tf.float32))
+wy = tf.Variable(tf.random_normal(shape=(n_neurons, n_neurons), dtype=tf.float32))
+b = tf. Variable(tf.zeros(shape=(1,n_neurons), dtype=tf.float32))
+
+y0 = tf.tanh(tf.matmul(x0,wx)+b) # shape (1,3)x(3,5)+(1,5) = (1,5)
+y1 = tf.tanh(tf.matmul(y0,wy)+tf.matmul(x1,wx)+b)
+
+init = tf.global_variables_initializer()
+```
+
+```python
+# mini batch = 4,     sentence1   sentence2  sentence3  sentence4
+x0_batch = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 0, 1]]) # t=0
+x1_batch = np.array([[9, 8, 7], [0, 0, 0], [6, 5, 4], [3, 2, 1]]) # t=1
+
+# sentence1: x0 = [0, 1, 2], x1 = [9, 8, 7]
+# sentence2: x0 = [3, 4, 5], x1 = [0, 0, 0]
+# sentence3: x0 = [6, 7, 8], x1 = [6, 5, 4]
+# sentence4: x0 = [9, 0, 1], x1 = [3, 2, 1]
+```
 
 
 
