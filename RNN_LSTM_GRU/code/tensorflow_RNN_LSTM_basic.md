@@ -151,7 +151,7 @@ The ```static_rnn()```function calls the cell factory’s``` __call__()``` funct
 
 The ```static_rnn()``` function returns two objects. 
 1. The first is a Python list containing the output tensors for each time step. 
-2. The second is a tensor containing the final states of the network. When you are using basic cells, the final state is simply equal to the last output
+2. The second is a tensor containing the final states(hidden states) of the network. When you are using basic cells, the final state is simply equal to the last output. show as the code printed below.
 
 
 ```python
@@ -161,11 +161,42 @@ x1_batch = np.array([[9, 8, 7], [0, 0, 0], [6, 5, 4], [3, 2, 1]]) # t=1
 with tf.Session() as sess:
     # sess.run(init)
     sess.run(tf.global_variables_initializer())
-    y0_val, y1_val = sess.run([y0,y1], feed_dict={x0:x0_batch, x1:x1_batch})
+    y0_val, y1_val, states = sess.run([y0,y1,states], feed_dict={x0:x0_batch, x1:x1_batch})
 print('y0_val:\n',y0_val)
 print('\ny1_val:\n',y1_val)
+print('\nstates:\n',states)
 ```
 
+```
+y0_val:
+ [[ 0.65068823 -0.7885722  -0.68872046 -0.579271    0.5519878 ]
+ [ 0.9604823  -0.9950424  -0.9997227  -0.5949103   0.8591207 ]
+ [ 0.9961673  -0.9998956  -0.9999998  -0.6101117   0.96099204]
+ [-0.4338037  -0.33560485 -0.9999477  -0.36008093  0.70006984]]
+
+y1_val:
+ [[ 0.9983586  -0.9998548  -1.          0.80598366  0.7580543 ]
+ [ 0.8172029   0.09068511 -0.8805279   0.5421987  -0.5194732 ]
+ [ 0.9914208  -0.99018264 -0.99999976  0.845585    0.12200028]
+ [ 0.6654841  -0.707808   -0.99619687  0.8441219  -0.2600849 ]]
+ 
+states:
+ [[ 0.9983586  -0.9998548  -1.          0.80598366  0.7580543 ]
+ [ 0.8172029   0.09068511 -0.8805279   0.5421987  -0.5194732 ]
+ [ 0.9914208  -0.99018264 -0.99999976  0.845585    0.12200028]
+ [ 0.6654841  -0.707808   -0.99619687  0.8441219  -0.2600849 ]]
+```
+
+If there were 50 time steps, it would not be very convenient to have to define 50 input placeholders and 50 output tensors.
+
+x0 = tf.placeholder(dtype=tf.float32, shape=(None, n_inputs))
+x1 = tf.placeholder(dtype=tf.float32, shape=(None, n_inputs))
+...
+
+x49 = tf.placeholder(dtype=tf.float32, shape=(None, n_inputs))
+Moreover, at execution time you would have to feed each of the 50 placeholders and manipulate the 50 outputs.
+
+Let’s simplify this. The following code builds the same RNN again, but this time it takes a single input placeholder of shape [batch_size, n_steps, n_inputs] where the first dimension is the mini-batch size. 즉, put all 50 timesteps (50 words a sentence) together in one tenser/array/list.
 
 
 
