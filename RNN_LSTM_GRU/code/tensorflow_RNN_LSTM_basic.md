@@ -17,7 +17,7 @@ output_seqs, states = tf.contrib.rnn.static_rnn(cell=basic_cell, inputs=[x0,x1],
 -----
 
 # 1. Basic RNNs in TensorFlow
-
+## 仅根据RNN数学原理，未使用tensorflow自带RNN函数
 
 <p align="center">
     <img src="https://camo.githubusercontent.com/11597f39a693e699966f443bd2d15eb5bef45f87/68747470733a2f2f692e6c6f6c692e6e65742f323031382f31322f31382f356331383530623235353366632e706e67">
