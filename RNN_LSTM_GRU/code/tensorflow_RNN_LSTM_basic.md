@@ -71,6 +71,12 @@ x1_batch = np.array([[9, 8, 7], [0, 0, 0], [6, 5, 4], [3, 2, 1]]) # t=1
 # sentence3: x0 = [6, 7, 8], x1 = [6, 5, 4]
 # sentence4: x0 = [9, 0, 1], x1 = [3, 2, 1]
 ```
-
+```python
+with tf.Session() as sess:
+    sess.run(init)
+    y0_val, y1_val = sess.run([y0,y1], feed_dict={x0:x0_batch, x1:x1_batch})
+print('y0_val:\n',y0_val)
+print('\ny1_val:\n',y1_val)
+```
 
 
