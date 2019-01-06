@@ -227,7 +227,23 @@ Then we extract取出 a Python list of tensors along the first dimension (i.e., 
 
 The next two lines are the same as before. Finally, we merge all the output tensors into a single tensor using the stack() function, and we swap the first two dimensions to get a final outputs tensor of shape [None, n_steps, n_neurons] (again the first dimension is the mini-batch size).
 
-
+```python
+x_batch = np.array([
+# t = 0        t = 1
+[[0, 1, 2], [9, 8, 7]], # instance 0
+[[3, 4, 5], [0, 0, 0]], # instance 1
+[[6, 7, 8], [6, 5, 4]], # instance 2
+[[9, 0, 1], [3, 2, 1]], # instance 3
+])
+```
+```python
+with tf.Session() as sess:
+    sess.run(tf.global_variables_initializer())
+    outputs_val = sess.run(outputs, feed_dict={x:x_batch})
+```
+```python
+print(outputs_val)
+```
 
 
 
