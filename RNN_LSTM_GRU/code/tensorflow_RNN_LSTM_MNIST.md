@@ -41,4 +41,20 @@ learning_rate = 0.001
 ```python
 x = tf.placeholder(tf.float32, (None, n_steps, n_inputs))
 y = tf.placeholder(tf.int32, (None,))
+
+cells = DeviceCellWrapper("/gpu:0",tf.contrib.rnn.BasicRNNCell(num_units=n_neurons)) # GPU
+outputs, states = tf.nn.dynamic_rnn(cells, x, dtype=tf.float32)
+
+logits = fully_connected(inputs=states, num_outputs=n_outputs, activation_fn=None)
+cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(labels=y, logits=logits)
+
+loss = tf.reduce_mean(cross_entropy)
+
+optimizer = tf.train.AdamOptimizer(learning_rate)
+training_operation = optimizer.minimize(loss)
+
+correct = tf.nn.in_top_k(logits,y,1)
+accuracy = tf.reduce_mean(tf.cast(correct,tf.float32))
+
+init = tf.global_variables_initializer()
 ```
