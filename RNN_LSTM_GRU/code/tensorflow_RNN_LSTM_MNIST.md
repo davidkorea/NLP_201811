@@ -6,4 +6,22 @@
     <img src="https://i.loli.net/2019/01/06/5c31bee02bce4.png" width="500" height="300">
 </p>
 
-# 1. 
+# 1. RNN
+```python
+import tensorflow as tf
+import numpy as np
+from tensorflow.contrib.layers import fully_connected
+# tf.set_random_seed(1)
+tf.reset_default_graph()
+```
+```python
+n_steps = 28
+n_inputs = 28
+n_neurons = 150
+n_outputs = 10
+learning_rate = 0.001
+```
+```python
+x = tf.placeholder(tf.float32, (None, n_steps, n_inputs))
+y = tf.placeholder(tf.int32, (None,))
+```
