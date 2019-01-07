@@ -47,6 +47,16 @@ from tensorflow.contrib.layers import fully_connected
 # tf.set_random_seed(1)
 tf.reset_default_graph()
 ```
+
+```python
+# import MNIST from tensorflow
+from tensorflow.examples.tutorials.mnist import input_data
+
+mnist = input_data.read_data_sets('mnist')
+x_test = mnist.test.images.reshape((-1,n_steps,n_inputs))
+y_test = mnist.test.labels
+```
+
 ```python
 n_steps = 28
 n_inputs = 28
@@ -74,8 +84,23 @@ accuracy = tf.reduce_mean(tf.cast(correct,tf.float32))
 
 init = tf.global_variables_initializer()
 ```
+```python
+n_epochs = 100
+batch_size = 150
 
-1. **tf.fully_connected()** 
+with tf.Session() as sess:
+    init.run()
+    for epoch in range(n_epochs):
+        for iteration in range(mnist.train.num_examples//batch_size):
+            x_batch, y_batch = mnist.train.next_batch(batch_size)
+            x_batch = x_batch.reshape((-1,n_steps,n_inputs))
+            sess.run(training_operation, feed_dict={x:x_batch, y:y_batch})
+        acc_train = accuracy.eval(feed_dict={x:x_batch, y:y_batch})
+        acc_test = accuracy.eval(feed_dict={x:x_test, y:y_test})
+        print('{} epoch, Train accuracy: {:.3f} - Test accuracy: {:.3f}'.format(epoch, acc_train, acc_test))
+```
+
+tensorflow API **tf.fully_connected()** 
 contains initialization of uniform weights and zero bias.
 
 ```
@@ -96,8 +121,7 @@ tf.contrib.layers.fully_connected(
     scope=None
 )
 ```
-    
-    1. **weights_initializer=initializers.xavier_initializer()**
+- **weights_initializer=initializers.xavier_initializer()**
 ```
 tf.contrib.layers.xavier_initializer(
     uniform=True,
@@ -105,9 +129,5 @@ tf.contrib.layers.xavier_initializer(
     dtype=tf.float32
 )
 ```
-    2. **biases_initializer=tf.zeros_initializer()**
+- **biases_initializer=tf.zeros_initializer()**
 
-## 1.3 import MNIST from tensorflow
-```python
-
-```
