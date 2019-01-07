@@ -8,6 +8,22 @@
 
 # 1. RNN with kaggle GPU
 ## 1.1 GPU
+if you try to create each cell in a different
+device() block, it will not work:
+```python
+with tf.device("/gpu:0"): # BAD! This is ignored.
+layer1 = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons)
+with tf.device("/gpu:1"): # BAD! Ignored again.
+layer2 = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons)
+```
+This fails because a BasicRNNCell is a cell factory, not a cell per se (as mentioned earlier); no cells get
+created when you create the factory, and thus no variables do either. The device block is simply ignored.
+The cells actually get created later. When you call dynamic_rnn(), it calls the MultiRNNCell, which
+calls each individual BasicRNNCell, which create the actual cells (including their variables).
+Unfortunately, none of these classes provide any way to control the devices on which the variables get
+created. If you try to put the dynamic_rnn() call within a device block, the whole RNN gets pinned to a
+single device. So are you stuck? Fortunately not! The trick is to create your own cell wrapper:
+
 ```pytonn
 class DeviceCellWrapper(tf.contrib.rnn.RNNCell):
     def __init__(self, device, cell):
