@@ -1,5 +1,13 @@
 # NLP_201811
 
+# 2019-01-06
+
+
+
+# 2019-01-04
+
+
+
 # 2019-01-03
 
 1. [numpy_kafka_sentence_generate_LSTM](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/numpy_kafka_sentence_generate_LSTM.md)
