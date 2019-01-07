@@ -75,7 +75,7 @@ accuracy = tf.reduce_mean(tf.cast(correct,tf.float32))
 init = tf.global_variables_initializer()
 ```
 
-**tf.fully_connected()** 
+1. **tf.fully_connected()** 
 contains initialization of uniform weights and zero bias.
 
 ```
@@ -97,7 +97,7 @@ tf.contrib.layers.fully_connected(
 )
 ```
     
-1. **weights_initializer=initializers.xavier_initializer()**
+    1. **weights_initializer=initializers.xavier_initializer()**
 ```
 tf.contrib.layers.xavier_initializer(
     uniform=True,
@@ -105,5 +105,9 @@ tf.contrib.layers.xavier_initializer(
     dtype=tf.float32
 )
 ```
-2. **biases_initializer=tf.zeros_initializer()**
+    2. **biases_initializer=tf.zeros_initializer()**
 
+## 1.3 import MNIST from tensorflow
+```python
+
+```
