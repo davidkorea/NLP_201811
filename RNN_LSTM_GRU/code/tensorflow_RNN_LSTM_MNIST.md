@@ -52,9 +52,21 @@ tf.reset_default_graph()
 # import MNIST from tensorflow
 from tensorflow.examples.tutorials.mnist import input_data
 
-mnist = input_data.read_data_sets('mnist')
+mnist = input_data.read_data_sets('mnist') # one_hot=False by default
+# mnist = input_data.read_data_sets('/tmp/data/', one_hot=True) # dataset save path, 
+
 x_test = mnist.test.images.reshape((-1,n_steps,n_inputs))
 y_test = mnist.test.labels
+
+# y_test = array([7, 2, 1, ..., 4, 5, 6], dtype=uint8) # one_hot=False
+# one_hot=True
+array([[0., 0., 0., ..., 1., 0., 0.],
+       [0., 0., 1., ..., 0., 0., 0.],
+       [0., 1., 0., ..., 0., 0., 0.],
+       ...,
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])
 ```
 
 ```python
