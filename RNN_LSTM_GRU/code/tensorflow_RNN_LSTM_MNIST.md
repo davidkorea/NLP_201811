@@ -74,3 +74,34 @@ accuracy = tf.reduce_mean(tf.cast(correct,tf.float32))
 
 init = tf.global_variables_initializer()
 ```
+
+tf.fully_connected()
+contains initialization of iniform weights and zero bias.
+        ```
+        tf.contrib.layers.fully_connected(
+            inputs,
+            num_outputs,
+            activation_fn=tf.nn.relu,
+            normalizer_fn=None,
+            normalizer_params=None,
+            weights_initializer=initializers.xavier_initializer(),
+            weights_regularizer=None,
+            biases_initializer=tf.zeros_initializer(),
+            biases_regularizer=None,
+            reuse=None,
+            variables_collections=None,
+            outputs_collections=None,
+            trainable=True,
+            scope=None
+        )
+        ```
+1. **weights_initializer=initializers.xavier_initializer()**
+        ```
+        tf.contrib.layers.xavier_initializer(
+            uniform=True,
+            seed=None,
+            dtype=tf.float32
+        )
+        ```
+2. ** biases_initializer=tf.zeros_initializer()**
+
