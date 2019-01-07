@@ -24,7 +24,7 @@ Unfortunately, none of these classes provide any way to control the devices on w
 created. If you try to put the dynamic_rnn() call within a device block, the whole RNN gets pinned to a
 single device. So are you stuck? Fortunately not! The trick is to create your own cell wrapper:
 
-```pytonn
+```python
 class DeviceCellWrapper(tf.contrib.rnn.RNNCell):
     def __init__(self, device, cell):
         self._cell = cell
