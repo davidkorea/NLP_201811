@@ -1,5 +1,8 @@
 # NLP_201811
 
+# 2019-01-09
+hands on examples codes: https://github.com/ageron/handson-ml
+
 # 2019-01-08
 
 # 2019-01-07
