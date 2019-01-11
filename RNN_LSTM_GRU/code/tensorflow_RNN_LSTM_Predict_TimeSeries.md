@@ -86,7 +86,9 @@ At each time step we now have an output vector of size 100. But what we actually
 ## 2.2 Using an OuputProjectionWrapper
 
 A cell wrapper acts like a normal cell, proxying every method call to an underlying cell, but it also add ssome functionality. The ```OutputProjectionWrapper``` adds a fully connected layer of linear neurons (i.e., without any activation function) on top of each output (but it does not affect the cell state). All these fully connected layers share the same (trainable) weights and bias terms. 
+
 ![](https://i.loli.net/2019/01/11/5c38483442d82.png)
+
 Wrapping a cell is quite easy. Let’s tweak the preceding code by wrapping the BasicRNNCell into an ```OutputProjectionWrapper```:
 ```python
 n_steps = 20
@@ -153,7 +155,7 @@ plt.xlabel("Time")
 
 plt.show()
 ```
-![](https://i.loli.net/2019/01/11/5c3847ae1825b.png)
+![](https://i.loli.net/2019/01/11/5c3848af3ddb3.png)
 
 
 
