@@ -1,5 +1,26 @@
 # NLP_201811
 
+# 2019-01-12
+
+1. anaconda install python3.6
+```conda create -n py36 python=3.6```
+```
+Downloading and Extracting Packages
+python-3.6.8         | 20.5 MB   | ##################################### | 100% 
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate py36
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+```
+
 # 2019-01-11
 
 1. Issue on mac install pip3 https://github.com/davidkorea/NLP_201811/issues/8
