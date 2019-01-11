@@ -58,7 +58,7 @@ plt.xlabel("Time")
 plt.show()
 ```
 
-![](https://www.kaggleusercontent.com/kf/9404547/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..oBX1fUW5X1zwDzYFkwYDUA.OrB5t7zKCfaiYqvmKG0Iucf8mnydrfhrtao76sFIqyDcxDjOXn-jj1og_h5YtosCnKFh2cGopr81ZRRK2SAvpRdFdxVMoKHYwOI9WPRDJRK927r82AxMnaUeTEXFmfR9nellwGI6kek4nonzJlE54fIRMDuOp-Moq8gqiAZ9_og.Usf_cMPSK_J_1yS1rgNccg/__results___files/__results___13_0.png)
+![](https://i.loli.net/2019/01/11/5c3847adde410.png)
 
 
 # 2. RNN
@@ -153,7 +153,7 @@ plt.xlabel("Time")
 
 plt.show()
 ```
-![](https://www.kaggleusercontent.com/kf/9404547/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..oBX1fUW5X1zwDzYFkwYDUA.OrB5t7zKCfaiYqvmKG0Iucf8mnydrfhrtao76sFIqyDcxDjOXn-jj1og_h5YtosCnKFh2cGopr81ZRRK2SAvpRdFdxVMoKHYwOI9WPRDJRK927r82AxMnaUeTEXFmfR9nellwGI6kek4nonzJlE54fIRMDuOp-Moq8gqiAZ9_og.Usf_cMPSK_J_1yS1rgNccg/__results___files/__results___26_0.png)
+![](https://i.loli.net/2019/01/11/5c3847ae1825b.png)
 
 
 
