@@ -178,4 +178,36 @@ Now that we have a model that can predict the future, we can use it to generate 
 as explained at the beginning of the chapter. All we need is to provide it a seed sequence containing
 n_steps values (e.g., full of zeros), use the model to predict the next value, append this predicted value
 to the sequence, feed the last n_steps values to the model to predict the next value, and so on. This
-process generates a new sequence that has some resemblance to the original time series
+process generates a new sequence that has some resemblance to the original time series.
+
+```python
+with tf.Session() as sess:
+    saver.restore(sess, "./my_time_series_model")
+
+    sequence1 = [0. for i in range(n_steps)]
+    for iteration in range(len(t) - n_steps):
+        X_batch = np.array(sequence1[-n_steps:]).reshape(1, n_steps, 1)
+        y_pred = sess.run(outputs, feed_dict={X: X_batch})
+        sequence1.append(y_pred[0, -1, 0])
+
+    sequence2 = [time_series(i * resolution + t_min + (t_max-t_min/3)) for i in range(n_steps)]
+    for iteration in range(len(t) - n_steps):
+        X_batch = np.array(sequence2[-n_steps:]).reshape(1, n_steps, 1)
+        y_pred = sess.run(outputs, feed_dict={X: X_batch})
+        sequence2.append(y_pred[0, -1, 0])
+
+plt.figure(figsize=(11,4))
+plt.subplot(121)
+plt.plot(t, sequence1, "b-")
+plt.plot(t[:n_steps], sequence1[:n_steps], "r-", linewidth=3)
+plt.xlabel("Time")
+plt.ylabel("Value")
+
+plt.subplot(122)
+plt.plot(t, sequence2, "b-")
+plt.plot(t[:n_steps], sequence2[:n_steps], "r-", linewidth=3)
+plt.xlabel("Time")
+
+plt.show()
+```
+![](https://i.loli.net/2019/01/11/5c38563364706.png)
