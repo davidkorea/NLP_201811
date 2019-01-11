@@ -2,9 +2,9 @@
 
 # 2019-01-11
 
-1. Issue on mac install pip3
-2. Issue on mac python3.7 install tensorflow
-3. Issue on mac anaconda python3.7 install tensorflow
+1. Issue on mac install pip3 https://github.com/davidkorea/NLP_201811/issues/8
+2. Issue on mac python3.7 install tensorflow https://github.com/davidkorea/NLP_201811/issues/9
+3. Issue on mac anaconda python3.7 install tensorflow https://github.com/davidkorea/NLP_201811/issues/10
 
 # 2019-01-10
 
