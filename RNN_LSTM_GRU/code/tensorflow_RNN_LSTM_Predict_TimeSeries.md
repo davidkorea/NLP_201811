@@ -24,7 +24,7 @@ t = np.linspace(t_min, t_max, int((t_max - t_min) / resolution)) # 定义域t（
 
 n_steps = 20
 t_instance = np.linspace(12.2, 12.2 + resolution * (n_steps + 1), n_steps + 1)
-# 在上面定义域t的范围中中选取长度为n_steps的一段最为示例
+# 在上面定义域t的范围中，选取长度为n_steps=20的一段最为示例
 
 plt.figure(figsize=(11,4))
 plt.subplot(121)
