@@ -100,5 +100,49 @@ cell = tf.contrib.rnn.OutputProjectionWrapper(
             tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu),
             output_size=n_outputs)
 outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+```
+So far, so good. Now we need to define the cost function. We will use the Mean Squared Error (MSE), as we did in previous regression tasks. Next we will create an Adam optimizer, the training op, and the variable initialization op, as usual:
+```python
+learning_rate = 0.001
+loss = tf.reduce_mean(tf.square(outputs - y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)training_op = optimizer.minimize(loss)
+init = tf.global_variables_initializer()
+```
+Now on to the execution phase:
+```python
+saver = tf.train.Saver()
+
+n_iterations = 200000
+batch_size = 50
+
+with tf.Session() as sess:
+    init.run()
+    for iteration in range(n_iterations):
+        X_batch, y_batch = next_batch(batch_size, n_steps)
+        sess.run(training_op, feed_dict={X:X_batch, y:y_batch})
+        if iteration % 100 == 0:
+            mse = loss.eval(feed_dict={X:X_batch, y:y_batch})
+            print(iteration, "\tMSE:", mse)
+    
+    saver.save(sess, "./my_time_series_model") # not shown in the book
+```
+The program’s output should look like this:
+```
+199500 	MSE: 0.07861377
+199600 	MSE: 0.079538494
+199700 	MSE: 0.09140773
+199800 	MSE: 0.08307927
+199900 	MSE: 0.09161533
+```
+Once the model is trained, you can make predictions:
+```python
 
 ```
+
+
+
+
+
+
+
+
