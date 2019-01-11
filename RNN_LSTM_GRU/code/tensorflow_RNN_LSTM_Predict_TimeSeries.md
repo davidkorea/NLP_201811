@@ -13,10 +13,18 @@ def time_series(t):
 
 def next_batch(batch_size, n_steps):
     t0 = np.random.rand(batch_size, 1) * (t_max - t_min - n_steps * resolution)
+    # 随即生成size为（batch_size, 1）的array 
     Ts = t0 + np.arange(0., n_steps + 1) * resolution
+    # np.arange(0., n_steps + 1) 从0到n_steps=20每间隔1生成的整数array（n_steps，1）
+    # t0（batch_size, 1）+（n_steps，1）=（batch_size，n_steps）
+    
     ys = time_series(Ts)
     return ys[:, :-1].reshape(-1, n_steps, 1), ys[:, 1:].reshape(-1, n_steps, 1)
 ```
+**重点**
+
+1. numpy加法：（batch_size, 1）+（n_steps，1）=（batch_size，n_steps）
+
 ```python
 # 此处并没有用到上面的next_batch()
 
