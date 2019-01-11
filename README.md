@@ -22,6 +22,10 @@ Executing transaction: done
 ```
 2. ```conda create -n tensorflow pip python=3.6```
 
+```conda activate tensorflow```
+
+```pip install --ignore-installed --upgrade tensorflow```
+
 
 
 # 2019-01-11
