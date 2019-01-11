@@ -173,3 +173,9 @@ one fully connected layer instead of one per time step.
 
 ![](https://i.loli.net/2019/01/11/5c384aec71abb.png)
 
+# 3. Creative RNN
+Now that we have a model that can predict the future, we can use it to generate some creative sequences,
+as explained at the beginning of the chapter. All we need is to provide it a seed sequence containing
+n_steps values (e.g., full of zeros), use the model to predict the next value, append this predicted value
+to the sequence, feed the last n_steps values to the model to predict the next value, and so on. This
+process generates a new sequence that has some resemblance to the original time series
