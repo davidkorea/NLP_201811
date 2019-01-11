@@ -170,5 +170,5 @@ outputs = tf.reshape(stacked_outputs, [-1, n_steps, n_outputs])
 The rest of the code is the same as earlier. This can provide a significant speed boost since there is just
 one fully connected layer instead of one per time step.
 
-
+![](https://i.loli.net/2019/01/11/5c384aec71abb.png)
 
