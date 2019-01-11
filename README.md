@@ -20,6 +20,9 @@ Executing transaction: done
 #     $ conda deactivate
 
 ```
+2. ```conda create -n tensorflow pip python=3.6```
+
+
 
 # 2019-01-11
 
