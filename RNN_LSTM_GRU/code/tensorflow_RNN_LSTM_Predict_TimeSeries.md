@@ -61,7 +61,7 @@ plt.show()
 ![](https://i.loli.net/2019/01/11/5c3847adde410.png)
 
 
-# 2. RNN
+# 2. RNN Model
 First, let’s create the RNN. It will contain 100 recurrent neurons and we will unroll it over 20 time steps
 since each training instance will be 20 inputs long. Each input will contain only one feature (the value at
 that time). The targets are also sequences of 20 inputs, each containing a single value. The code is almost
@@ -157,7 +157,7 @@ plt.show()
 ```
 ![](https://i.loli.net/2019/01/11/5c3848af3ddb3.png)
 
-
+Although using an OutputProjectionWrapper is the simplest solution to reduce the dimensionality of the RNN’s output sequences down to just one value per time step (per instance), it is not the most efficient. There is a trickier but more efficient solution: you can reshape the RNN outputs from ```[batch_size, n_steps, n_neurons]``` to ```[batch_size * n_steps, n_neurons]```, then apply a single fully connected layer with the appropriate output size (in our case just 1), which will result in an output tensor of shape ```[batch_size * n_steps, n_outputs]```, and then reshape this tensor to ```[batch_size, n_steps, n_outputs]```. 
 
 
 
