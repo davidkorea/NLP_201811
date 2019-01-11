@@ -8,6 +8,8 @@
 
 # 2019-01-10
 
+https://github.com/MorvanZhou/tutorials/blob/master/tensorflowTUT/tf20_RNN2.2/full_code.py
+
 # 2019-01-09
 hands on examples codes: https://github.com/ageron/handson-ml
 
