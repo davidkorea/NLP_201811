@@ -20,13 +20,24 @@ Executing transaction: done
 #     $ conda deactivate
 
 ```
-2. ```conda create -n tensorflow pip python=3.6```
+2. create a new environment
+```conda create -n tensorflow pip python=3.6```
 
 ```conda activate tensorflow```
 
 ```pip install --ignore-installed --upgrade tensorflow```
 
+create a kernel in this environment
 
+```source activate tensorflow```
+
+```conda install ipykernel```
+
+```
+(tensorflow) DaviddeMacBook-Pro:~ david$ python -m ipykernel install --user --name tensorflow --display-name "tensorflow"
+
+Installed kernelspec tensorflow in /Users/david/Library/Jupyter/kernels/tensorflow
+```
 
 # 2019-01-11
 
