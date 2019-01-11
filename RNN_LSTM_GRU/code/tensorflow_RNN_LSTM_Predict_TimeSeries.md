@@ -67,29 +67,7 @@ since each training instance will be 20 inputs long. Each input will contain onl
 that time). The targets are also sequences of 20 inputs, each containing a single value. The code is almost
 the same as earlier:
 
-## 2.1 No output wrapper
-```python
-n_steps = 20
-n_inputs = 1
-n_neurons = 100
-n_outputs = 1
-X = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
-y = tf.placeholder(tf.float32, [None, n_steps, n_outputs])
-cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
-outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
-```
-> **NOTE**:
-> In general you would have more than just one input feature. For example, if you were trying to predict stock prices, you would likely have many other input features at each time step, such as prices of competing stocks, ratings from analysts, or any other feature that might help the system make its predictions.
-
-At each time step we now have an output vector of size 100. But what we actually want is a single output value at each time step. The simplest solution is to wrap the cell in an ```OutputProjectionWrapper```. 
-
-## 2.2 Using an OuputProjectionWrapper
-
-A cell wrapper acts like a normal cell, proxying every method call to an underlying cell, but it also add ssome functionality. The ```OutputProjectionWrapper``` adds a fully connected layer of linear neurons (i.e., without any activation function) on top of each output (but it does not affect the cell state). All these fully connected layers share the same (trainable) weights and bias terms. 
-
-![](https://i.loli.net/2019/01/11/5c38483442d82.png)
-
-Wrapping a cell is quite easy. Let’s tweak the preceding code by wrapping the BasicRNNCell into an ```OutputProjectionWrapper```:
+## 2.1 Using an OuputProjectionWrapper
 ```python
 n_steps = 20
 n_inputs = 1
@@ -102,6 +80,21 @@ cell = tf.contrib.rnn.OutputProjectionWrapper(
             tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu),
             output_size=n_outputs)
 outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+```
+> **NOTE**:
+> In general you would have more than just one input feature. For example, if you were trying to predict stock prices, you would likely have many other input features at each time step, such as prices of competing stocks, ratings from analysts, or any other feature that might help the system make its predictions.
+
+At each time step we now have an output vector of size 100. But what we actually want is a single output value at each time step. The simplest solution is to wrap the cell in an ```OutputProjectionWrapper```. 
+
+A cell wrapper acts like a normal cell, proxying every method call to an underlying cell, but it also add ssome functionality. The ```OutputProjectionWrapper``` adds a fully connected layer of linear neurons (i.e., without any activation function) on top of each output (but it does not affect the cell state). All these fully connected layers share the same (trainable) weights and bias terms. 
+
+![](https://i.loli.net/2019/01/11/5c38483442d82.png)
+
+Wrapping a cell is quite easy. Let’s tweak the preceding code by wrapping the BasicRNNCell into an ```OutputProjectionWrapper```:
+```python
+cell = tf.contrib.rnn.OutputProjectionWrapper(
+            tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu),
+            output_size=n_outputs)
 ```
 So far, so good. Now we need to define the cost function. We will use the Mean Squared Error (MSE), as we did in previous regression tasks. Next we will create an Adam optimizer, the training op, and the variable initialization op, as usual:
 ```python
@@ -157,9 +150,24 @@ plt.show()
 ```
 ![](https://i.loli.net/2019/01/11/5c3848af3ddb3.png)
 
+## 2.2 
 Although using an OutputProjectionWrapper is the simplest solution to reduce the dimensionality of the RNN’s output sequences down to just one value per time step (per instance), it is not the most efficient. There is a trickier but more efficient solution: you can reshape the RNN outputs from ```[batch_size, n_steps, n_neurons]``` to ```[batch_size * n_steps, n_neurons]```, then apply a single fully connected layer with the appropriate output size (in our case just 1), which will result in an output tensor of shape ```[batch_size * n_steps, n_outputs]```, and then reshape this tensor to ```[batch_size, n_steps, n_outputs]```. 
 
-
+To implement this solution, we first revert to a basic cell, without the OutputProjectionWrapper:
+```python
+cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
+rnn_outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+```
+Then we stack all the outputs using the reshape() operation, apply the fully connected linear layer
+(without using any activation function; this is just a projection), and finally unstack all the outputs, again
+using reshape():
+```python
+stacked_rnn_outputs = tf.reshape(rnn_outputs, [-1, n_neurons])
+stacked_outputs = fully_connected(stacked_rnn_outputs, n_outputs,
+activation_fn=None)outputs = tf.reshape(stacked_outputs, [-1, n_steps, n_outputs])
+```
+The rest of the code is the same as earlier. This can provide a significant speed boost since there is just
+one fully connected layer instead of one per time step
 
 
 
