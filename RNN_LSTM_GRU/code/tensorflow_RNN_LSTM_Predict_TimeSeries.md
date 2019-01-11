@@ -89,7 +89,16 @@ A cell wrapper acts like a normal cell, proxying every method call to an underly
 
 Wrapping a cell is quite easy. Let’s tweak the preceding code by wrapping the BasicRNNCell into an ```OutputProjectionWrapper```:
 ```python
+n_steps = 20
+n_inputs = 1
+n_neurons = 100
+n_outputs = 1
+X = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
+y = tf.placeholder(tf.float32, [None, n_steps, n_outputs])
+# cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
 cell = tf.contrib.rnn.OutputProjectionWrapper(
             tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu),
             output_size=n_outputs)
+outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+
 ```
