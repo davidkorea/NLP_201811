@@ -150,7 +150,8 @@ plt.show()
 ```
 ![](https://i.loli.net/2019/01/11/5c3848af3ddb3.png)
 
-## 2.2 
+## 2.2 More efficient without OutputProjectionWrappe
+
 Although using an OutputProjectionWrapper is the simplest solution to reduce the dimensionality of the RNN’s output sequences down to just one value per time step (per instance), it is not the most efficient. There is a trickier but more efficient solution: you can reshape the RNN outputs from ```[batch_size, n_steps, n_neurons]``` to ```[batch_size * n_steps, n_neurons]```, then apply a single fully connected layer with the appropriate output size (in our case just 1), which will result in an output tensor of shape ```[batch_size * n_steps, n_outputs]```, and then reshape this tensor to ```[batch_size, n_steps, n_outputs]```. 
 
 To implement this solution, we first revert to a basic cell, without the OutputProjectionWrapper:
