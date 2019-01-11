@@ -78,7 +78,18 @@ y = tf.placeholder(tf.float32, [None, n_steps, n_outputs])
 cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
 outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
 ```
-> **NOTE**
-> In general you would have more than just one input feature. For example, if you were trying to predict stock prices, you would
-likely have many other input features at each time step, such as prices of competing stocks, ratings from analysts, or any other
-feature that might help the system make its predictions.
+> **NOTE**:
+> In general you would have more than just one input feature. For example, if you were trying to predict stock prices, you would likely have many other input features at each time step, such as prices of competing stocks, ratings from analysts, or any other feature that might help the system make its predictions.
+
+At each time step we now have an output vector of size 100. But what we actually want is a single output value at each time step. The simplest solution is to wrap the cell in an ```OutputProjectionWrapper```. 
+
+## 2.2 Using an OuputProjectionWrapper
+
+A cell wrapper acts like a normal cell, proxying every method call to an underlying cell, but it also add ssome functionality. The ```OutputProjectionWrapper``` adds a fully connected layer of linear neurons (i.e., without any activation function) on top of each output (but it does not affect the cell state). All these fully connected layers share the same (trainable) weights and bias terms. 
+
+Wrapping a cell is quite easy. Let’s tweak the preceding code by wrapping the BasicRNNCell into an ```OutputProjectionWrapper```:
+```python
+cell = tf.contrib.rnn.OutputProjectionWrapper(
+            tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu),
+            output_size=n_outputs)
+```
