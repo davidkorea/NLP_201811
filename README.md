@@ -1,5 +1,11 @@
 # NLP_201811
 
+# 2019-01-11
+
+1. Issue on mac install pip3
+2. Issue on mac python3.7 install tensorflow
+3. Issue on mac anaconda python3.7 install tensorflow
+
 # 2019-01-10
 
 # 2019-01-09
