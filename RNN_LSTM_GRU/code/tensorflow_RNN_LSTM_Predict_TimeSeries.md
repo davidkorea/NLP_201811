@@ -164,10 +164,11 @@ using reshape():
 ```python
 stacked_rnn_outputs = tf.reshape(rnn_outputs, [-1, n_neurons])
 stacked_outputs = fully_connected(stacked_rnn_outputs, n_outputs,
-activation_fn=None)outputs = tf.reshape(stacked_outputs, [-1, n_steps, n_outputs])
+                                  activation_fn=None)
+outputs = tf.reshape(stacked_outputs, [-1, n_steps, n_outputs])
 ```
 The rest of the code is the same as earlier. This can provide a significant speed boost since there is just
-one fully connected layer instead of one per time step
+one fully connected layer instead of one per time step.
 
 
 
