@@ -105,7 +105,8 @@ So far, so good. Now we need to define the cost function. We will use the Mean S
 ```python
 learning_rate = 0.001
 loss = tf.reduce_mean(tf.square(outputs - y))
-optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)training_op = optimizer.minimize(loss)
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
+training_op = optimizer.minimize(loss)
 init = tf.global_variables_initializer()
 ```
 Now on to the execution phase:
@@ -136,9 +137,23 @@ The program’s output should look like this:
 ```
 Once the model is trained, you can make predictions:
 ```python
+with tf.Session() as sess:                          # not shown in the book
+    saver.restore(sess, "./my_time_series_model")   # not shown
 
+    X_new = time_series(np.array(t_instance[:-1].reshape(-1, n_steps, n_inputs)))
+    y_pred = sess.run(outputs, feed_dict={X: X_new})
 ```
+```python
+plt.title("Testing the model", fontsize=14)
+plt.plot(t_instance[:-1], time_series(t_instance[:-1]), "bo", markersize=10, label="instance")
+plt.plot(t_instance[1:], time_series(t_instance[1:]), "y*", markersize=10, label="target")
+plt.plot(t_instance[1:], y_pred[0,:,0], "r.", markersize=10, label="prediction")
+plt.legend(loc="upper left")
+plt.xlabel("Time")
 
+plt.show()
+```
+![](https://www.kaggleusercontent.com/kf/9404547/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..oBX1fUW5X1zwDzYFkwYDUA.OrB5t7zKCfaiYqvmKG0Iucf8mnydrfhrtao76sFIqyDcxDjOXn-jj1og_h5YtosCnKFh2cGopr81ZRRK2SAvpRdFdxVMoKHYwOI9WPRDJRK927r82AxMnaUeTEXFmfR9nellwGI6kek4nonzJlE54fIRMDuOp-Moq8gqiAZ9_og.Usf_cMPSK_J_1yS1rgNccg/__results___files/__results___26_0.png)
 
 
 
