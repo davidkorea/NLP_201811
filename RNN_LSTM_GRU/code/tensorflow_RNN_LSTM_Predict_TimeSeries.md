@@ -18,10 +18,13 @@ def next_batch(batch_size, n_steps):
     return ys[:, :-1].reshape(-1, n_steps, 1), ys[:, 1:].reshape(-1, n_steps, 1)
 ```
 ```python
-t = np.linspace(t_min, t_max, int((t_max - t_min) / resolution))
+# 此处并没有用到上面的next_batch()
+
+t = np.linspace(t_min, t_max, int((t_max - t_min) / resolution)) # 定义域t（0，30）共30/0.1=300个离散点
 
 n_steps = 20
 t_instance = np.linspace(12.2, 12.2 + resolution * (n_steps + 1), n_steps + 1)
+# 在上面定义域t的范围中中选取长度为n_steps的一段最为示例
 
 plt.figure(figsize=(11,4))
 plt.subplot(121)
