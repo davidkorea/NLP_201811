@@ -34,11 +34,8 @@ create a kernel in this environment
 
 ```(tensorflow) DaviddeMacBook-Pro:~ david$ conda install ipykernel```
 
-```
-(tensorflow) DaviddeMacBook-Pro:~ david$ python -m ipykernel install --user --name tensorflow --display-name "tensorflow"
+```(tensorflow) DaviddeMacBook-Pro:~ david$ python -m ipykernel install --user --name tensorflow --display-name "tensorflow"``` Installed kernelspec tensorflow in /Users/david/Library/Jupyter/kernels/tensorflow
 
-Installed kernelspec tensorflow in /Users/david/Library/Jupyter/kernels/tensorflow
-```
 
 ```jupyter notebook```
 
