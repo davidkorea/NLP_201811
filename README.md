@@ -21,6 +21,7 @@ Executing transaction: done
 
 ```
 2. create a new environment
+
 ```conda create -n tensorflow pip python=3.6```
 
 ```conda activate tensorflow```
@@ -31,13 +32,15 @@ create a kernel in this environment
 
 ```source activate tensorflow```
 
-```conda install ipykernel```
+```(tensorflow) DaviddeMacBook-Pro:~ david$ conda install ipykernel```
 
 ```
 (tensorflow) DaviddeMacBook-Pro:~ david$ python -m ipykernel install --user --name tensorflow --display-name "tensorflow"
 
 Installed kernelspec tensorflow in /Users/david/Library/Jupyter/kernels/tensorflow
 ```
+
+```jupyter notebook```
 
 # 2019-01-11
 
