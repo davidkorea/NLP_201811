@@ -59,3 +59,26 @@ plt.show()
 ```
 
 ![](https://www.kaggleusercontent.com/kf/9404547/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..oBX1fUW5X1zwDzYFkwYDUA.OrB5t7zKCfaiYqvmKG0Iucf8mnydrfhrtao76sFIqyDcxDjOXn-jj1og_h5YtosCnKFh2cGopr81ZRRK2SAvpRdFdxVMoKHYwOI9WPRDJRK927r82AxMnaUeTEXFmfR9nellwGI6kek4nonzJlE54fIRMDuOp-Moq8gqiAZ9_og.Usf_cMPSK_J_1yS1rgNccg/__results___files/__results___13_0.png)
+
+
+# 2. RNN
+First, let’s create the RNN. It will contain 100 recurrent neurons and we will unroll it over 20 time steps
+since each training instance will be 20 inputs long. Each input will contain only one feature (the value at
+that time). The targets are also sequences of 20 inputs, each containing a single value. The code is almost
+the same as earlier:
+
+## 2.1 No output wrapper
+```python
+n_steps = 20
+n_inputs = 1
+n_neurons = 100
+n_outputs = 1
+X = tf.placeholder(tf.float32, [None, n_steps, n_inputs])
+y = tf.placeholder(tf.float32, [None, n_steps, n_outputs])
+cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons, activation=tf.nn.relu)
+outputs, states = tf.nn.dynamic_rnn(cell, X, dtype=tf.float32)
+```
+> **NOTE**
+> In general you would have more than just one input feature. For example, if you were trying to predict stock prices, you would
+likely have many other input features at each time step, such as prices of competing stocks, ratings from analysts, or any other
+feature that might help the system make its predictions.
