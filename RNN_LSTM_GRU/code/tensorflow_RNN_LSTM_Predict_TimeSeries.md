@@ -36,7 +36,7 @@ plt.axis([0, 30, -17, 13])
 plt.xlabel("Time")
 plt.ylabel("Value")
 
-plt.subplot(122)
+plt.subplot(122) # 画出示例的x 和 target
 plt.title("A training instance", fontsize=14)
 # t_instance[:-1] 0~倒数第二个
 plt.plot(t_instance[:-1], time_series(t_instance[:-1]), "bo", markersize=10, label="instance")
