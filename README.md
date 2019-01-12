@@ -2,42 +2,26 @@
 
 # 2019-01-12
 
-1. anaconda install python3.6
-```conda create -n py36 python=3.6```
-```
-Downloading and Extracting Packages
-python-3.6.8         | 20.5 MB   | ##################################### | 100% 
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-#
-# To activate this environment, use
-#
-#     $ conda activate py36
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
+## 1. anaconda create a new env and install python3.6 https://github.com/davidkorea/NLP_201811/issues/11
+## 2. anaconda create python3.6 new environment and new kernel https://github.com/davidkorea/NLP_201811/issues/12
+### 2.1. create a new environment and install tensorflow 
 
-```
-2. create a new environment
+1. ```conda create -n tensorflow pip python=3.6``` create new env
 
-```conda create -n tensorflow pip python=3.6```
+2. ```conda activate tensorflow``` activate this new env
 
-```conda activate tensorflow```
+3. ```pip install --ignore-installed --upgrade tensorflow``` install tensorflow in this new env
 
-```pip install --ignore-installed --upgrade tensorflow```
+### 2.2. create a kernel in this environment
 
-create a kernel in this environment
+1. ```source activate tensorflow``` activate new env
 
-```source activate tensorflow```
+2. ```(tensorflow) DaviddeMacBook-Pro:~ david$ conda install ipykernel``` install ipykernel in this env
 
-```(tensorflow) DaviddeMacBook-Pro:~ david$ conda install ipykernel```
+3. ```(tensorflow) DaviddeMacBook-Pro:~ david$ python -m ipykernel install --user --name tensorflow --display-name "tensorflow"```  create a new kernel in this env, Installed kernelspec tensorflow in /Users/david/Library/Jupyter/kernels/tensorflow
 
-```(tensorflow) DaviddeMacBook-Pro:~ david$ python -m ipykernel install --user --name tensorflow --display-name "tensorflow"``` Installed kernelspec tensorflow in /Users/david/Library/Jupyter/kernels/tensorflow
+4. ```(tensorflow) DaviddeMacBook-Pro:~ david$ jupyter notebook``` open jpynb in this env
 
-
-```jupyter notebook```
 
 # 2019-01-11
 
