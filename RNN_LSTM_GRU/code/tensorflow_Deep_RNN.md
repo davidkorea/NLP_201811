@@ -33,8 +33,10 @@ multi_layer_cell = tf.contrib.rnn.MultiRNNCell([cell_drop] * n_layers)
 rnn_outputs, states = tf.nn.dynamic_rnn(multi_layer_cell, X, dtype=tf.float32)
 ```
 Note that it is also possible to apply dropout to the outputs by setting output_keep_prob.
+
 The main problem with this code is that it will apply dropout not only during training but also during
 testing, which is not what you want (recall that dropout should be applied only during training).
+
 Unfortunately, the DropoutWrapper does not support an is_training placeholder (yet?), so you must
 either write your own dropout wrapper class, or have two different graphs: one for training, and the other
 for testing. 
