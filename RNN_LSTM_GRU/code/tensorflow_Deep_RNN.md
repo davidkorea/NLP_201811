@@ -14,6 +14,11 @@ basic_cell = tf.contrib.rnn.BasicRNNCell(num_units=n_neurons)
 multi_layer_cell = tf.contrib.rnn.MultiRNNCell([basic_cell] * n_layers)
 outputs, states = tf.nn.dynamic_rnn(multi_layer_cell, X, dtype=tf.float32)
 ```
+```python
+layers = [tf.nn.rnn_cell.BasicRNNCell(num_units=n_neurons)
+          for layer in range(n_layers)]
+multi_layer_cell = tf.nn.rnn_cell.MultiRNNCell(layers)
+```
 
 That’s all there is to it! The states variable is a tuple containing one tensor per layer, each representing the final state of that layer’s cell (with shape [batch_size, n_neurons]). 
 
