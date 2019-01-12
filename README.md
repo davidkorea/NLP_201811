@@ -2,8 +2,10 @@
 
 # 2019-01-12
 
-## 1. anaconda create a new env and install python3.6 https://github.com/davidkorea/NLP_201811/issues/11
-## 2. anaconda create python3.6 new environment and new kernel https://github.com/davidkorea/NLP_201811/issues/12
+## 1. anaconda create a new env and install python3.6 
+https://github.com/davidkorea/NLP_201811/issues/11
+## 2. anaconda create python3.6 new environment and new kernel 
+https://github.com/davidkorea/NLP_201811/issues/12
 ### 2.1. create a new environment and install tensorflow 
 
 1. ```conda create -n tensorflow pip python=3.6``` create new env
