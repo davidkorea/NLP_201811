@@ -31,6 +31,8 @@ https://github.com/davidkorea/NLP_201811/issues/12
 2. Issue on mac python3.7 install tensorflow https://github.com/davidkorea/NLP_201811/issues/9
 3. Issue on mac anaconda python3.7 install tensorflow https://github.com/davidkorea/NLP_201811/issues/10
 
+4. [tensorflow_RNN_LSTM_Predict_TimeSeries](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_RNN_LSTM_Predict_TimeSeries.md)
+
 # 2019-01-10
 
 https://github.com/MorvanZhou/tutorials/blob/master/tensorflowTUT/tf20_RNN2.2/full_code.py
