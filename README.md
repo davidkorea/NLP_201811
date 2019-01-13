@@ -1,5 +1,8 @@
 # NLP_201811
 
+# 2019-01-13
+
+
 # 2019-01-12 tensorflow does NOT support python3.7
 
 ## 1. anaconda create a new env and install python3.6 
