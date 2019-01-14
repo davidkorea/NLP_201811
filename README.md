@@ -1,5 +1,8 @@
 # NLP_201811
 
+# 2019-01-14
+OFFICIAL: [Neural Machine Translation (seq2seq) Tutorial](https://github.com/tensorflow/nmt#introduction)
+
 # 2019-01-13
 [tensorflow_Deep_RNN](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_Deep_RNN.md)
 
