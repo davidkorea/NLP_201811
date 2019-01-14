@@ -1,6 +1,7 @@
 # NLP_201811
 
 # 2019-01-13
+[tensorflow_Deep_RNN](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_Deep_RNN.md)
 
 
 # 2019-01-12 tensorflow does NOT support python3.7
