@@ -24,3 +24,5 @@
 5. [tensorflow_RNN_LSTM_Predict_TimeSeries](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_RNN_LSTM_Predict_TimeSeries.md)
 
 6. [tensorflow_Deep_RNN](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/code/tensorflow_Deep_RNN.md)
+-----
+7. Attention Mechanism
