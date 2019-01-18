@@ -2,6 +2,7 @@
 # 2019-01-18
 
 1. [Neural Machine Translation using word level language model and embeddings in Keras](https://github.com/devm2024/nmt_keras/blob/master/base.ipynb)
+2. [simple sequence-to-sequence model with dynamic unrolling](https://github.com/ematvey/tensorflow-seq2seq-tutorials/blob/master/1-seq2seq.ipynb)
 
 # 2019-01-17 seq2seq
 
