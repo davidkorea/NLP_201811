@@ -1,4 +1,7 @@
 # NLP_201811
+# 2019-01-18
+
+1. [Neural Machine Translation using word level language model and embeddings in Keras](https://github.com/devm2024/nmt_keras/blob/master/base.ipynb)
 
 # 2019-01-17 seq2seq
 
