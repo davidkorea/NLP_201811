@@ -2,6 +2,133 @@
 # 2019-01-22
 1. [Tensorflow nmt源码解析](https://blog.csdn.net/stupid_3/article/details/78956470)
 2. [运行tensorflow_NMT模型](https://blog.csdn.net/Moluth/article/details/79142689)
+3.怎么用nmt
+
+
+
+3.1 数据格式
+
+仿照着之前下载的8个文件，做好数据对应，其中三个文件是英文的一句一行单词之间通过空格分隔，还有三个是越南语，格式和英语一样。vocab.vi 是越南语的词汇表取了常用的5000个词,vocab.en 是英语词汇表取了最常用的前5000个词语，但是它们前三个词语是<unk> 代表不认识的词语 <s>开始 </s>结束，这三个词必须在词汇表中否则nmt模型不能工作，具体原因官方github上有解释。
+
+
+
+3.2 模型参数
+
+python -m nmt.nmt --src=en --tgt=vi --vocab_prefix=/tmp/nmt_data/vocab  --train_prefix=/tmp/nmt_data/train --dev_prefix=/tmp/nmt_data/tst2012  --test_prefix=/tmp/nmt_data/tst2013 --out_dir=/tmp/nmt_model --num_train_steps=12000 --steps_per_stats=100 --num_layers=2 --num_units=128 --dropout=0.2 --metrics=bleu
+
+这条命令中只是使用了个别的参数，还有一些其他有用的参数，如下：
+
+forget_bias=1.0 这个是lstm的记忆力参数,取值范围在[0.0,1.0]越大代表记性越好
+
+batch_size=128 这个代表每次训练128条数据，取值是正整数，如果太大，需要的内存会增大
+
+learning_rate=1 学习率，正常情况下设置成小于等于1的值，默认值 1
+
+num_gpus=1 机器中gpu个数，默认值是1
+
+eos='</s>' 结束符配置成</s>,参考3.1 数据格式
+
+sos='<s>' 同上，这两个参数没有配置的必要
+
+src_max_len=50 源输入最大长度，针对我们训练的英语-越南语模型中，意思是每行最长接受50个英语单词，其余忽略
+
+tgt_max_len=50 目标输出最大长度，默认值50.这个和上面的参数有时很有用，假设我们要做文章摘要，参数可以这样写--src_max_len=800 --tgt_max_len=150，这两个参数都会影响训练和预测速度，他们越大，模型跑的越慢。
+
+share_vocab=False 这个意思是是否公用词汇表，假设做文章摘要，把这个设置成True。因为不是做翻译，输入和输出是同一种语言。
+
+还有一些其他参数，不再列举，可以去源代码中nmt.py文件中查看。
+
+
+
+3.3 训练一个聊天机器人（汉语）
+3.3.1 准备好训练数据，开发数据，测试数据，汉语常用汉字表（前5000个）即可
+
+仿照3.1中的数据，来准备训练数据。这次不是翻译数据，而是对话数据。比如：
+
+train.src
+
+你 好 ！
+
+很 高 兴 认 识 你 。
+
+当 然 很 激 动 了。
+
+....
+
+
+
+
+
+
+train.tgt
+
+你 好 呀 ！
+
+我 也 是 呢 ， 你 有 没 有 很 激 动 。
+
+激 动 你 妹 啊 。
+
+....
+
+
+
+
+vocab.src
+
+<unk>
+<s>
+</s>
+，
+的
+。
+<sp>
+一
+0
+是
+1
+、
+在
+有
+不
+了
+2
+人
+中
+大
+国
+年
+
+...
+
+
+
+
+3.3.2 接下来进行训练
+
+python -m nmt.nmt --src=src --tgt=tgt --vocab_prefix=/tmp/chat_data/vocab  --train_prefix=/tmp/chat_data/train --dev_prefix=/tmp/chat_data/dev  --test_prefix=/tmp/chat_data/test --out_dir=/tmp/nmt_model --num_train_steps=192000 --steps_per_stats=100 --num_layers=2 --num_units=256 --dropout=0.2 --metrics=bleu --src_max_len=80 --tgt_max_len=80 --share_vocab=True
+
+经过漫长的训练，聊天模型训练完毕
+
+
+
+3.3.3 集成到项目
+
+有三种方案将训练的模型集成到项目中：
+
+（1）对nmt进行部分修改，在项目代码中调用预测，使结果以文件形式展示，然后去文件中提取结果。优点：改动少，可以快速集成。 缺点：运行速度很慢
+
+（2）对nmt进行部分修改，在项目代码中调用预测，只是要给nmt的源代码添加参数和返回值，返回值就是结果。 优点：改动少，可以快速集成。缺点：运行速度慢
+
+（3）把nmt重构，写成一个对象，不要释放session，这样调用的速度会快一些。优点：运行速度快。 缺点：需要对nmt进行深入了解，开发周期长
+
+前两种速度慢的原因是，每次运行都要加载大量的参数，加载词汇。第一种方案还多进行了两次io操作。
+
+
+--------------------- 
+作者：Moluth 
+来源：CSDN 
+原文：https://blog.csdn.net/Moluth/article/details/79142689 
+版权声明：本文为博主原创文章，转载请附上博文链接！
 
 # 2019-01-21
 
