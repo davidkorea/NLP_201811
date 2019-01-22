@@ -1,6 +1,7 @@
 # NLP_201811
 # 2019-01-22
 1. [Tensorflow nmt源码解析](https://blog.csdn.net/stupid_3/article/details/78956470)
+2. [](https://blog.csdn.net/Moluth/article/details/79142689)
 
 # 2019-01-21
 
