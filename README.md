@@ -2,6 +2,7 @@
 # 2019-01-22
 ## 1. BERT
 1. [NLP seq2seq BERT blogs](https://www.jianshu.com/u/abfe703a00fe)
+2. [github of the above blog author](https://github.com/FuYanzhe2)
 2. [google-research/bert](https://github.com/google-research/bert)
 ## 2. [Tensorflow nmt源码解析](https://blog.csdn.net/stupid_3/article/details/78956470)
 ## 3. [运行tensorflow_NMT模型](https://blog.csdn.net/Moluth/article/details/79142689)
