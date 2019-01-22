@@ -1,4 +1,6 @@
 # NLP_201811
+# 2019-01-22
+1. [](https://blog.csdn.net/stupid_3/article/details/78956470)
 
 # 2019-01-21
 
