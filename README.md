@@ -1,7 +1,7 @@
 # NLP_201811
 # 2019-01-23
 1. [The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)](http://jalammar.github.io/illustrated-bert/)
-2. [](http://jalammar.github.io/illustrated-transformer/)
+2. [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
 # 2019-01-22
 ## 1. BERT
 1. [NLP seq2seq BERT blogs](https://www.jianshu.com/u/abfe703a00fe)
