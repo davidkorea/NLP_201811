@@ -1,6 +1,7 @@
 # NLP_201811
 # 2019-01-24
 1. [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+![](https://i.loli.net/2019/01/24/5c49834d77c27.png)
 
 2. OFFICIAL: [Neural Machine Translation (seq2seq) Tutorial](https://github.com/tensorflow/nmt#introduction)
 
