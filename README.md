@@ -1,9 +1,11 @@
 # NLP_201811
 # 2019-01-24
 1. [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
-![](https://i.loli.net/2019/01/24/5c49834d77c27.png)
+![](https://i.loli.net/2019/01/24/5c49834daf3ab.png)
 
 2. OFFICIAL: [Neural Machine Translation (seq2seq) Tutorial](https://github.com/tensorflow/nmt#introduction)
+![](https://i.loli.net/2019/01/24/5c49834d77c27.png)
+
 
 3. [深度学习中的注意力机制](https://mp.weixin.qq.com/s?__biz=MzA4Mzc0NjkwNA==&mid=2650783542&idx=1&sn=3846652d54d48e315e31b59507e34e9e&chksm=87fad601b08d5f17f41b27bb21829ed2c2e511cf2049ba6f5c7244c6e4e1bd7144715faa8f67&mpshare=1&scene=1&srcid=1113JZIMxK3XhM9ViyBbYR76#rd)
 
