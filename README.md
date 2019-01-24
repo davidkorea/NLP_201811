@@ -6,11 +6,15 @@
 > decoder init hidden state in randomly generated? or get from encoder???
 
 ## 2. OFFICIAL: [Neural Machine Translation (seq2seq) Tutorial](https://github.com/tensorflow/nmt#introduction)
+**current target hidden state H_t**
 
 ![](https://i.loli.net/2019/01/24/5c49834d77c27.png)
 
 
+
+
 ## 3. [深度学习中的注意力机制](https://mp.weixin.qq.com/s?__biz=MzA4Mzc0NjkwNA==&mid=2650783542&idx=1&sn=3846652d54d48e315e31b59507e34e9e&chksm=87fad601b08d5f17f41b27bb21829ed2c2e511cf2049ba6f5c7244c6e4e1bd7144715faa8f67&mpshare=1&scene=1&srcid=1113JZIMxK3XhM9ViyBbYR76#rd)
+**last target hidden state H_t-1**
 
 ![](http://mmbiz.qpic.cn/mmbiz_png/ptp8P184xjxeRHqppry03SX1TTiblocHfEic80ZyYfA1hF6F58uYTKHl7g8tn90MFIQZpNtCJHUjG1O9jYkwsnNA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
