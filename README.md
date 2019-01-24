@@ -1,4 +1,9 @@
 # NLP_201811
+# 2019-01-24
+1. Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
+
+2. 
+
 # 2019-01-23
 1. [The Illustrated BERT, ELMo, and co. (How NLP Cracked Transfer Learning)](http://jalammar.github.io/illustrated-bert/)
 2. [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/) - [CN](https://www.jianshu.com/p/e7d8caa13b21)
