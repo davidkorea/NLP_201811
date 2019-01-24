@@ -1,5 +1,5 @@
 # NLP_201811
-# 2019-01-24
+# 2019-01-24 NMT - Seq2seq Models With Attention
 ## 1. [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
 ![](https://i.loli.net/2019/01/24/5c49834daf3ab.png)
 
