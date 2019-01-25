@@ -7,8 +7,9 @@
 ![](https://i.loli.net/2019/01/25/5c4a9ea403070.png)
 ## 3. All you need is Attention
 Only attension without RNNs, called Transformer.
+![]()
 
-
+![]()
 
 
 
