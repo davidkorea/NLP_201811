@@ -1,7 +1,10 @@
 # NLP_201811
 
-https://github.com/KuniXl?tab=repositories
+# 2019-01-25
 
+## 1. https://github.com/KuniXl?tab=repositories
+## 2. Multiplicative Attention
+![](https://i.loli.net/2019/01/25/5c4a9ea403070.png)
 
 # 2019-01-24 NMT - Seq2seq Models With Attention
 ## 1. [Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)](http://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)
