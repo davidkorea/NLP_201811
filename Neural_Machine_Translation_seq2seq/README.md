@@ -1,42 +1,6 @@
-<div id="content">
-      <header class="container-fluild header">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="align-items-middle">
-                <button type="button" id="sidebarCollapse" class="btn btn-toggle-sidebar">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </button>
+# Machine Translation can be thought of as a sequence-to-sequence learning problem.
 
-                <h1 style="display: inline-block">02. Machine Translation</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <main class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="ud-atom">
-  <h3></h3>
-  <div>
-  <p>Machine Translation can be thought of as a sequence-to-sequence learning problem.</p>
-</div>
-
-</div>
-<div class="divider"></div><div class="ud-atom">
-  <h3></h3>
-  <div>
-  <figure class="figure">
-    <img src="img/nlp-m1-l4-machine-translation.002.png" alt="Machine Translation: A Sequence-to-Sequence Learning Problem" class="img img-fluid">
-    <figcaption class="figure-caption">
-      <p>Machine Translation: A Sequence-to-Sequence Learning Problem</p>
-    </figcaption>
-  </figure>
-</div>
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.002.png)
 
 
 </div>
