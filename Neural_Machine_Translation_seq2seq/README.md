@@ -304,21 +304,6 @@ At any time <span class="mathquill ud-math"><span class="katex"><span class="kat
 <p>Feel free to experiment with these different approaches to see what architecture works best for your task. Keep in mind that these mechanisms typically add to the model complexity, which means you need more data and time to train the additional parameters.</p>
 </div>
 
-</div>
-<div class="divider"></div>
-          </div>
-        </div>
-      </main>
 
-      <footer class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <p class="text-center">
-                <a href="https://github.com/udacimak/udacimak#readme" target="_blank">udacimak v1.2.1</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+
+     
