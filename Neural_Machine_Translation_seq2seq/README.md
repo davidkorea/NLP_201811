@@ -20,3 +20,14 @@ Let's develop a basic neural network architecture for machine translation.
 The key thing to note here is that instead of a single word vector or document vector as input, we need to represent each sentence in the source language as a sequence of word vectors.
 
 Therefore, we convert each word or token into a one-hot encoded vector, and stack those vectors into a matrix - this becomes our input to the neural network.
+
+![]()
+
+You may be wondering what to do about sequences of different length: One common approach is to simply take the sequence of maximum length in your corpus, and pad each sequence with a special token to make them all the same length.
+
+## 1.2 Basic RNN Architecture
+
+Once we have the sequence of word vectors, we can feed them in one at a time to the neural network.
+
+![]()
+
