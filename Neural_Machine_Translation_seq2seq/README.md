@@ -31,3 +31,10 @@ Once we have the sequence of word vectors, we can feed them in one at a time to 
 
 ![]()
 
+### 1.2.1 Embedding Layer
+The first layer of the network is typically an embedding layer that helps enhance the representation of the word. This produces a more compact word vector that is then fed into one or more recurrent layers.
+
+### 1.2.2 Recurrent Layer(s)
+This is where the magic happens! The recurrent layer(s) help incorporate information from across the sequence, allowing each output word to be affected by potentially any previous input word.
+
+Note: You could skip the embedding step, and feed in the one-hot encoded vectors directly to the recurrent layer(s). This may reduce the complexity of the model and make it easier to train, but the quality of translation may suffer as one-hot encoded vectors cannot exploit similarities and differences between words.
