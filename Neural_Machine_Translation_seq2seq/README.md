@@ -11,11 +11,11 @@ Experimenting with different network architectures and recurrent layer units (su
 
 Commercial-grade translation systems need to deal with a much larger vocabulary, and hence have to use a much more complex model, apply different optimizations, etc. Training such models requires a lot of data and compute time.
 
-# 1. Neural Net Architecture for Machine Translation
+# Neural Net Architecture for Machine Translation
 
 Let's develop a basic neural network architecture for machine translation.
 
-## 1.1 Input Representation
+## 1. Input Representation
 
 The key thing to note here is that instead of a single word vector or document vector as input, we need to represent each sentence in the source language as a sequence of word vectors.
 
@@ -25,28 +25,28 @@ Therefore, we convert each word or token into a one-hot encoded vector, and stac
 
 You may be wondering what to do about sequences of different length: One common approach is to simply take the sequence of maximum length in your corpus, and pad each sequence with a special token to make them all the same length.
 
-## 1.2 Basic RNN Architecture
+## 2. Basic RNN Architecture
 
 Once we have the sequence of word vectors, we can feed them in one at a time to the neural network.
 
 ![]()
 
-### 1.2.1 Embedding Layer
+### 2.1 Embedding Layer
 The first layer of the network is typically an embedding layer that helps enhance the representation of the word. This produces a more compact word vector that is then fed into one or more recurrent layers.
 
-### 1.2.2 Recurrent Layer(s)
+### 2.2 Recurrent Layer(s)
 This is where the magic happens! The recurrent layer(s) help incorporate information from across the sequence, allowing each output word to be affected by potentially any previous input word.
 
 Note: You could skip the embedding step, and feed in the one-hot encoded vectors directly to the recurrent layer(s). This may reduce the complexity of the model and make it easier to train, but the quality of translation may suffer as one-hot encoded vectors cannot exploit similarities and differences between words.
 
-### 1.2.3 Dense Layer(s)
+### 2.3 Dense Layer(s)
 The output of the recurrent layer(s) is fed into one or more fully-connected dense layers that produce softmax output, which can be interpreted as one-hot encoded words in the target language.
 
 As each word is passed in as input, its corresponding translation is obtained from the final output. The output words are then collected in a sequence to produce the complete translation of the input sentence.
 
 Note: For efficient processing we would like to capture the output in a matrix of fixed size, and for that we need to have output sequences of the same length. Again, we can achieve this by using the same padding technique as we used for input.
 
-### 1.2.4 Recurrent Layer: Internals
+### 2.4 Recurrent Layer: Internals
 Let’s take a closer look at what is going on inside a recurrent layer.
 
 - The input word vector x_t is first multiplied by the weight matrix: W_x
