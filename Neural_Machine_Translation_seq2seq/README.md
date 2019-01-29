@@ -2,7 +2,7 @@
 
 Machine Translation can be thought of as a sequence-to-sequence learning problem.
 
-[](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.002.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.002.png)
 
 You have one sequence going in, i.e. a sentence in the source language,
 and one sequence coming out, its translation in the target language.
@@ -23,7 +23,7 @@ The key thing to note here is that instead of a single word vector or document v
 
 Therefore, we convert each word or token into a one-hot encoded vector, and stack those vectors into a matrix - this becomes our input to the neural network.
 
-![]()
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.003.png)
 
 You may be wondering what to do about sequences of different length: One common approach is to simply take the sequence of maximum length in your corpus, and pad each sequence with a special token to make them all the same length.
 
@@ -31,7 +31,7 @@ You may be wondering what to do about sequences of different length: One common 
 
 Once we have the sequence of word vectors, we can feed them in one at a time to the neural network.
 
-![]()
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.004.png)
 
 ### 2.1 Embedding Layer
 The first layer of the network is typically an embedding layer that helps enhance the representation of the word. This produces a more compact word vector that is then fed into one or more recurrent layers.
@@ -59,7 +59,7 @@ Let’s take a closer look at what is going on inside a recurrent layer.
 
 Let’s simplify this diagram and look at the bigger picture again.
 
-![]()
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.005.png)
 
 The key thing to note here is that the RNN’s state h_t  is used to produce the output y_t , as well as looped back to produce the next state.In summary, a recurrent layer computes the current state h_t  as:
 
@@ -70,7 +70,7 @@ Here (⋅) is some non-linear activation function, x_t  is the input vector, W_x
 ### 2.5 Unrolling an RNN
 It’s easier to understand how this works over time if we unroll it.
 
-![]()
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.006.png)
 
 Each copy of the network you see represents its state at the respective time step.
 
@@ -82,7 +82,7 @@ The main drawback of such a simple model is that we are trying to read the corre
 
 What we should ideally do is to let the network learn an internal representation of the entire input sentence, and then start generating the output translation. In fact, you need two different networks in order to achieve this.
 
-![]()
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.007.png)
 
 The first is called an Encoder, which accepts the source sentence, one word at a time, and captures its overall meaning in a single vector. This is simply the state vector at the last time step. Note that the encoder network is not used to produce any outputs.
 
@@ -96,7 +96,7 @@ This process is typically continued for a fixed number of iterations, with the i
 
 If we roll back the time steps, we can see what the overall architecture looks like.
 
-![]()
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.008.png)
 
 
 This encoder-decoder design very popular for several sequence-to-sequence tasks, not just Machine Translation.
