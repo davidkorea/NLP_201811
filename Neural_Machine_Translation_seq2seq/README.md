@@ -63,7 +63,7 @@ Let’s simplify this diagram and look at the bigger picture again.
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.006.png)
 
-The key thing to note here is that the RNN’s state h_t  is used to produce the output y_t , as well as looped back to produce the next state.In summary, a recurrent layer computes the current state h_t  as:
+**The key thing to note here is that the RNN’s state h_t  is used to produce the output y_t , as well as looped back to produce the next state.** In summary, a recurrent layer computes the current state h_t  as:
 
 h_t = f(x_t W_x + h_{t-1} W_h + b)
 
