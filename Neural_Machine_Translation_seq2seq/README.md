@@ -67,7 +67,7 @@ Let’s simplify this diagram and look at the bigger picture again.
 
 h_t = f(x_t W_x + h_{t-1} W_h + b)
 
-Here (⋅) is some non-linear activation function, x_t  is the input vector, W_x  is the input weight matrix, h_{t-1}  is the previous state vector, W_h  is the recurrent weight matrix and bb is the bias vector.
+Here f(⋅) is some non-linear activation function, x_t  is the input vector, W_x  is the input weight matrix, h_{t-1}  is the previous state vector, W_h  is the recurrent weight matrix and bb is the bias vector.
 
 ### 2.5 Unrolling an RNN
 It’s easier to understand how this works over time if we unroll it.
