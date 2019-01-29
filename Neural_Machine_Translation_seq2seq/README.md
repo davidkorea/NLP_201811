@@ -54,3 +54,14 @@ Let’s take a closer look at what is going on inside a recurrent layer.
 - Meanwhile, the state vector from the previous time step h_{t-1} is multiplied with another weight matrix W_h to produce our second intermediate result:h_{t-1} * W_h
 - These two are then added together, and passed through an activation function such as ReLU, sigmoid or tanh to produce the state for the current time step: h_t
 - This state vector is passed on as input to the next fully-connected layer, that applies another weight matrix, bias and activation to produce the output: y_t
+
+Let’s simplify this diagram and look at the bigger picture again.
+
+![]()
+
+The key thing to note here is that the RNN’s state h_t  is used to produce the output y_t , as well as looped back to produce the next state.In summary, a recurrent layer computes the current state h_t  as:
+
+h_t = f(x_t W_x + h_{t-1} W_h + b)
+
+Here (⋅) is some non-linear activation function, x_t  is the input vector, W_x  is the input weight matrix, h_{t-1}  is the previous state vector, W_h  is the recurrent weight matrix and bb is the bias vector.
+
