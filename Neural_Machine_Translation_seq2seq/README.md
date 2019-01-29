@@ -49,3 +49,6 @@ Note: For efficient processing we would like to capture the output in a matrix o
 ### 1.2.4 Recurrent Layer: Internals
 Let’s take a closer look at what is going on inside a recurrent layer.
 
+- The input word vector x_t is first multiplied by the weight matrix: W_x
+- Then bias values are added to produce our first intermediate result: x_t * W_x + b
+- Meanwhile, the state vector from the previous time step h_{t-1} is multiplied with another weight matrix W_h to produce our second intermediate result:h_{t-1} * W_h
