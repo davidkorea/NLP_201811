@@ -1,4 +1,4 @@
-# 02. Machine Translation
+# Machine Translation
 
 Machine Translation can be thought of as a sequence-to-sequence learning problem.
 
