@@ -92,7 +92,7 @@ The second network is called a Decoder, which then interprets the final sentence
 
 The first time step for the decoder network is special. It is fed in the final sentence vector from the encoder h_t , and given a sentinel input to kickstart the process. The recurrent portion of the network produces a state vector c_0 , and with that the fully-connected portion produces the first output word in the target language, y_0 .
 
-At each subsequent time step t, the decoder network uses its own previous state c_{t-1}  as well as its own previous output y_{t-1} , in order to produce the current output, y_t .
+At each subsequent time step t, the decoder network **uses its own previous state c_{t-1}  as well as its own previous output y_{t-1} , in order to produce the current output, y_t .**
 
 This process is typically continued for a fixed number of iterations, with the idea that the network will start producing special padding symbols after all meaningful words have been generated. Alternately, the network could be trained to output a stop symbol, such as a period (.), to indicate that the translation is complete.
 
