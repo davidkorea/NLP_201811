@@ -51,6 +51,8 @@ Note: For efficient processing we would like to capture the output in a matrix o
 ### 2.4 Recurrent Layer: Internals
 Let’s take a closer look at what is going on inside a recurrent layer.
 
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.005.png)
+
 - The input word vector x_t is first multiplied by the weight matrix: W_x
 - Then bias values are added to produce our first intermediate result: x_t * W_x + b
 - Meanwhile, the state vector from the previous time step h_{t-1} is multiplied with another weight matrix W_h to produce our second intermediate result:h_{t-1} * W_h
@@ -59,7 +61,7 @@ Let’s take a closer look at what is going on inside a recurrent layer.
 
 Let’s simplify this diagram and look at the bigger picture again.
 
-![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.005.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.006.png)
 
 The key thing to note here is that the RNN’s state h_t  is used to produce the output y_t , as well as looped back to produce the next state.In summary, a recurrent layer computes the current state h_t  as:
 
@@ -70,7 +72,7 @@ Here (⋅) is some non-linear activation function, x_t  is the input vector, W_x
 ### 2.5 Unrolling an RNN
 It’s easier to understand how this works over time if we unroll it.
 
-![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.006.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.007.png)
 
 Each copy of the network you see represents its state at the respective time step.
 
@@ -82,7 +84,7 @@ The main drawback of such a simple model is that we are trying to read the corre
 
 What we should ideally do is to let the network learn an internal representation of the entire input sentence, and then start generating the output translation. In fact, you need two different networks in order to achieve this.
 
-![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.007.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.008.png)
 
 The first is called an Encoder, which accepts the source sentence, one word at a time, and captures its overall meaning in a single vector. This is simply the state vector at the last time step. Note that the encoder network is not used to produce any outputs.
 
@@ -96,7 +98,7 @@ This process is typically continued for a fixed number of iterations, with the i
 
 If we roll back the time steps, we can see what the overall architecture looks like.
 
-![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.008.png)
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/nlp-m1-l4-machine-translation.009.png)
 
 
 This encoder-decoder design very popular for several sequence-to-sequence tasks, not just Machine Translation.
