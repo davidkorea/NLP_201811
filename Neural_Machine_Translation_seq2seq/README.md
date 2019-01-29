@@ -78,7 +78,7 @@ Each copy of the network you see represents its state at the respective time ste
 
 At any time t, the recurrent layer receives input x_t as well as the state vector from the previous step, h_{t-1}. This process is continued till the entire input is exhausted.
 
-The main drawback of such a simple model is that we are trying to read the corresponding output for each input word immediately. This would only work in situations where the source and target language have an almost one-to-one mapping between words.
+The main drawback딘점 of such a simple model is that we are trying to read the corresponding output for each input word immediately. This would only work in situations where the source and target language have an almost one-to-one mapping between words.
 
 ## 3. Encoder-Decoder Architecture
 
