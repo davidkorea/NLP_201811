@@ -52,3 +52,5 @@ Let’s take a closer look at what is going on inside a recurrent layer.
 - The input word vector x_t is first multiplied by the weight matrix: W_x
 - Then bias values are added to produce our first intermediate result: x_t * W_x + b
 - Meanwhile, the state vector from the previous time step h_{t-1} is multiplied with another weight matrix W_h to produce our second intermediate result:h_{t-1} * W_h
+- These two are then added together, and passed through an activation function such as ReLU, sigmoid or tanh to produce the state for the current time step: h_t
+- This state vector is passed on as input to the next fully-connected layer, that applies another weight matrix, bias and activation to produce the output: y_t
