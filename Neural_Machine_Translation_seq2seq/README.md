@@ -97,6 +97,16 @@ If we roll back the time steps, we can see what the overall architecture looks l
 ![]()
 
 
+This encoder-decoder design very popular for several sequence-to-sequence tasks, not just Machine Translation.
+
+Now, there are several variations of this design that can be used to enhance the performance of the network.
+
+- One option is to use different kinds of recurrent neural network units, such as LSTMs, GRUs etc. instead of vanilla RNN units. That allows the network to better analyze the input sequence, at the cost of additional model complexity.
+- Another dimension to explore is how many recurrent layers to use. Each layer effectively incorporates information from the input sequence, producing a compact state vector at each time step. Additional layers can essentially incorporate information across these state vectors.
+- Other more innovative approaches include adding in a backward encoder (bidirectional encoder-decoder model), feeding in the sentence vector to each time step of the decoder (attention mechanism), etc.
+
+Feel free to experiment with these different approaches to see what architecture works best for your task. Keep in mind that these mechanisms typically add to the model complexity, which means you need more data and time to train the additional parameters.
+
 
 
 
