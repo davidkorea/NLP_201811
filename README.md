@@ -1,4 +1,21 @@
 # NLP_201811
+# 2019-01-31
+### 1. argmax
+```numpy.argmax(a, axis=None, out=None)```
+- axis : int, optional. By default, the index is into the flattened array, otherwise along the specified axis.
+```python
+>>> a = np.arange(6).reshape(2,3)
+>>> a
+array([[0, 1, 2],
+       [3, 4, 5]])
+>>> np.argmax(a)  # 默认是展开所有元素并找出最大值的位置
+5
+>>> np.argmax(a, axis=0)
+array([1, 1, 1])
+>>> np.argmax(a, axis=1)
+array([2, 2])
+```
+
 # 2019-01-30
 
 # 2019-01-25
