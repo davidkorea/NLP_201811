@@ -1,6 +1,8 @@
 # NLP_201811
 # 2019-01-31
-### 1. argmax
+### 1. Udacity nano
+https://github.com/bkktimber
+### 2. argmax
 ```numpy.argmax(a, axis=None, out=None)```
 - axis : int, optional. By default, the index is into the flattened array, otherwise along the specified axis.
 ```python
