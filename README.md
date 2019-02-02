@@ -1,4 +1,21 @@
 # NLP_201811
+
+# 2019-02-02
+
+Lets Make a Question Answering chatbot using the bleeding edge in deep learning (Dynamic Memory Network). We'll go over different chatbot methodologies, then dive into how memory networks work, with accompanying code in Keras. 
+
+Code + Challenge for this video:
+https://github.com/llSourcell/How_to_...
+
+Nemanja's Winning Code:
+https://github.com/Nemzy/language-tra...
+
+Vishal's Runner up code:
+https://github.com/erilyth/DeepLearni...
+
+Web app to run the code yourself:
+https://ethancaballero.pythonanywhere...
+
 # 2019-01-31
 ### 1. Udacity nano
 https://github.com/bkktimber
