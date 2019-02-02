@@ -1,6 +1,7 @@
 # NLP_201811
 
-# 2019-02-02
+# 2019-02-02 https://www.youtube.com/watch?v=t5qgjJIBy9g
+
 
 Lets Make a Question Answering chatbot using the bleeding edge in deep learning (Dynamic Memory Network). We'll go over different chatbot methodologies, then dive into how memory networks work, with accompanying code in Keras. 
 
