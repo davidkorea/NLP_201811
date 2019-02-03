@@ -9,13 +9,13 @@ Code + Challenge for this video:
 https://github.com/llSourcell/How_to_...
 
 Nemanja's Winning Code:
-https://github.com/Nemzy/language-tra...
+https://github.com/Nemzy/language-translation/blob/master/neural_machine_translation.ipynb
 
 Vishal's Runner up code:
-https://github.com/erilyth/DeepLearni...
+https://github.com/erilyth/DeepLearning-Challenges/tree/master/Language_Translation
 
 Web app to run the code yourself:
-https://ethancaballero.pythonanywhere...
+https://ethancaballero.pythonanywhere.com/
 
 # 2019-01-31
 ### 1. Udacity nano
