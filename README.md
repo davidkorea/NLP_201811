@@ -1,5 +1,9 @@
 # NLP_201811
 
+# 2019-02-04
+
+come back home.. what to say...
+
 # 2019-02-02 https://www.youtube.com/watch?v=t5qgjJIBy9g
 
 
