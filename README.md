@@ -1,7 +1,10 @@
 # NLP_201811
 # 2019-02-11
 https://github.com/modin-project/modin
-
+```
+DaviddeMBP:~ david$ source activate tensorflow
+(tensorflow) DaviddeMBP:~ david$ pip3 install modin
+```
 
 # 2019-02-10
 first day saty at home alone
