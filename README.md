@@ -8,7 +8,7 @@ DaviddeMBP:~ david$ source activate tensorflow
 2. https://carbon.now.sh
 
 3. https://nteract.io/ download desktop app
-
+4. https://www.kite.com/
 
 
 # 2019-02-10
