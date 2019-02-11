@@ -3,7 +3,7 @@
 1. https://github.com/modin-project/modin
 ```
 DaviddeMBP:~ david$ source activate tensorflow
-(tensorflow) DaviddeMBP:~ david$ pip3 install modin
+(tensorflow) DaviddeMBP:~ david$ pip install modin
 ```
 2. https://carbon.now.sh
 
