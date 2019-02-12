@@ -9,7 +9,7 @@ InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
 	 _device="/job:localhost/replica:0/task:0/device:CPU:0"]
 	 (metrics_1/acc/Reshape, metrics_1/acc/Cast)]]
 ```
-1. --I get this error only when run my code on a GPU node (Tesla k80), ONLY on cpu
+1. ~~I get this error only when run my code on a GPU node (Tesla k80)~~, ONLY on cpu
 2. I do not get the error for batch_size = 1
 3. I do not get the error when I do not use metrics=['accuracy'] in compile.
 4. I get the error only for some particular architecture
