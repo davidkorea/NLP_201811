@@ -16,6 +16,10 @@ InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
 5. All the problems reported above have problems with arrays of the same dimensionality [n1,n2]
   vs [m1,m2] but my  case is [n] vs [n/r, r]
 
+> 1. error occurs on my local kernel on mac with tensorflow 1.12.0, keras 2.2.4
+> 2. no error on kaggle kernel with same version as above
+
+
 # 2019-02-11
 1. https://github.com/modin-project/modin
 ```
