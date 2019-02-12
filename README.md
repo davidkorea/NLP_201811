@@ -9,11 +9,11 @@ InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
 	 _device="/job:localhost/replica:0/task:0/device:CPU:0"]
 	 (metrics_1/acc/Reshape, metrics_1/acc/Cast)]]
 ```
-* I get this error only when run my code on a GPU node (Tesla k80)
-* I do not get the error for batch_size = 1
-* I do not get the error when I do not use metrics=['accuracy'] in compile.
-* I get the error only for some particular architecture
-* All the problems reported above have problems with arrays of the same dimensionality [n1,n2]
+1. I get this error only when run my code on a GPU node (Tesla k80)
+2. I do not get the error for batch_size = 1
+3. I do not get the error when I do not use metrics=['accuracy'] in compile.
+4. I get the error only for some particular architecture
+5. All the problems reported above have problems with arrays of the same dimensionality [n1,n2]
   vs [m1,m2] but my  case is [n] vs [n/r, r]
 
 # 2019-02-11
