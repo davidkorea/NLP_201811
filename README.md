@@ -1,6 +1,6 @@
 # NLP_201811
 
-# 2019-02-12
+# 2019-02-12 nano-machine translation
 ## 1. Error - https://github.com/kuza55/keras-extras/issues/7#issuecomment-447235795
 ```python
 InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
