@@ -2,7 +2,7 @@
 
 # 2019-02-12
 ## 1. Error - https://github.com/kuza55/keras-extras/issues/7#issuecomment-447235795
-```
+```python
 InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
 
 [[{{node metrics_1/acc/Equal}} = Equal[T=DT_FLOAT, 
