@@ -1,7 +1,7 @@
 # NLP_201811
 
 # 2019-02-12
-### 1. Error - https://github.com/kuza55/keras-extras/issues/7#issuecomment-447235795
+## 1. Error - https://github.com/kuza55/keras-extras/issues/7#issuecomment-447235795
 ```
 InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
 
@@ -9,7 +9,12 @@ InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
 	 _device="/job:localhost/replica:0/task:0/device:CPU:0"]
 	 (metrics_1/acc/Reshape, metrics_1/acc/Cast)]]
 ```
-
+* I get this error only when run my code on a GPU node (Tesla k80)
+* I do not get the error for batch_size = 1
+* I do not get the error when I do not use metrics=['accuracy'] in compile.
+* I get the error only for some particular architecture
+* All the problems reported above have problems with arrays of the same dimensionality [n1,n2]
+  vs [m1,m2] but my  case is [n] vs [n/r, r]
 
 # 2019-02-11
 1. https://github.com/modin-project/modin
