@@ -4,7 +4,8 @@
 1. Error
 ```
 InvalidArgumentError: Incompatible shapes: [21504] vs. [1024,21]
-	 [[{{node metrics_1/acc/Equal}} = Equal[T=DT_FLOAT, 
+
+[[{{node metrics_1/acc/Equal}} = Equal[T=DT_FLOAT, 
 	 _device="/job:localhost/replica:0/task:0/device:CPU:0"]
 	 (metrics_1/acc/Reshape, metrics_1/acc/Cast)]]
 ```
