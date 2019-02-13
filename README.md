@@ -1,5 +1,9 @@
 # NLP_201811
 
+# 2019-02-12
+1. Nice chrome attension for github **octotree**
+https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc?hl=en-US
+
 # 2019-02-12 nano-machine translation
 ## 1. Error - https://github.com/kuza55/keras-extras/issues/7#issuecomment-447235795
 ```python
