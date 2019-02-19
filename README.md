@@ -1,5 +1,14 @@
 # NLP_201811
 
+# 2019-02-19
+linux edit text
+1. ```vim filepath```
+2. ```i```,foor insert
+3. ```Esc```
+4. ```:wq```,for saving changes
+5. ```:q!```,for ignoring changes
+
+
 # 2019-02-15
 추워
 
