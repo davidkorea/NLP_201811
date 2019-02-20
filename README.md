@@ -1,5 +1,8 @@
 # NLP_201811
 
+# 2019-02-20
+start to linux for tencent cloud
+
 # 2019-02-19
 linux edit text
 1. ```vim filepath```
