@@ -1,5 +1,15 @@
 # NLP_201811
 
+# 2019-02-21
+
+windows 10 open image
+
+1. run ```regedit```
+2. go to ```HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Photo Viewer\Capabilities\FileAssociations```
+3. create ```문자열 값```, ```.jpg```,```.png```,```.bmp```,```.gif```
+4. copy the 값 of the exsited .tif to the new string keys above
+
+
 # 2019-02-20
 start to linux for tencent cloud
 
