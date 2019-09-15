@@ -64,21 +64,6 @@ DaviddeMBP:~ david$ source activate tensorflow
 4. https://www.kite.com/
 
 
-# 2019-02-10
-first day saty at home alone
-
-# 2019-02-09
-天宝
-# 2019-02-08
-드라마 데이
-# 2019-02-07
-외할아버지 생신 
-
-# 2019-02-06
-힘들어,드람 ㄱㅊ
-
-# 2019-02-05
-힘들다ㅠㅠ 
 
 # 2019-02-04
 
