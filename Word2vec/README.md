@@ -11,4 +11,11 @@ based on **distributed hypothesis**，分布式假设。即，一个单词的和
 - 不具备上下文语义，所有语境下都是相同的向量
 - 降维后，不能实现同一类名词，映射到相近的空间，apple banana
 
-中心词，预测周围的词
+中心词，预测周围的词, `the cat sat on the mat`, windows_size=1
+window pair: 
+- the: (the, cat) 
+- cat: (cat, the), (cat, sat)
+- sat：(sat, cat), (sat, on)
+
+input = ['the', 'cat', 'cat', 'sat', 'sat']
+label = ['cat', 'the', 'sat', 'cat', 'on']
