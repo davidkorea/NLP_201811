@@ -4,6 +4,8 @@
 ## 1.2 predict based
 if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
 
+https://blog.csdn.net/leadai/article/details/80249999
+
 `the cat sat on the mat`, window_size = 2
 
 - CBOW, **8 samples**
