@@ -1,4 +1,7 @@
 # word2vec
+[Word2Vec word embedding tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/)
+
+
 
 based on **distributed hypothesis**，分布式假设。即，一个单词的和其周围的单词语义更相近。
 
