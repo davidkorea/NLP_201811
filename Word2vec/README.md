@@ -2,9 +2,25 @@
 ## 1.1 Count based
 
 ## 1.2 predict based
-- CBOW
-- Skipgram
+if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
 
+`the cat sat on the mat`, window_size = 2
+
+- CBOW, **8 samples**
+  - the: [(cat, sat), the]
+  - cat: [(sat, on), cat]
+  - sat: [(the, cat), sat], [(on, the), sat]
+  - on: [(cat, sat), on]. [(the, mat), on]
+  - the: [(sat, on), the]
+  - mat: [(on, the), mat]
+
+- Skipgram, **18 samples**
+  - the: (the, cat), (the sat)
+  - cat: (cat, the), (cat, sat), (cat, on)
+  - sat: (sat, the), (sat, cat), (sat, on), (sat, the)
+  - on: (on, cat), (on, sat), (on, the), (on, mat)
+  - the: (the, sat), (the, on), (the, mat)
+  - mat: (mat, on), (mat, the)
 
 
 # word2vec
