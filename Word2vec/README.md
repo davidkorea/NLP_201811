@@ -9,23 +9,6 @@ if two words co-occur frequently, the vector of the the words would be similar(i
 
 ## 1.2 predict based
 
-
-if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
-
-https://blog.csdn.net/leadai/article/details/80249999
-
-
-
-`the cat sat on the mat`, window_size = 2
-
-### CBOW, **8 samples**
-  - the: [(cat, sat), the]
-  - cat: [(sat, on), cat]
-  - sat: [(the, cat), sat], [(on, the), sat]
-  - on: [(cat, sat), on]. [(the, mat), on]
-  - the: [(sat, on), the]
-  - mat: [(on, the), mat]
-
 输入是一个单词的one-hot，one-hot的每一维都是一个输入，和权重相乘后，作为隐藏层的输入，输出是词库中每个单词的下一个单词的概率。取第一个隐藏层的输入向量z为该单词的词向量。
 
 <img src="http://wx3.sinaimg.cn/large/006gDTsUgy1g75tl0ur6zj30hc0cv79k.jpg" width="600" data-width="600" >
@@ -44,6 +27,28 @@ https://blog.csdn.net/leadai/article/details/80249999
 
 <img src="http://ws3.sinaimg.cn/large/006gDTsUgy1g75x9f47ibj30z20cngv1.jpg" width="1262" data-width="1262" >
 
+使用前面2个单词预测后面的单词，但是此处还不是CBOW，因为CBOW使用 前一个 和 后一个 来预测 中心词
+<img src="http://ws1.sinaimg.cn/large/006gDTsUgy1g75xfrkyaej30hl093tc8.jpg"  width="600" data-width="600">
+
+
+
+
+# word2vec
+[Word2Vec word embedding tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/)
+
+
+if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
+
+https://blog.csdn.net/leadai/article/details/80249999
+
+### CBOW, **8 samples**
+  - the: [(cat, sat), the]
+  - cat: [(sat, on), cat]
+  - sat: [(the, cat), sat], [(on, the), sat]
+  - on: [(cat, sat), on]. [(the, mat), on]
+  - the: [(sat, on), the]
+  - mat: [(on, the), mat]
+  
 ### Skipgram, **18 samples**
   - the: (the, cat), (the sat)
   - cat: (cat, the), (cat, sat), (cat, on)
@@ -51,13 +56,7 @@ https://blog.csdn.net/leadai/article/details/80249999
   - on: (on, cat), (on, sat), (on, the), (on, mat)
   - the: (the, sat), (the, on), (the, mat)
   - mat: (mat, on), (mat, the)
-
-
-# word2vec
-[Word2Vec word embedding tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/)
-
-
-
+  
 based on **distributed hypothesis**，分布式假设。即，一个单词的和其周围的单词语义更相近。
 
 ## 1. Skip-gram
