@@ -28,12 +28,15 @@ https://blog.csdn.net/leadai/article/details/80249999
 
 输入是一个单词的one-hot，one-hot的每一维都是一个输入，和权重相乘后，作为隐藏层的输入，输出是词库中每个单词的下一个单词的概率。取第一个隐藏层的输入向量z为该单词的词向量。
 
-<img src="http://wx3.sinaimg.cn/large/006gDTsUgy1g75tl0ur6zj30hc0cv79k.jpg" width="600" data-width="600" align="right">
+<img src="http://wx3.sinaimg.cn/large/006gDTsUgy1g75tl0ur6zj30hc0cv79k.jpg" width="600" data-width="600" >
 
-实例中，无论输入是马英九还是蔡英文，输出都是宣誓就职。不同输入，如何才能使输出中“宣誓就职”的概率都最大呢？答案就是，经过weight变换后的向量应该在相近的空间，才能使得输入同样取得的最大概率。而相近空间的z作为词向量，就可以表达相近词义的单词的向量也比较接近。
+示例中，无论输入是马英九还是蔡英文，输出都是宣誓就职。不同输入，如何才能使输出中“宣誓就职”的概率都最大呢？答案就是，经过weight变换后的向量应该在相近的空间，才能使得输入同样取得的最大概率。而相近空间的z作为词向量，就可以表达相近词义的单词的向量也比较接近。
 
-<img src="http://wx1.sinaimg.cn/large/006gDTsUgy1g75tnpfer9j30hc0ctgrn.jpg" width="600" data-width="600" align="right">
+<img src="http://wx1.sinaimg.cn/large/006gDTsUgy1g75tnpfer9j30hc0ctgrn.jpg" width="600" data-width="600" >
 
+而只看一个单词，其下一个单词的可能性是千千万万的。那么使用前2个，前3个单词预测下一个单词。但是每个单词的权重矩阵需要相同，及w_t-1的第一维和隐藏层第一个neuron的权重 与 w_t-2的第一维和隐藏层第一个neuron的权重 需要一直。其中一个原因是，交换w_t-1和w_t-2两个单词的位置，可以获得同样的词向量z，但如果权重矩阵不一样，那么交换位置后的词向量也将变化。
+
+<img src="http://ws4.sinaimg.cn/large/006gDTsUgy1g75u5n08nkj30gt0bmwib.jpg" width="600" data-width="600" >
 
 ### Skipgram, **18 samples**
   - the: (the, cat), (the sat)
