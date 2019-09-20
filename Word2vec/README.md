@@ -28,9 +28,9 @@ https://blog.csdn.net/leadai/article/details/80249999
 
 输入是一个单词的onthot，输出使词库中每个单词是下一个单词的概率
 
-<img src="http://wx3.sinaimg.cn/large/006gDTsUgy1g75tl0ur6zj30hc0cv79k.jpg" width="500" data-width="500" data-height="461" align="left">
+<img src="http://wx3.sinaimg.cn/large/006gDTsUgy1g75tl0ur6zj30hc0cv79k.jpg" width="400" data-width="400"  align="left">
 
-<img src="http://wx1.sinaimg.cn/large/006gDTsUgy1g75tnpfer9j30hc0ctgrn.jpg" width="500" data-width="500" data-height="461" align="right">
+<img src="http://wx1.sinaimg.cn/large/006gDTsUgy1g75tnpfer9j30hc0ctgrn.jpg" width="400" data-width="400" align="right">
 
 ### Skipgram, **18 samples**
   - the: (the, cat), (the sat)
