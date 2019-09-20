@@ -8,13 +8,15 @@ if two words co-occur frequently, the vector of the the words would be similar(i
 - Glove
 
 ## 1.2 predict based
+
+
 if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
 
 https://blog.csdn.net/leadai/article/details/80249999
 
 `the cat sat on the mat`, window_size = 2
 
-- CBOW, **8 samples**
+### CBOW, **8 samples**
   - the: [(cat, sat), the]
   - cat: [(sat, on), cat]
   - sat: [(the, cat), sat], [(on, the), sat]
@@ -22,7 +24,11 @@ https://blog.csdn.net/leadai/article/details/80249999
   - the: [(sat, on), the]
   - mat: [(on, the), mat]
 
-- Skipgram, **18 samples**
+输入是一个单词的onthot，输出使词库中每个单词是下一个单词的概率
+
+![image](http://wx3.sinaimg.cn/large/006gDTsUgy1g75tl0ur6zj30hc0cv79k.jpg)
+
+### Skipgram, **18 samples**
   - the: (the, cat), (the sat)
   - cat: (cat, the), (cat, sat), (cat, on)
   - sat: (sat, the), (sat, cat), (sat, on), (sat, the)
