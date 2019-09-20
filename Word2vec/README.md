@@ -39,6 +39,8 @@ https://blog.csdn.net/leadai/article/details/80249999
 - 另一个原因是，每次输入一般都是十万维，因此参数超级多，使用同样权重矩阵可以减少训练参数
 
 <img src="http://ws4.sinaimg.cn/large/006gDTsUgy1g75u5n08nkj30gt0bmwib.jpg" width="600" data-width="600" >
+<img src="http://ws2.sinaimg.cn/large/006gDTsUgy1g75x7zsgonj30hd0cn799.jpg" alt="image" width="625" data-width="625" data-height="455">
+
 
 ### Skipgram, **18 samples**
   - the: (the, cat), (the sat)
