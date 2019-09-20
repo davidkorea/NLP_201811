@@ -59,13 +59,20 @@ if we have enough training data, skipgram maybe better than CBOW, because skipgr
   - the: (the, sat), (the, on), (the, mat)
   - mat: (mat, on), (mat, the)
   
-based on **distributed hypothesis**，分布式假设。即，一个单词的和其周围的单词语义更相近。
+Based on **distributed hypothesis**，分布式假设。即，一个单词的和其周围的单词语义更相近。
+
+Taking an input word and then attempting to estimate the probability of other words appearing close to that word.  This is called the skip-gram approach.
+
+Continuous Bag Of Words (CBOW), does the opposite – it takes some context words as input and tries to find the single word that has the highest probability of fitting that context.
 
 ## 1. Skip-gram
+
+
+
 我的理解是，类似于ngram，两个单词总是同时出现，因此，我就使得，给定中心词，其周边词出现的概率P（周围词|中心词）越大越好。而在求得这个概率最大的同时，也训练出了weights，拿此weights当做词向量
 
-- 不具备上下文语义，所有语境下都是相同的向量
-- 降维后，不能实现同一类名词，映射到相近的空间，apple banana
+- ？？？不具备上下文语义，所有语境下都是相同的向量
+- ？？？降维后，不能实现同一类名词，映射到相近的空间，apple banana
 
 中心词，预测周围的词, `the cat sat on the mat`, windows_size=1
 
@@ -77,3 +84,9 @@ based on **distributed hypothesis**，分布式假设。即，一个单词的和
 input = ['the', 'cat', 'cat', 'sat', 'sat']
 label = ['cat', 'the', 'sat', 'cat', 'on']
 ```
+if we take the word “cat” it will be one of the words in the 10,000 word vocabulary. Therefore we can represent it as a 10,000 length one-hot vector.  
+
+We then interface this input vector to a 300 node hidden layer. The weights connecting this layer will be our new word vectors.
+The activations of the nodes in this hidden layer are simply linear summations of the weighted inputs.
+
+These nodes are then fed into a softmax output layer.  During training, we want to change the weights of this neural network so that words surrounding “cat” have a higher probability in the softmax output layer. we would want our network to assign large probabilities to words like “the”, “sat” and “on” when "cat" is given as the center(input) word (given lots of sentences like “the cat sat on the mat”).
