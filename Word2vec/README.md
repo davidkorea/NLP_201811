@@ -1,4 +1,7 @@
 # 1. Word Embedding
+
+**You shall know a word by the company it keeps.** 阅读理解，根据上下文推测一个单词含义
+
 ## 1.1 Count based
 if two words co-occur frequently, the vector of the the words would be similar(inner product)
 
