@@ -1,5 +1,8 @@
 # 1. Word Embedding
 ## 1.1 Count based
+if two words co-occur frequently, the vector of the the words would be similar(inner product)
+
+- Glove
 
 ## 1.2 predict based
 if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
