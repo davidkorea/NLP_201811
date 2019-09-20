@@ -90,3 +90,39 @@ We then interface this input vector to a 300 node hidden layer. The weights conn
 The activations of the nodes in this hidden layer are simply linear summations of the weighted inputs.
 
 These nodes are then fed into a softmax output layer.  During training, we want to change the weights of this neural network so that words surrounding “cat” have a higher probability in the softmax output layer. we would want our network to assign large probabilities to words like “the”, “sat” and “on” when "cat" is given as the center(input) word (given lots of sentences like “the cat sat on the mat”).
+
+The weight matrix essentially becomes a look-up or encoding table of our words.  Not only that, but these **weight values contain context information** due to the way we’ve trained our network.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
