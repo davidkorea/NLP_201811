@@ -35,14 +35,14 @@ predictiion based 的其它形式
 - Skipgram
 
 
-# word2vec
+# 2 Word2vec
 [Word2Vec word embedding tutorial in Python and TensorFlow](http://adventuresinmachinelearning.com/word2vec-tutorial-tensorflow/)
 
 
-if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW.
+if we have enough training data, skipgram maybe better than CBOW, because skipgram can generate more training sample pairs than CBOW. https://blog.csdn.net/leadai/article/details/80249999
 
-https://blog.csdn.net/leadai/article/details/80249999
-
+**`the cat sat on the mat`, windows_size=1**
+ 
 ### CBOW, **8 samples**
   - the: [(cat, sat), the]
   - cat: [(sat, on), cat]
