@@ -1,4 +1,7 @@
 # NLP_201811
+
+word2vec
+
 # 2019-09-10
 
 spell correct
