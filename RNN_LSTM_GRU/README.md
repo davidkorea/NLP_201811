@@ -75,6 +75,10 @@ Through the mathmatic notation and equation we can find that:
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/RNNBP2.png?raw=true)
 
+- 如右下角图所示，假设输入为[1, 0, 0, ..., 0], 输入和输出转换矩阵为1， hiddle的转换矩阵为w，经过1000次计算后，最后的结果是w^1000次方。
+    - 因此如果w = 1 那么1的1000次方还是1，但如果w变化一点点为1.01， 那么1.01的1000次方约为20000
+    - 再者，当w=0.99 和w=0.01，w本身差异很大，但是经过1000次方计算后，结果都为0
+
 <p align="center">
     <img src="https://github.com/davidkorea/NLP_201811/blob/master/RNN_LSTM_GRU/README/BPgradient.png" width="390" height="130">
 </p>
