@@ -1,5 +1,10 @@
 # Attention Basics
 
+
+[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+
+
+-----
 [Udacity NLP Nanodegree](https://eu.udacity.com/course/natural-language-processing-nanodegree--nd892)
 
 Additive Attention: [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)
