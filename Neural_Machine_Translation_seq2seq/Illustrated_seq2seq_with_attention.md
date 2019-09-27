@@ -129,6 +129,8 @@ Second, an attention <span class="decoder">decoder</span>  does an extra step be
 
 ![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/attention_process.gif)
 
+![](https://github.com/davidkorea/NLP_201811/blob/master/Neural_Machine_Translation_seq2seq/README/8.gif)
+
 
 <br />
 <br />
