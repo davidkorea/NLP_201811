@@ -170,18 +170,4 @@ Note that the model isn't just mindless aligning the first word at the output wi
 
 If you feel you're ready to learn the implementation, be sure to check TensorFlow's [Neural Machine Translation (seq2seq) Tutorial](https://github.com/tensorflow/nmt).
 
----
 
-<br />
-
-I hope you've found this useful. These visuals are early iterations of a lesson on attention that is part of the Udacity [Natural Language Processing Nanodegree Program](https://www.udacity.com/course/natural-language-processing-nanodegree--nd892). We go into more details in the lesson, including discussing applications and touching on more recent attention methods like the Transformer model from  [Attention Is All You Need](https://arxiv.org/abs/1706.03762).
-
-Check out the trailer of the [NLP Nanodegree Program](https://www.udacity.com/course/natural-language-processing-nanodegree--nd892):
-
-<div class="videoWrapper">
-<iframe width="560" height="349"  src="https://www.youtube.com/embed/FggN0VtWYTk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-
-I've also created a few lessons as a part of Udacity's [Machine Learning Nanodegree Program](https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t). The lessons I've created cover Unsupervised Learning, as well as a jupyter notebook on movie recommendations using collaborative filtering.
-
-I'd love any feedback you may have. Please reach me at [@jalammmar](https://twitter.com/jalammar).
