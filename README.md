@@ -1,5 +1,7 @@
 # NLP_201811
 
+seq2seq
+
 word2vec 
 
 # 2019-09-10
